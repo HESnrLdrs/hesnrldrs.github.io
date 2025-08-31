@@ -78,8 +78,13 @@ nav a:hover {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease; /* <- ADD THIS LINE */
+    cursor: pointer; /* <- ADD THIS LINE */
 }
-
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
