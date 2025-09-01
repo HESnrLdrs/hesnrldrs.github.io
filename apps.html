@@ -112,7 +112,9 @@
             <h3>Get Full Access</h3>
             <p>Enter your email to get access to <span id="tool-name"></span></p>
             <form action="https://formspree.io/f/meolzkeg" method="POST">
-    <input type="hidden" name="_format" value="json" />  <!-- ADD THIS LINE -->
+    <input type="hidden" name="_format" value="json" />
+    <!-- ADD THIS NEW HIDDEN FIELD -->
+    <input type="hidden" name="requested_tool" id="requested-tool-input" value="">
     <input type="email" name="email" placeholder="Your email address" required>
     <button type="submit">Get Access</button>
 </form>
