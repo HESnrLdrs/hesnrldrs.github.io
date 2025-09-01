@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Packages | Senior Academic Transformations</title>
+    <link rel="stylesheet" href="styles/style.css"> <!-- Uses your main site's CSS -->
+    <style>
+        /* Additional specific styles for the pricing page */
+        .pricing-hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .tier-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            border: 2px solid #eee;
+        }
+        .tier-card.featured {
+            border-color: var(--colour-secondary);
+            transform: scale(1.02);
+        }
+        .tier-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--colour-secondary);
+            color: var(--colour-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        .tier-name {
+            color: var(--colour-primary);
+            margin-bottom: 1rem;
+        }
+        .tier-price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--colour-accent);
+            margin: 1rem 0;
+        }
+        .price-period {
+            font-size: 0.4em;
+            color: #666;
+            font-weight: normal;
+        }
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        .tier-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .tier-features li:last-child {
+            border-bottom: none;
+        }
+        .tier-cta {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Senior Academic Transformations</h1>
+            <p>Structured Coaching Packages for Lasting Change</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="apps.html">Assessment Tools</a></li>
+                <li><a href="pricing.html">Coaching Packages</a></li>
+                <li><a href="about.html">About Paul</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="pricing-hero">
+            <h2>Find Your Path Forward</h2>
+            <p>Choose a coaching package designed for senior academics ready to make a transformative change.</p>
+        </section>
+
+        <div class="tiers-grid">
+            <!-- TIER 1: DISCOVERY -->
+            <div class="tier-card">
+                <h3 class="tier-name">Discovery Call</h3>
+                <div class="tier-price">FREE</div>
+                <p>Start with a no-obligation conversation to explore your goals.</p>
+                <ul class="tier-features">
+                    <li>✓ 30-minute video call</li>
+                    <li>✓ Identify core challenges</li>
+                    <li>✓ personalised recommendations</li>
+                    <li>✓ No obligation to continue</li>
+                </ul>
+                <div class="tier-cta">
+                    <a href="contact.html" class="btn">Book Your Call</a>
+                </div>
+            </div>
+
+            <!-- TIER 2: FOUNDATIONS -->
+            <div class="tier-card">
+                <div class="tier-badge">Popular</div>
+                <h3 class="tier-name">Foundations Package</h3>
+                <div class="tier-price">£497</div>
+                <p>Gain clarity and a concrete action plan.</p>
+                <ul class="tier-features">
+                    <li>✓ 1 x In-Depth Assessment App</li>
+                    <li>✓ 1 x 60min Strategy Session</li>
+                    <li>✓ Personalised Action Plan</li>
+                    <li>✓ Email support for 2 weeks</li>
+                </ul>
+                <div class="tier-cta">
+                    <a href="contact.html" class="btn">Get Started</a>
+                </div>
+            </div>
+
+            <!-- TIER 3: MOMENTUM -->
+            <div class="tier-card featured">
+                <div class="tier-badge">Most Popular</div>
+                <h3 class="tier-name">Momentum Package</h3>
+                <div class="tier-price">£997</div>
+                <p>Build sustained progress with ongoing support.</p>
+                <ul class="tier-features">
+                    <li>✓ 2 x In-Depth Assessment Apps</li>
+                    <li>✓ 2 x 60min Coaching Sessions</li>
+                    <li>✓ Supported Implementation</li>
+                    <li>✓ Priority email support for 1 month</li>
+                </ul>
+                <div class="tier-cta">
+                    <a href="contact.html" class="btn">Build Momentum</a>
+                </div>
+            </div>
+
+            <!-- TIER 4: TRANSFORMATION -->
+            <div class="tier-card">
+                <h3 class="tier-name">Transformation Package</h3>
+                <div class="tier-price">£2,497</div>
+                <p>Complete support for a major career transition.</p>
+                <ul class="tier-features">
+                    <li>✓ Access to ALL Assessment Apps & Workbooks</li>
+                    <li>✓ 12 months of coaching support (monthly calls)</li>
+                    <li>✓ Unlimited email support</li>
+                    <li>✓ CV & LinkedIn profile review</li>
+                    <li>✓ Interview & negotiation preparation</li>
+                </ul>
+                <div class="tier-cta">
+                    <a href="contact.html" class="btn">Begin Transformation</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.</p>
+        </div>
+    </footer>
+</body>
+</html>
