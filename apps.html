@@ -127,11 +127,17 @@
         </div>
     </footer>
 
-    <script>
-        function showSignup(toolName) {
-            document.getElementById('tool-name').textContent = toolName;
-            document.getElementById('signup-modal').style.display = 'flex';
-        }
-    </script>
+   <script>
+    function showSignup(toolName) {
+        // 1. Display the tool name in the modal text
+        document.getElementById('tool-name').textContent = toolName;
+        
+        // 2. SET THE HIDDEN INPUT VALUE to the tool name
+        document.getElementById('requested-tool-input').value = toolName;
+        
+        // 3. Show the modal
+        document.getElementById('signup-modal').style.display = 'flex';
+    }
+</script>
 </body>
 </html>
