@@ -103,5 +103,29 @@
 </footer>
         
     </div>
-</body>
+    <!-- Back to Top Button -->
+    <button onclick="topFunction()" class="back-to-top" id="backToTopBtn" title="Go to top">↑</button>
+
+    <script>
+    // Get the button
+    let mybutton = document.getElementById("backToTopBtn");
+
+    // Show the button when user scrolls down 100px from the top
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // Scroll to the top when the button is clicked
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+    </script>
+            </body>
 </html>
