@@ -20,6 +20,8 @@
             --colour-light: #F9F5EB; 
             --colour-dark: #333333; 
             --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --colour-warning: #ffc107;
             --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
             --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
             --shadow-heavy: 0 10px 25px rgba(0,0,0,0.15);
@@ -53,17 +55,6 @@
             padding: 5rem 1rem; 
             position: relative;
             overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="white" opacity="0.08"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.06"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>') repeat;
-            pointer-events: none;
         }
         
         header h1 { 
@@ -171,6 +162,15 @@
             color: var(--colour-dark);
         }
         
+        .btn-success {
+            background-color: var(--colour-success);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        
         /* Status Indicators */
         .status-badge {
             display: inline-block;
@@ -189,6 +189,80 @@
         .status-coming-soon {
             background-color: #fff3cd;
             color: #856404;
+        }
+        
+        /* Pricing Styles */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .pricing-card {
+            background: var(--colour-white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--colour-primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.free {
+            border-color: var(--colour-success);
+        }
+        
+        .tier-header h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tier-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--colour-primary);
+            margin: 1rem 0;
+        }
+        
+        .price.free {
+            color: var(--colour-success);
+        }
+        
+        .tier-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .tier-features li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .tier-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--colour-success);
+            font-weight: bold;
         }
         
         /* Contact and Lead Capture */
@@ -263,15 +337,6 @@
             margin-bottom: 1.5rem;
         }
         
-        /* Featured Content */
-        .workbook-feature { 
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
-            padding: 2.5rem; 
-            border-radius: 12px; 
-            margin: 2rem 0; 
-            border-left: 5px solid var(--colour-primary); 
-        }
-        
         /* Contact Grid */
         .contact-grid {
             display: grid;
@@ -286,6 +351,14 @@
             background: var(--colour-light);
             border-radius: 12px;
             border: 1px solid var(--colour-secondary);
+        }
+        
+        /* Section Dividers */
+        .section-divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--colour-secondary), transparent);
+            margin: 4rem 0;
         }
         
         /* Responsive Design */
@@ -303,7 +376,7 @@
                 padding: 1rem 0;
             }
             
-            .tool-grid {
+            .tool-grid, .pricing-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
@@ -314,6 +387,10 @@
             
             h2 {
                 font-size: 1.8rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
             }
         }
         
@@ -348,14 +425,14 @@
         <section id="welcome" aria-labelledby="welcome-heading">
             <h2 id="welcome-heading">A Warm Welcome</h2>
             <p class="intro-text">Hello. I'm Paul Thomas, and I've been supporting academic professionals in Higher Education since the early 1990s. This platform is designed for senior academics like you, who are navigating pivotal moments in their careers. Whether you're stepping into a new leadership role, seeking to enhance your impact, or contemplating your future direction, this centre provides the tools and guidance for thoughtful, evidence-based self-reflection and development.</p>
-            <p class="intro-text">Please explore the interactive apps and resources below. They are the first step in a transformative coaching journey, helping to bring clarity and focus to our conversations.</p>
+            <p class="intro-text">Explore our <strong>interactive assessment apps</strong>, download our <strong>comprehensive workbooks</strong>, or discover our <strong>coaching programmes</strong> designed specifically for senior academic professionals.</p>
         </section>
 
-        <section id="tools" aria-labelledby="tools-heading">
-            <h2 id="tools-heading">Our Assessment Tools</h2>
-            <p>These interactive apps are designed to provide you with immediate, confidential insights into your motivations, challenges, and opportunities. Simply click on each one to begin.</p>
+        <!-- APPS SECTION -->
+        <section id="apps" aria-labelledby="apps-heading">
+            <h2 id="apps-heading">🔧 Interactive Assessment Apps</h2>
+            <p>These web-based tools provide immediate, confidential insights into your motivations, challenges, and opportunities. Each assessment takes 10-15 minutes and gives you instant results with personalized recommendations.</p>
 
-            <h3>Interactive Apps</h3>
             <div class="tool-grid">
                 <!-- APP 1 - SUPPORT STYLE FINDER -->
                 <article class="tool-card">
@@ -363,17 +440,19 @@
                         <span class="status-badge status-live">Live</span>
                         <h4>Support Style Finder</h4>
                         <p>Discover your natural preferences for leadership development and identify which type of support you respond to best. This assessment reveals your ideal coaching and mentorship style.</p>
+                        <p><strong>Time:</strong> 10 minutes | <strong>Output:</strong> Personalized development track</p>
                         <a href="https://hesnrldrs.github.io/support-style-app/" target="_blank" rel="noopener" class="btn">Launch App</a>
                     </div>
                 </article>
                 
-                <!-- APP 2 - CAREER TRANSITION WORKBOOK -->
+                <!-- APP 2 - CAREER TRANSITION APP -->
                 <article class="tool-card">
                     <div class="card-content">
                         <span class="status-badge status-live">Live</span>
-                        <h4>Moving On: Career Transition</h4>
-                        <p>A structured, supportive workbook to guide you through career change. Explore your strengths, plan your next steps, and build confidence for what comes after academia.</p>
-                        <a href="https://hesnrldrs.github.io/career-transition-app/" target="_blank" rel="noopener" class="btn">Launch Workbook</a>
+                        <h4>Career Transition Navigator</h4>
+                        <p>A structured assessment to guide you through career change. Evaluates your readiness, motivations, and potential pathways for life beyond traditional academia.</p>
+                        <p><strong>Time:</strong> 15 minutes | <strong>Output:</strong> Transition readiness report</p>
+                        <a href="https://hesnrldrs.github.io/career-transition-app/" target="_blank" rel="noopener" class="btn">Launch App</a>
                     </div>
                 </article>
                 
@@ -382,123 +461,173 @@
                     <div class="card-content">
                         <span class="status-badge status-live">Live</span>
                         <h4>Life Balance Scorecard</h4>
-                        <p>Assess your work-life balance across four key areas. Based on Professor Sarah Thomson's framework, this tool helps you create a strategic plan for personal wellbeing and fulfilment.</p>
-                        <a href="https://hesnrldrs.github.io/life-balance-app/" target="_blank" rel="noopener" class="btn">Launch Assessment</a>
+                        <p>Assess your work-life balance across four key areas. Based on Professor Sarah Thomson's framework, this tool helps you create a strategic plan for personal wellbeing.</p>
+                        <p><strong>Time:</strong> 12 minutes | <strong>Output:</strong> Balance analysis & action plan</p>
+                        <a href="https://hesnrldrs.github.io/life-balance-app/" target="_blank" rel="noopener" class="btn">Launch App</a>
                     </div>
                 </article>
                 
-                <!-- APP 4 - RESILIENCE APP -->
+                <!-- APP 4 - RESILIENCE ASSESSMENT -->
                 <article class="tool-card">
                     <div class="card-content">
                         <span class="status-badge status-live">Live</span>
                         <h4>Academic Resilience Assessment</h4>
                         <p>Evaluate your resilience levels across different dimensions of academic life. Identify strengths and areas for development in managing pressure and setbacks.</p>
-                        <a href="https://hesnrldrs.github.io/resilience-app/" target="_blank" rel="noopener" class="btn">Launch Assessment</a>
+                        <p><strong>Time:</strong> 15 minutes | <strong>Output:</strong> Resilience profile & strategies</p>
+                        <a href="https://hesnrldrs.github.io/resilience-app/" target="_blank" rel="noopener" class="btn">Launch App</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- RESILIENCE SECTION -->
-        <section id="resilience-resources" aria-labelledby="resilience-heading">
-            <h2 id="resilience-heading">Resilience & Wellbeing Resources</h2>
-            <p>Build your capacity to thrive in challenging academic environments with these specialised resources.</p>
+        <hr class="section-divider">
+
+        <!-- WORKBOOKS SECTION -->
+        <section id="workbooks" aria-labelledby="workbooks-heading">
+            <h2 id="workbooks-heading">📚 Comprehensive Workbooks</h2>
+            <p>In-depth, downloadable resources for sustained personal development. These comprehensive guides provide structured exercises, frameworks, and tools you can work through at your own pace.</p>
 
             <div class="tool-grid">
-                <!-- RESILIENCE WORKBOOK -->
+                <!-- WORKBOOK 1 - MOVING ON -->
+                <article class="tool-card">
+                    <div class="card-content">
+                        <span class="status-badge status-live">Live</span>
+                        <h4>Moving On: Career Transition Workbook</h4>
+                        <p>A comprehensive 50-page guide for academics contemplating career change. Includes structured exercises, reflective activities, and practical frameworks for navigation with clarity and confidence.</p>
+                        <p><strong>Includes:</strong> Self-assessment tools, skills translation frameworks, networking strategies, interview preparation, and personal action planning.</p>
+                        <a href="https://hesnrldrs.github.io/moving-on-workbook/" target="_blank" rel="noopener" class="btn">Download Workbook</a>
+                    </div>
+                </article>
+                
+                <!-- WORKBOOK 2 - RESILIENCE -->
                 <article class="tool-card">
                     <div class="card-content">
                         <span class="status-badge status-live">Live</span>
                         <h4>Building Academic Resilience</h4>
                         <p>A comprehensive workbook designed to help academics develop robust coping strategies, maintain wellbeing under pressure, and build sustainable resilience practices.</p>
                         <p><strong>Includes:</strong> Stress assessment tools, coping strategy framework, mindfulness exercises, boundary-setting techniques</p>
-                        <a href="https://hesnrldrs.github.io/resilience-workbook/" target="_blank" rel="noopener" class="btn">View Workbook</a>
+                        <a href="https://hesnrldrs.github.io/resilience-workbook/" target="_blank" rel="noopener" class="btn">Download Workbook</a>
                     </div>
                 </article>
                 
-                <!-- PERSONAL LIFE BALANCE WORKBOOK -->
+                <!-- WORKBOOK 3 - LIFE BALANCE -->
                 <article class="tool-card">
                     <div class="card-content">
                         <span class="status-badge status-live">Live</span>
                         <h4>Personal Life Balance Guide</h4>
                         <p>A practical guide to creating sustainable balance between professional demands and personal wellbeing. Based on research-backed strategies for long-term academic success.</p>
                         <p><strong>Includes:</strong> Time audit tools, priority alignment exercises, energy management techniques, recovery planning</p>
-                        <a href="https://hesnrldrs.github.io/life-balance-guide/" target="_blank" rel="noopener" class="btn">View Guide</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="workbooks" aria-labelledby="workbooks-heading">
-            <h2 id="workbooks-heading">Career Development Workbooks</h2>
-            <p>Deepen your learning with these comprehensive workbooks. Download these resources to complement your assessment insights and support your development journey.</p>
-
-            <!-- FEATURED WORKBOOK -->
-            <div class="workbook-feature">
-                <h3>Featured Workbook</h3>
-                <article class="tool-card">
-                    <div class="card-content">
-                        <span class="status-badge status-live">Live</span>
-                        <h4>Moving On: The Senior Academic's Career Transition Workbook</h4>
-                        <p>A comprehensive guide for academics contemplating career change. This workbook provides structured exercises, reflective activities, and practical frameworks to help you navigate your transition with clarity and confidence. Based on proven methodologies used with senior leaders across UK higher education.</p>
-                        <p><strong>Includes:</strong> Self-assessment tools, skills translation frameworks, networking strategies, interview preparation, and personal action planning.</p>
-                        <a href="https://hesnrldrs.github.io/moving-on-workbook/" target="_blank" rel="noopener" class="btn">View Workbook</a>
-                    </div>
-                </article>
-            </div>
-
-            <h3>Additional Resources</h3>
-            <div class="tool-grid">
-                <article class="tool-card">
-                    <div class="card-content">
-                        <span class="status-badge status-coming-soon">Coming Soon</span>
-                        <h4>From Insight to Action</h4>
-                        <p>A practical guide to synthesising your assessment results and creating a personalised development plan with achievable goals.</p>
-                        <a href="#" class="btn btn-secondary" aria-disabled="true">Download Workbook</a>
+                        <a href="https://hesnrldrs.github.io/life-balance-guide/" target="_blank" rel="noopener" class="btn">Download Workbook</a>
                     </div>
                 </article>
                 
+                <!-- WORKBOOK 4 - COMING SOON -->
                 <article class="tool-card">
                     <div class="card-content">
                         <span class="status-badge status-coming-soon">Coming Soon</span>
                         <h4>Strategic Conversation Guide</h4>
-                        <p>This workbook will provide frameworks for preparing for and navigating crucial conversations, from securing resources to negotiating roles.</p>
-                        <a href="#" class="btn btn-secondary" aria-disabled="true">Download Workbook</a>
+                        <p>Frameworks for preparing for and navigating crucial conversations, from securing resources to negotiating roles. Essential skills for senior academic leadership.</p>
+                        <p><strong>Will Include:</strong> Conversation planning templates, negotiation strategies, conflict resolution tools</p>
+                        <a href="#" class="btn btn-secondary" aria-disabled="true">Notify When Ready</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="guides" aria-labelledby="guides-heading">
-            <h2 id="guides-heading">How-To Guides</h2>
-            <p>To ensure you get the most value from the tools, please refer to these short explanatory guides.</p>
-            <div class="tool-grid">
-                <article class="tool-card">
-                    <div class="card-content">
-                        <span class="status-badge status-coming-soon">Coming Soon</span>
-                        <h4>Getting Started: A Quick Overview</h4>
-                        <p>New to the assessment centre? This guide explains how the apps and workbooks fit together and how to begin your journey.</p>
-                        <a href="#" class="btn btn-secondary" aria-disabled="true">Read Guide</a>
+        <hr class="section-divider">
+
+        <!-- COACHING PROGRAMMES SECTION -->
+        <section id="coaching" aria-labelledby="coaching-heading">
+            <h2 id="coaching-heading">🎯 Coaching Programmes</h2>
+            <p>Personalized support for your transformation journey. Choose the level of guidance that feels right for where you are and where you want to go.</p>
+
+            <div class="pricing-grid">
+                <!-- TIER 0 - FREE DISCOVERY -->
+                <div class="pricing-card free">
+                    <div class="tier-header">
+                        <h4>Discovery Call</h4>
+                        <div class="tier-subtitle">Get Started</div>
                     </div>
-                </article>
-                
-                <article class="tool-card">
-                    <div class="card-content">
-                        <span class="status-badge status-coming-soon">Coming Soon</span>
-                        <h4>Interpreting Your Results</h4>
-                        <p>This guide will offer advice on how to analyse and reflect on the output from your assessments, ready for a coaching session.</p>
-                        <a href="#" class="btn btn-secondary" aria-disabled="true">Read Guide</a>
+                    <div class="price free">FREE</div>
+                    <ul class="tier-features">
+                        <li>30-minute consultation call</li>
+                        <li>Assess your current situation</li>
+                        <li>Identify key challenges & opportunities</li>
+                        <li>Explore programme fit</li>
+                        <li>Free "Moving On: First Steps" guide</li>
+                        <li>Clear next steps framework</li>
+                    </ul>
+                    <a href="https://calendly.com/paulthomascoaching" target="_blank" rel="noopener" class="btn btn-success">📅 Book Your Call</a>
+                </div>
+
+                <!-- TIER 1 - EXPLORATION -->
+                <div class="pricing-card">
+                    <div class="tier-header">
+                        <h4>Exploration Programme</h4>
+                        <div class="tier-subtitle">3 months supported</div>
                     </div>
-                </article>
+                    <div class="price">£1,500</div>
+                    <ul class="tier-features">
+                        <li>Six fortnightly coaching sessions</li>
+                        <li>All assessment apps & workbooks included</li>
+                        <li>Email check-ins (48-hour response)</li>
+                        <li>Goal-mapping and progress reviews</li>
+                        <li>Break unhelpful patterns</li>
+                        <li>30-day money-back guarantee</li>
+                    </ul>
+                    <a href="#" class="btn">Select Programme</a>
+                </div>
+
+                <!-- TIER 2 - TRANSFORMATION -->
+                <div class="pricing-card featured">
+                    <div class="tier-header">
+                        <h4>Transformation Programme</h4>
+                        <div class="tier-subtitle">6 months intensive</div>
+                    </div>
+                    <div class="price">£2,850</div>
+                    <ul class="tier-features">
+                        <li>Twelve coaching sessions</li>
+                        <li>Complete resource library access</li>
+                        <li>Priority email & phone support</li>
+                        <li>Monthly progress assessments</li>
+                        <li>Career strategy development</li>
+                        <li>Network introduction support</li>
+                        <li>60-day money-back guarantee</li>
+                    </ul>
+                    <a href="#" class="btn">Select Programme</a>
+                    <p style="margin-top: 1rem; font-weight: bold; color: var(--colour-primary);">Most Popular Choice</p>
+                </div>
+
+                <!-- TIER 3 - COMPLETE -->
+                <div class="pricing-card">
+                    <div class="tier-header">
+                        <h4>Complete Leadership Programme</h4>
+                        <div class="tier-subtitle">12 months comprehensive</div>
+                    </div>
+                    <div class="price">£4,500</div>
+                    <ul class="tier-features">
+                        <li>24 coaching sessions over 12 months</li>
+                        <li>Quarterly intensive strategy sessions</li>
+                        <li>Unlimited email & phone support</li>
+                        <li>Leadership assessment & 360 feedback</li>
+                        <li>Executive presence development</li>
+                        <li>Speaking & presentation coaching</li>
+                        <li>90-day money-back guarantee</li>
+                    </ul>
+                    <a href="#" class="btn">Select Programme</a>
+                </div>
             </div>
         </section>
+
+        <hr class="section-divider">
 
         <!-- FREE DISCOVERY OFFER -->
         <section id="free-offer" class="lead-capture" aria-labelledby="offer-heading">
-            <h2 id="offer-heading">An Invitation to Explore What's Next</h2>
-            <p class="intro-text">Whether you're considering your next steps within academia or exploring possibilities beyond, I invite you to receive my "Moving On: First Steps" guide and a complimentary 30-minute conversation.</p>
+            <h2 id="offer-heading">Start Your Transformation Journey</h2>
+            <p class="intro-text">Ready to explore what's next? Book your complimentary Discovery Call to assess your situation, identify opportunities, and determine the best path forward for your career and personal development.</p>
 
             <div class="form-container">
+                <h3>Book Your Free Discovery Call</h3>
                 <form action="#" method="post" aria-label="Request free consultation">
                     <div class="form-group">
                         <label for="full-name" class="sr-only">Full Name</label>
@@ -508,9 +637,13 @@
                         <label for="email" class="sr-only">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="Email Address" required>
                     </div>
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 0;">Accept Invitation</button>
+                    <div class="form-group">
+                        <label for="message" class="sr-only">Tell me about your situation</label>
+                        <textarea id="message" name="message" placeholder="Tell me briefly about your current situation and what you'd like to explore" rows="4" style="width: 100%; padding: 12px 15px; border: 2px solid #ddd; border-radius: 8px; font-family: Georgia, serif; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 0;">Request Discovery Call</button>
                 </form>
-                <p style="color: #666; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">We respect your privacy and will never share your information.</p>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 1rem; text-align: center; font-style: italic;">We respect your privacy and will never share your information.</p>
             </div>
         </section>
 
@@ -521,8 +654,8 @@
             <div class="contact-grid">
                 <!-- Book A Consultation -->
                 <div class="contact-card">
-                    <h3>Book a Consultation</h3>
-                    <p>Ready to begin your transformation? Book a session directly.</p>
+                    <h3>Book Directly</h3>
+                    <p>Ready to begin? Book your Discovery Call directly through my calendar.</p>
                     <a href="https://calendly.com/paulthomascoaching" target="_blank" rel="noopener" class="btn">Book Now</a>
                 </div>
                 
@@ -544,7 +677,7 @@
         Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
     </footer>
 
-    <!-- Simple Analytics -->
+    <!-- Analytics and Form Handling -->
     <script>
         // Track page load
         console.log('Senior Academic Transformations loaded successfully');
@@ -557,7 +690,7 @@
             });
         });
         
-        // Form submission tracking
+        // Form submission handling
         const form = document.querySelector('form');
         if (form) {
             form.addEventListener('submit', function(e) {
