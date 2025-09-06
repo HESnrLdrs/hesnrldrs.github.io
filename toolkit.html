@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Career Transformation Toolkit | Senior Academic Transformations</title>
+    <meta name="description" content="Interactive tools to design your strategic transformation. Five comprehensive assessments to help senior academics explore their career options with confidence.">
+    
+    <style>
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.7; 
+            color: var(--colour-dark); 
+            background-color: var(--colour-light); 
+        }
+        
+        .header-nav {
+            background: var(--colour-white);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            display: flex;
+            align-items: center;
+            color: var(--colour-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover { color: var(--colour-accent); }
+        
+        .toolkit-badge {
+            background: var(--colour-success);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .toolkit-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .toolkit-header h1 {
+            font-size: 2.5rem;
+            color: var(--colour-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .introduction {
+            background: var(--colour-white);
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .introduction h2 {
+            color: var(--colour-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .benefit-list {
+            list-style: none;
+        }
+        
+        .benefit-list li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--colour-success);
+            font-weight: bold;
+        }
+        
+        .outcomes-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .user-info-form {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            border: 2px solid var(--colour-success);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-input {
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: Georgia, serif;
+            font-size: 1rem;
+        }
+        
+        .toolkit-content {
+            background: var(--colour-white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            margin: 2rem 0;
+        }
+        
+        .tool-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+        
+        .tool-section h3 {
+            color: var(--colour-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-input-full {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: Georgia, serif;
+            resize: vertical;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-family: Georgia, serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-success {
+            background: var(--colour-success);
+            color: white;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, #9c27b0 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--colour-primary);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .footer-links {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid #ddd;
+        }
+        
+        .footer-links a {
+            color: var(--colour-primary);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .hidden { display: none; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .toolkit-header h1 { font-size: 2rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-nav">
+        <div class="nav-container">
+            <a href="index.html" class="back-link">
+                <span style="margin-right: 0.5rem;">←</span>
+                Back to Senior Academic Transformations
+            </a>
+            <div class="toolkit-badge">Free Interactive Toolkit</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="toolkit-header">
+            <h1>Academic Career Transformation Toolkit</h1>
+            <p style="font-size: 1.2rem; color: var(--colour-accent); margin-bottom: 0.5rem;">Interactive tools to design your strategic transformation to whatever comes next</p>
+            <p style="color: var(--colour-success); font-weight: bold;">Complimentary from Senior Academic Transformations</p>
+
+            <div class="introduction">
+                <h2>What is this toolkit?</h2>
+                <p>Whether you're contemplating a move into industry, considering consultancy, exploring entrepreneurship, transitioning to policy work, or simply reimagining your academic career, this comprehensive toolkit guides you through the five essential components of any successful career transformation.</p>
+
+                <h3 style="color: var(--colour-primary); margin: 1.5rem 0 1rem 0;">Why use these tools?</h3>
+                <div class="benefits-grid">
+                    <ul class="benefit-list">
+                        <li>Move beyond the "what am I supposed to do?" confusion</li>
+                        <li>Recognise your most valuable transferable skills</li>
+                        <li>Create a realistic timeline that actually works</li>
+                    </ul>
+                    <ul class="benefit-list">
+                        <li>Explore options where you'll genuinely flourish</li>
+                        <li>Make the most of connections you already have</li>
+                        <li>Plan your finances to reduce transition anxiety</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: var(--colour-primary); margin: 1.5rem 0 1rem 0;">What you'll discover:</h3>
+                <div class="outcomes-box">
+                    <ul style="list-style: none;">
+                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your unique professional story</strong> - How to articulate your academic experience beyond the university</li>
+                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your realistic transition timeline</strong> - Thoughtful phases based on your circumstances</li>
+                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your career possibilities</strong> - Structured evaluation of different paths</li>
+                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your existing connections</strong> - People you may not have considered as resources</li>
+                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your financial clarity</strong> - Understanding your runway during change</li>
+                    </ul>
+                </div>
+                
+                <p style="font-style: italic; color: #666; text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+                    <strong>Time commitment:</strong> 30-45 minutes | <strong>Value:</strong> The strategic foundation that typically takes months to develop on your own
+                </p>
+            </div>
+
+            <div class="user-info-form" id="userInfoForm">
+                <h3 style="color: var(--colour-success); margin-bottom: 1rem;">Get Started - Tell us about yourself:</h3>
+                <p style="margin-bottom: 1.5rem; color: #2e7d32;">Complete your details to access the full toolkit and receive your personalised transformation strategy.</p>
+                <div class="form-grid">
+                    <input type="text" class="form-input" id="userName" placeholder="Your name" required>
+                    <input type="email" class="form-input" id="userEmail" placeholder="Email address" required>
+                    <input type="text" class="form-input" id="userRole" placeholder="Current academic role">
+                    <select class="form-input" id="userTimeframe">
+                        <option value="">Transition timeframe</option>
+                        <option value="immediate">Immediate (0-3 months)</option>
+                        <option value="short">Short-term (3-6 months)</option>
+                        <option value="medium">Medium-term (6-12 months)</option>
+                        <option value="long">Long-term (12+ months)</option>
+                    </select>
+                </div>
+                <button class="btn btn-success" onclick="startToolkit()">Begin Your Transformation Journey</button>
+            </div>
+        </div>
+
+        <div class="toolkit-content" id="toolkitContent" style="display: none;">
+            <h2 style="color: var(--colour-accent); margin-bottom: 2rem; text-align: center;">Your Five-Step Transformation Process</h2>
+            
+            <div class="tool-section">
+                <h3>🎯 Step 1: Skills Translation Matrix</h3>
+                <p>Identify and articulate your transferable skills for various career paths.</p>
+                <div class="form-group">
+                    <label>Your top academic achievement:</label>
+                    <textarea class="form-input-full" rows="3" placeholder="Describe your most significant achievement and its impact..."></textarea>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <input type="text" class="form-input-full" placeholder="Key skills demonstrated">
+                    <input type="text" class="form-input-full" placeholder="Career equivalent value">
+                </div>
+            </div>
+
+            <div class="tool-section">
+                <h3>📅 Step 2: Strategic Timeline</h3>
+                <p>Create your realistic transition roadmap.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label>Target transition date:</label>
+                        <input type="date" class="form-input-full">
+                    </div>
+                    <div>
+                        <label>Financial runway:</label>
+                        <select class="form-input-full">
+                            <option>3 months</option>
+                            <option>6 months</option>
+                            <option>9 months</option>
+                            <option>12+ months</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Phase 1 goals (Months 1-2):</label>
+                    <textarea class="form-input-full" rows="2" placeholder="What will you focus on in the first phase?"></textarea>
+                </div>
+            </div>
+
+            <div class="tool-section">
+                <h3>📊 Step 3: Career Options Research</h3>
+                <p>Systematically evaluate potential career paths.</p>
+                <div class="form-group">
+                    <label>Career option 1:</label>
+                    <input type="text" class="form-input-full" placeholder="e.g., Corporate consulting, Policy work, Entrepreneurship">
+                </div>
+                <div class="form-group">
+                    <label>Why this appeals to you:</label>
+                    <textarea class="form-input-full" rows="2" placeholder="What draws you to this option?"></textarea>
+                </div>
+            </div>
+
+            <div class="tool-section">
+                <h3>👥 Step 4: Network Mapping</h3>
+                <p>Identify people who could provide insights or opportunities.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                    <input type="text" class="form-input-full" placeholder="Contact name">
+                    <input type="text" class="form-input-full" placeholder="Sector/field">
+                    <input type="text" class="form-input-full" placeholder="Organisation">
+                </div>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label>Networking approach:</label>
+                    <textarea class="form-input-full" rows="2" placeholder="How will you reach out to explore opportunities?"></textarea>
+                </div>
+            </div>
+
+            <div class="tool-section">
+                <h3>💰 Step 5: Financial Planning</h3>
+                <p>Plan your financial runway during transition.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label>Monthly expenses:</label>
+                        <input type="number" class="form-input-full" placeholder="£0">
+                    </div>
+                    <div>
+                        <label>Available savings:</label>
+                        <input type="number" class="form-input-full" placeholder="£0">
+                    </div>
+                </div>
+                <div style="margin-top: 1rem; padding: 1rem; background: #e8f5e8; border-radius: 8px;">
+                    <strong>Your financial runway:</strong> <span id="runwayResult">Complete the fields above</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <button class="btn btn-success" onclick="completeToolkit()">Get My Complete Strategy</button>
+            </div>
+        </div>
+
+        <div class="cta-section" id="ctaSection" style="display: none;">
+            <h3>Ready to Take the Next Step?</h3>
+            <p>The Senior Academic Transformations programmes provide comprehensive support, accountability, and proven strategies to help you navigate your career transition with confidence and clarity.</p>
+            <div class="cta-buttons">
+                <a href="coaching.html" class="btn btn-white">View Coaching Programmes</a>
+                <a href="contact.html" class="btn btn-outline">Schedule Free Consultation</a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="apps.html">Assessment Apps</a>
+            <a href="workbooks.html">Workbooks</a>
+            <a href="coaching.html">Coaching</a>
+            <a href="about.html">About Paul</a>
+        </div>
+        <p style="text-align: center; color: #666; font-size: 0.9rem;">
+            © 2025 Senior Academic Transformations - A service of Paul Thomas Coaching
+        </p>
+    </div>
+
+    <script>
+        let userData = {};
+
+        function startToolkit() {
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            
+            if (!name || !email) {
+                alert('Please enter your name and email address to continue.');
+                return;
+            }
+
+            userData = {
+                name: name,
+                email: email,
+                role: document.getElementById('userRole').value,
+                timeframe: document.getElementById('userTimeframe').value
+            };
+
+            document.getElementById('userInfoForm').style.display = 'none';
+            document.getElementById('toolkitContent').style.display = 'block';
+        }
+
+        function completeToolkit() {
+            if (userData.email) {
+                document.getElementById('toolkitContent').style.display = 'none';
+                document.getElementById('ctaSection').style.display = 'block';
+                
+                alert(`Thank you ${userData.name}! Your comprehensive transformation strategy will be sent to ${userData.email}. You'll also receive our complete "Moving On" guide series and exclusive insights for senior academics exploring their next chapter.`);
+            }
+        }
+
+        // Calculate financial runway
+        document.addEventListener('input', function(e) {
+            if (e.target.type === 'number') {
+                calculateRunway();
+            }
+        });
+
+        function calculateRunway() {
+            const expenses = document.querySelector('input[placeholder="£0"]:first-of-type')?.value || 0;
+            const savings = document.querySelector('input[placeholder="£0"]:last-of-type')?.value || 0;
+            const runway = expenses > 0 ? Math.floor(savings / expenses) : 0;
+            
+            document.getElementById('runwayResult').textContent = runway > 0 ? `${runway} months` : 'Complete the fields above';
+        }
+
+        console.log('Academic Career Transformation Toolkit loaded successfully');
+    </script>
+</body>
+</html>
