@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workbooks | Senior Academic Transformations</title>
+    <meta name="description" content="Comprehensive development workbooks for senior academics. In-depth resources for career transition, resilience building, and leadership development.">
+    
+    <style>
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.7; 
+            color: var(--colour-dark); 
+            background-color: var(--colour-light); 
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background: var(--colour-white);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--colour-primary);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--colour-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+        }
+        
+        .container { 
+            width: 90%; 
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 2rem 0; 
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 { 
+            color: var(--colour-accent); 
+            border-bottom: 2px solid var(--colour-secondary); 
+            padding-bottom: 0.5rem; 
+            margin: 3rem 0 2rem 0; 
+            font-size: 2rem;
+        }
+        
+        .workbook-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 2rem; 
+            margin: 2rem 0; 
+        }
+        
+        .workbook-card { 
+            background: var(--colour-white); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow-light); 
+            transition: all 0.3s ease; 
+            border: 1px solid #eee; 
+        }
+        
+        .workbook-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: var(--shadow-medium); 
+        }
+        
+        .workbook-card.featured {
+            border: 2px solid var(--colour-primary);
+        }
+        
+        .card-content { 
+            padding: 2rem; 
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .status-live {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-coming-soon {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-featured {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .status-free {
+            background-color: #d1f2eb;
+            color: #00695c;
+        }
+        
+        .btn { 
+            display: inline-block; 
+            background-color: var(--colour-primary); 
+            color: white; 
+            padding: 0.9rem 1.8rem; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            margin-top: 1.2rem; 
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 1rem; 
+            text-align: center;
+        }
+        
+        .btn:hover { 
+            background-color: var(--colour-accent); 
+            transform: translateY(-2px);
+        }
+        
+        .btn-success {
+            background-color: var(--colour-success);
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        
+        .btn-secondary {
+            background-color: var(--colour-secondary);
+            color: var(--colour-dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d4a574;
+        }
+        
+        .intro-text { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            margin-bottom: 1.5rem;
+        }
+        
+        .workbook-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .workbook-features li {
+            margin: 0.5rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        
+        .workbook-features li:before {
+            content: "📄";
+            position: absolute;
+            left: 0;
+        }
+        
+        .workbook-specs {
+            background: var(--colour-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .reference-note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 1rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+        
+        footer { 
+            background-color: var(--colour-dark); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 0; 
+            margin-top: 4rem; 
+        }
+        
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+        
+        /* Return to Top Button */
+        .return-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--colour-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .return-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .return-to-top:hover {
+            background-color: var(--colour-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .workbook-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="apps.html">Assessment Apps</a></li>
+                <li><a href="workbooks.html" class="active">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Comprehensive Workbooks</h1>
+        <p>In-depth, structured resources for sustained personal and professional development</p>
+    </header>
+
+    <main class="container">
+        <section id="workbooks-intro">
+            <p class="intro-text">Our workbooks provide structured frameworks, exercises, and tools for deep personal development. Unlike quick assessments, these resources are designed for sustained engagement over weeks or months, helping you work through complex challenges at your own pace with expert guidance.</p>
+        </section>
+
+        <section id="free-resources">
+            <h2>Free Starter Resources</h2>
+            
+            <div class="workbook-grid">
+                <div class="workbook-card">
+                    <div class="card-content">
+                        <span class="status-badge status-free">Free Download</span>
+                        <h3>Moving On: Introduction</h3>
+                        
+                        <p>A comprehensive introduction to career transition planning for senior academics. This sampler guide introduces our methodology and helps you assess whether you're ready for deeper exploration.</p>
+                        
+                        <div class="workbook-specs">
+                            <strong>Format:</strong> PDF Download | <strong>Pages:</strong> 15 | <strong>Time:</strong> 1-2 hours
+                        </div>
+                        
+                        <ul class="workbook-features">
+                            <li>Career satisfaction assessment</li>
+                            <li>Values clarification exercise</li>
+                            <li>Initial exploration framework</li>
+                            <li>Resource links and next steps</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Introduction to transition theory frameworks and career development principles.
+                        </div>
+                        
+                        <a href="#" class="btn btn-success">Download Free</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="available-workbooks">
+            <h2>Available Workbooks</h2>
+            
+            <div class="workbook-grid">
+                <!-- WORKBOOK 2 - LIFE BALANCE -->
+                <div class="workbook-card">
+                    <div class="card-content">
+                        <span class="status-badge status-live">Available</span>
+                        <h3>Personal Life Balance Scorecard</h3>
+                        
+                        <p>A practical guide to creating sustainable balance between professional demands and personal wellbeing, based on research-backed strategies for long-term academic success.</p>
+                        
+                        <div class="workbook-specs">
+                            <strong>Format:</strong> PDF Download | <strong>Pages:</strong> 40 | <strong>Completion Time:</strong> 2-3 weeks
+                        </div>
+                        
+                        <ul class="workbook-features">
+                            <li>Time audit tools and analysis worksheets</li>
+                            <li>Priority alignment exercises</li>
+                            <li>Energy management techniques</li>
+                            <li>Recovery planning templates</li>
+                            <li>Goal-setting frameworks</li>
+                            <li>Progress tracking systems</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Based on work-life balance research (Greenhaus & Beutell, 1985) and balanced scorecard methodology (Kaplan & Norton, 1992).
+                        </div>
+                        
+                        <a href="#" class="btn">Purchase & Download - £29</a>
+                    </div>
+                </div>
+                
+                <!-- WORKBOOK 4 - RESILIENCE -->
+                <div class="workbook-card">
+                    <div class="card-content">
+                        <span class="status-badge status-live">Available</span>
+                        <h3>Academic Resilience Workbook</h3>
+                        
+                        <p>A comprehensive guide to developing robust coping strategies, maintaining wellbeing under pressure, and building sustainable resilience practices for academic careers.</p>
+                        
+                        <div class="workbook-specs">
+                            <strong>Format:</strong> PDF Download | <strong>Pages:</strong> 45 | <strong>Completion Time:</strong> 3-4 weeks
+                        </div>
+                        
+                        <ul class="workbook-features">
+                            <li>Stress assessment tools and tracking sheets</li>
+                            <li>Coping strategy framework and implementation guide</li>
+                            <li>Mindfulness exercises and meditation scripts</li>
+                            <li>Boundary-setting techniques for work-life balance</li>
+                            <li>Energy management strategies</li>
+                            <li>Crisis response planning templates</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Assessment framework based on academic resilience research (Martin & Marsh, 2009).
+                        </div>
+                        
+                        <a href="#" class="btn">Purchase & Download - £35</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="coming-soon">
+            <h2>In Development</h2>
+            
+            <div class="workbook-grid">
+                <!-- WORKBOOK 1 - MOVING ON -->
+                <div class="workbook-card featured">
+                    <div class="card-content">
+                        <span class="status-badge status-featured">Coming Soon</span>
+                        <h3>Moving On: The Complete Career Transition Workbook</h3>
+                        
+                        <p>Our flagship comprehensive guide for academics contemplating career change. This workbook provides structured exercises, reflective activities, and practical frameworks to help you navigate your transition with clarity and confidence.</p>
+                        
+                        <div class="workbook-specs">
+                            <strong>Expected:</strong> March 2025 | <strong>Estimated Pages:</strong> 60+ | <strong>Estimated Price:</strong> £49
+                        </div>
+                        
+                        <ul class="workbook-features">
+                            <li>Self-assessment questionnaires and scoring guides</li>
+                            <li>Skills translation frameworks for non-academic roles</li>
+                            <li>Networking strategy templates and scripts</li>
+                            <li>Interview preparation guides and practice questions</li>
+                            <li>Personal action planning worksheets</li>
+                            <li>Financial planning templates for career change</li>
+                            <li>Confidence-building exercises and affirmations</li>
+                            <li>Resource lists and recommended reading</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Comprehensive synthesis of transition theory (Schlossberg, 1981), career development research, and practical implementation strategies.
+                        </div>
+                        
+                        <a href="#" class="btn btn-secondary">Notify When Available</a>
+                    </div>
+                </div>
+                
+                <!-- WORKBOOK 3 - MATRIX REENGINEERING -->
+                <div class="workbook-card">
+                    <div class="card-content">
+                        <span class="status-badge status-coming-soon">Coming Soon</span>
+                        <h3>Matrix Reengineering: Reprogramming Your Internal Software</h3>
+                        
+                        <p>Examine the limiting beliefs that shape your decisions and learn to rewrite your internal operating systems. A practical guide to identifying and transforming unconscious patterns that hold you back.</p>
+                        
+                        <div class="workbook-specs">
+                            <strong>Expected:</strong> April 2025 | <strong>Estimated Pages:</strong> 50 | <strong>Estimated Price:</strong> £42
+                        </div>
+                        
+                        <ul class="workbook-features">
+                            <li>Limiting belief identification frameworks</li>
+                            <li>Cognitive restructuring exercises</li>
+                            <li>Mindset transformation strategies</li>
+                            <li>Self-awareness development tools</li>
+                            <li>Behaviour change implementation guides</li>
+                            <li>Progress tracking and reflection templates</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Based on cognitive behavioural therapy principles and mindset research.
+                        </div>
+                        
+                        <a href="#" class="btn btn-secondary">Notify When Available</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-workbooks-work">
+            <h2>How Our Workbooks Work</h2>
+            <div class="workbook-grid">
+                <div class="workbook-card">
+                    <div class="card-content">
+                        <h3>Instant Download</h3>
+                        <p>After purchase, receive immediate access to your workbook as a professionally formatted PDF. Print it out or work digitally - whatever works best for you.</p>
+                    </div>
+                </div>
+                
+                <div class="workbook-card">
+                    <div class="card-content">
+                        <h3>Self-Paced Learning</h3>
+                        <p>Work through exercises at your own pace. Most workbooks are designed for 2-6 weeks of engagement, with suggestions for daily or weekly activities.</p>
+                    </div>
+                </div>
+                
+                <div class="workbook-card">
+                    <div class="card-content">
+                        <h3>Email Support</h3>
+                        <p>All workbooks include email support. Get clarification on exercises, share insights, or ask questions about implementation.</p>
+                    </div>
+                </div>
+                
+                <div class="workbook-card">
+                    <div class="card-content">
+                        <h3>Lifetime Access</h3>
+                        <p>Once purchased, the workbook is yours forever. Return to exercises as needed, track your progress over time, and revisit insights as you grow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-steps" style="background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%); padding: 3rem 2rem; border-radius: 12px; margin: 3rem 0; border: 2px solid var(--colour-secondary); text-align: center;">
+            <h2 style="border: none; margin-bottom: 1rem;">Ready for Guided Support?</h2>
+            <p class="intro-text">While our workbooks provide comprehensive frameworks for self-development, many academics find that personalised coaching accelerates their progress significantly.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="coaching.html" class="btn">Explore Coaching Programmes</a>
+                <a href="apps.html" class="btn btn-secondary">Try Our Assessment Apps</a>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
+        Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
+    </footer>
+
+    <!-- Return to Top Button -->
+    <button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
+
+    <script>
+        // Return to Top Button
+        const returnToTopButton = document.querySelector('.return-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                returnToTopButton.classList.add('visible');
+            } else {
+                returnToTopButton.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        console.log('Workbooks page loaded successfully');
+    </script>
+</body>
+</html>
