@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Programmes | Senior Academic Transformations</title>
+    <meta name="description" content="Personalised coaching programmes for senior academics exploring their next chapter. From discovery calls to comprehensive transformation programmes.">
+    
+    <style>
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.7; 
+            color: var(--colour-dark); 
+            background-color: var(--colour-light); 
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background: var(--colour-white);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--colour-primary);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--colour-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+        }
+        
+        .container { 
+            width: 90%; 
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 2rem 0; 
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h2 { 
+            color: var(--colour-accent); 
+            border-bottom: 2px solid var(--colour-secondary); 
+            padding-bottom: 0.5rem; 
+            margin: 3rem 0 2rem 0; 
+            font-size: 2rem;
+        }
+        
+        .intro-text { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .programmes-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 2rem; 
+            margin: 2rem 0; 
+        }
+        
+        .programme-card { 
+            background: var(--colour-white); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow-light); 
+            transition: all 0.3s ease; 
+            border: 2px solid transparent;
+            position: relative;
+        }
+        
+        .programme-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: var(--shadow-medium); 
+        }
+        
+        .programme-card.featured {
+            border-color: var(--colour-primary);
+            transform: scale(1.02);
+        }
+        
+        .programme-card.free {
+            border-color: var(--colour-success);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: var(--colour-primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .card-content { 
+            padding: 2.5rem; 
+            text-align: center;
+        }
+        
+        .programme-title {
+            color: var(--colour-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .programme-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--colour-primary);
+            margin: 1rem 0;
+        }
+        
+        .price.free {
+            color: var(--colour-success);
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .programme-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .programme-features li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .programme-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--colour-success);
+            font-weight: bold;
+        }
+        
+        .guarantee {
+            background: var(--colour-light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--colour-secondary);
+        }
+        
+        .btn { 
+            display: inline-block; 
+            background-color: var(--colour-primary); 
+            color: white; 
+            padding: 1rem 2rem; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            margin-top: 1.5rem; 
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 1rem; 
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn:hover { 
+            background-color: var(--colour-accent); 
+            transform: translateY(-2px);
+        }
+        
+        .btn-success {
+            background-color: var(--colour-success);
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, #9c27b0 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-section h2 {
+            border: none;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--colour-primary);
+            border: 2px solid white;
+        }
+        
+        .btn-white:hover {
+            background: transparent;
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--colour-primary);
+        }
+        
+        footer { 
+            background-color: var(--colour-dark); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 0; 
+            margin-top: 4rem; 
+        }
+        
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+        
+        /* Return to Top Button */
+        .return-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--colour-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .return-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .return-to-top:hover {
+            background-color: var(--colour-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .programmes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 1rem 0;
+            }
+            
+            .programme-card.featured {
+                transform: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="apps.html">Assessment Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html" class="active">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Coaching Programmes</h1>
+        <p>Personalised support for senior academics navigating their next chapter with clarity, confidence, and strategic thinking</p>
+    </header>
+
+    <main class="container">
+        <section id="coaching-intro">
+            <p class="intro-text">Our coaching programmes are specifically designed for senior academics who are ready for transformation. Whether you're exploring options beyond academia, stepping into leadership roles, or seeking to enhance your impact, we provide the strategic support and accountability you need to achieve your goals.</p>
+        </section>
+
+        <section id="programmes">
+            <h2>Choose Your Level of Support</h2>
+            
+            <div class="programmes-grid">
+                <!-- FREE DISCOVERY CALL -->
+                <div class="programme-card free">
+                    <div class="card-content">
+                        <h3 class="programme-title">Discovery Call</h3>
+                        <p class="programme-subtitle">Explore your options</p>
+                        <div class="price free">FREE</div>
+                        
+                        <ul class="programme-features">
+                            <li>30-minute consultation to assess your situation</li>
+                            <li>Identify key challenges and opportunities</li>
+                            <li>Explore whether coaching is right for you</li>
+                            <li>Receive clear next steps framework</li>
+                            <li>No obligation to continue</li>
+                        </ul>
+                        
+                        <div class="guarantee">
+                            <strong>The "Clarity Question" Promise:</strong> I'll share the exact question that has helped hundreds of academics gain clarity about their next steps. If this insight doesn't shift your perspective, there's no obligation to continue.
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-success">Book Your Free Call</a>
+                    </div>
+                </div>
+
+                <!-- EXPLORATION PROGRAMME -->
+                <div class="programme-card">
+                    <div class="card-content">
+                        <h3 class="programme-title">Exploration Programme</h3>
+                        <p class="programme-subtitle">3 months of guided discovery</p>
+                        <div class="price">£1,500</div>
+                        
+                        <ul class="programme-features">
+                            <li>Six fortnightly coaching sessions (75 minutes each)</li>
+                            <li>Complete assessment app access</li>
+                            <li>Two core workbooks included</li>
+                            <li>Email support between sessions</li>
+                            <li>Goal-setting and progress reviews</li>
+                            <li>Personalised action planning</li>
+                        </ul>
+                        
+                        <div class="guarantee">
+                            <strong>30-Day Satisfaction Guarantee:</strong> If you don't feel you've gained significant clarity on your next steps within 30 days, I'll refund your investment in full.
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Start Exploration</a>
+                    </div>
+                </div>
+
+                <!-- TRANSFORMATION PROGRAMME -->
+                <div class="programme-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-content">
+                        <h3 class="programme-title">Transformation Programme</h3>
+                        <p class="programme-subtitle">6 months of comprehensive support</p>
+                        <div class="price">£2,850</div>
+                        
+                        <ul class="programme-features">
+                            <li>Twelve coaching sessions over 6 months</li>
+                            <li>All assessment apps and workbooks included</li>
+                            <li>Priority email and phone support</li>
+                            <li>Monthly progress assessments</li>
+                            <li>Career strategy development</li>
+                            <li>Network introduction support</li>
+                            <li>Interview preparation (where applicable)</li>
+                        </ul>
+                        
+                        <div class="guarantee">
+                            <strong>60-Day Results Guarantee:</strong> If you haven't made measurable progress towards your career goals within 60 days, I'll work with you at no additional cost until you do.
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Begin Transformation</a>
+                    </div>
+                </div>
+
+                <!-- COMPLETE PROGRAMME -->
+                <div class="programme-card">
+                    <div class="card-content">
+                        <h3 class="programme-title">Complete Leadership Programme</h3>
+                        <p class="programme-subtitle">12 months of executive development</p>
+                        <div class="price">£4,500</div>
+                        
+                        <ul class="programme-features">
+                            <li>Twenty-four coaching sessions over 12 months</li>
+                            <li>Quarterly intensive strategy sessions</li>
+                            <li>Unlimited email and phone support</li>
+                            <li>Leadership assessment and 360 feedback</li>
+                            <li>Executive presence development</li>
+                            <li>Speaking and presentation coaching</li>
+                            <li>Alumni network access</li>
+                        </ul>
+                        
+                        <div class="guarantee">
+                            <strong>90-Day Transformation Guarantee:</strong> If you haven't experienced significant personal and professional transformation within 90 days, I'll extend your programme at no additional cost.
+                        </div>
+                        
+                        <a href="contact.html" class="btn">Join Elite Programme</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology">
+            <h2>Our Approach</h2>
+            <p class="intro-text">My coaching methodology combines evidence-based frameworks with practical application, specifically designed for the unique challenges facing senior academics.</p>
+            
+            <div class="programmes-grid">
+                <div class="programme-card">
+                    <div class="card-content">
+                        <h3 class="programme-title">Strategic Thinking</h3>
+                        <p>We approach your career development with the same rigour you apply to your research, using structured frameworks and evidence-based strategies.</p>
+                    </div>
+                </div>
+                
+                <div class="programme-card">
+                    <div class="card-content">
+                        <h3 class="programme-title">Academic Understanding</h3>
+                        <p>Having worked in Higher Education since the early 1990s, I understand the unique culture, pressures, and opportunities within academic environments.</p>
+                    </div>
+                </div>
+                
+                <div class="programme-card">
+                    <div class="card-content">
+                        <h3 class="programme-title">Practical Application</h3>
+                        <p>Every session focuses on actionable insights and practical next steps, ensuring you make measurable progress towards your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>Ready to Begin Your Transformation?</h2>
+            <p>The first step is always the hardest, but it's also the most important. Book your complimentary Discovery Call to explore how coaching can support your journey towards greater clarity, confidence, and career satisfaction.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">Book Discovery Call</a>
+                <a href="apps.html" class="btn btn-outline">Try Our Assessments First</a>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
+        Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
+    </footer>
+
+    <!-- Return to Top Button -->
+    <button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
+
+    <script>
+        // Return to Top Button
+        const returnToTopButton = document.querySelector('.return-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                returnToTopButton.classList.add('visible');
+            } else {
+                returnToTopButton.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        console.log('Coaching programmes page loaded successfully');
+    </script>
+</body>
+</html>
