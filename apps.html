@@ -3,141 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment Tools | Senior Academic Transformations</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Assessment Apps | Senior Academic Transformations</title>
+    <meta name="description" content="Interactive assessment tools for senior academics. Discover your leadership style, career readiness, and personal balance with instant results.">
+    
     <style>
-        /* Styles for the modal pop-up */
-        .modal {
-            display: none;
-            position: fixed;
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.7; 
+            color: var(--colour-dark); 
+            background-color: var(--colour-light); 
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background: var(--colour-white);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 0;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--colour-primary);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--colour-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+        }
+        
+        .container { 
+            width: 90%; 
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 2rem 0; 
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 { 
+            color: var(--colour-accent); 
+            border-bottom: 2px solid var(--colour-secondary); 
+            padding-bottom: 0.5rem; 
+            margin: 3rem 0 2rem 0; 
+            font-size: 2rem;
+        }
+        
+        .app-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 2rem; 
+            margin: 2rem 0; 
+        }
+        
+        .app-card { 
+            background: var(--colour-white); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow-light); 
+            transition: all 0.3s ease; 
+            border: 1px solid #eee; 
+        }
+        
+        .app-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: var(--shadow-medium); 
+        }
+        
+        .card-content { 
+            padding: 2rem; 
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .status-live {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-coming-soon {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .btn { 
+            display: inline-block; 
+            background-color: var(--colour-primary); 
+            color: white; 
+            padding: 0.9rem 1.8rem; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            margin-top: 1.2rem; 
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 1rem; 
             text-align: center;
         }
-        .modal input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: Georgia, serif;
+        
+        .btn:hover { 
+            background-color: var(--colour-accent); 
+            transform: translateY(-2px);
         }
-        .modal button {
-            background: var(--colour-primary);
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        
+        .btn-success {
+            background-color: var(--colour-success);
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        
+        .btn-secondary {
+            background-color: var(--colour-secondary);
+            color: var(--colour-dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d4a574;
+        }
+        
+        .intro-text { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            margin-bottom: 1.5rem;
+        }
+        
+        .app-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .app-features li {
+            margin: 0.5rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        
+        .app-features li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--colour-primary);
             font-weight: bold;
+        }
+        
+        .reference-note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 1rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+        
+        footer { 
+            background-color: var(--colour-dark); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 0; 
+            margin-top: 4rem; 
+        }
+        
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+        
+        /* Return to Top Button */
+        .return-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--colour-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .return-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .return-to-top:hover {
+            background-color: var(--colour-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 1rem 0;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Assessment Tools Gallery</h1>
-            <p>Preview our transformative tools and request access to begin your journey</p>
+    <!-- Navigation -->
+    <nav role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="apps.html" class="active">Assessment Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Assessment Apps</h1>
+        <p>Interactive tools providing immediate, confidential insights into your career development</p>
     </header>
 
-    <nav>
-    <div class="container">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="apps.html">Assessment Tools</a></li>
-            <li><a href="pricing.html">Coaching Packages</a></li> <!-- This is the new line -->
-            <li><a href="about.html">About Paul</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
     <main class="container">
-        <section id="intro">
-            <h2>Explore Our Tools</h2>
-            <p>Each assessment is designed to provide specific insights for academic professionals. Request access to any tool below, and we'll send you immediate access via email.</p>
+        <section id="apps-intro">
+            <p class="intro-text">Our assessment tools are designed specifically for senior academics navigating career transitions and leadership challenges. Each app provides immediate, evidence-based insights you can use straight away to inform your development journey.</p>
         </section>
 
-        <div class="tool-grid">
-            <!-- SUPPORT STYLE FINDER CARD -->
-            <div class="tool-card">
-                <h3 id="support-style">Support Style Finder</h3>
-                <p>Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
-                <p><strong>Perfect for:</strong> Academic leaders wanting to optimize their development approach.</p>
-                <button onclick="showSignup('Support Style Finder')">Request Access</button>
+        <section id="live-apps">
+            <h2>Available Assessment Apps</h2>
+            <p>These interactive tools are live and ready to use. Each takes 10-15 minutes to complete and provides immediate insights.</p>
+            
+            <div class="app-grid">
+                <!-- APP 1 - SUPPORT STYLE FINDER -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <span class="status-badge status-live">Live & Free</span>
+                        <h3>Support Style Finder</h3>
+                        <p>Discover your natural preferences for leadership development and identify which type of support you respond to best. This assessment reveals your ideal coaching and mentorship style.</p>
+                        
+                        <ul class="app-features">
+                            <li>10-minute comprehensive assessment</li>
+                            <li>Personalised development track recommendation</li>
+                            <li>Leadership growth strategies</li>
+                            <li>Instant results and PDF report</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Based on learning preference research (Kolb, 1984) and leadership development frameworks.
+                        </div>
+                        
+                        <a href="https://hesnrldrs.github.io/support-style-app/" target="_blank" rel="noopener" class="btn btn-success">Launch Assessment</a>
+                    </div>
+                </div>
+                
+                <!-- APP 2 - CAREER TRANSITION -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <span class="status-badge status-live">Live & Free</span>
+                        <h3>Career Transition Navigator</h3>
+                        <p>A comprehensive assessment to evaluate your readiness for career change and identify potential pathways beyond traditional academia.</p>
+                        
+                        <ul class="app-features">
+                            <li>15-minute transition readiness evaluation</li>
+                            <li>Career pathway recommendations</li>
+                            <li>Skills translation guidance</li>
+                            <li>Personalised next steps plan</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Framework incorporates ikigai principles and transition theory (Schlossberg, 1981).
+                        </div>
+                        
+                        <a href="https://hesnrldrs.github.io/career-transition-app/" target="_blank" rel="noopener" class="btn btn-success">Launch Assessment</a>
+                    </div>
+                </div>
+                
+                <!-- APP 3 - LIFE BALANCE -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <span class="status-badge status-live">Live & Free</span>
+                        <h3>Life Balance Scorecard</h3>
+                        <p>Assess your work-life balance across four key dimensions and create a strategic plan for sustainable wellbeing and professional effectiveness.</p>
+                        
+                        <ul class="app-features">
+                            <li>12-minute balance assessment</li>
+                            <li>Four-dimension analysis</li>
+                            <li>Visual balance dashboard</li>
+                            <li>Personalised improvement strategies</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Based on work-life balance research (Greenhaus & Beutell, 1985) and balanced scorecard methodology (Kaplan & Norton, 1992).
+                        </div>
+                        
+                        <a href="https://hesnrldrs.github.io/life-balance-app/" target="_blank" rel="noopener" class="btn btn-success">Launch Assessment</a>
+                    </div>
+                </div>
+                
+                <!-- APP 4 - RESILIENCE -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <span class="status-badge status-live">Live & Free</span>
+                        <h3>Academic Resilience Assessment</h3>
+                        <p>Evaluate your resilience levels across different dimensions of academic life and develop strategies for thriving under pressure.</p>
+                        
+                        <ul class="app-features">
+                            <li>15-minute resilience evaluation</li>
+                            <li>Multi-dimensional resilience profile</li>
+                            <li>Stress management strategies</li>
+                            <li>Personalised development plan</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Assessment framework based on academic resilience research (Martin & Marsh, 2009).
+                        </div>
+                        
+                        <a href="https://hesnrldrs.github.io/resilience-app/" target="_blank" rel="noopener" class="btn btn-success">Launch Assessment</a>
+                    </div>
+                </div>
+                
+                <!-- APP 5 - TRANSFORMATION TOOLKIT -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <span class="status-badge status-live">Live & Free</span>
+                        <h3>Career Transformation Toolkit</h3>
+                        <p>Comprehensive five-step interactive toolkit to design your strategic career transformation with evidence-based frameworks and personalised planning.</p>
+                        
+                        <ul class="app-features">
+                            <li>30-45 minute comprehensive process</li>
+                            <li>Five integrated assessment tools</li>
+                            <li>Complete transformation strategy</li>
+                            <li>Personalised action plan and timeline</li>
+                        </ul>
+                        
+                        <div class="reference-note">
+                            Synthesises multiple frameworks including transition theory, skills translation research, and financial planning principles.
+                        </div>
+                        
+                        <a href="toolkit.html" class="btn btn-success">Access Toolkit</a>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- CAREER TRANSITION CARD -->
-           <div class="tool-card">
-    <h3 id="career-transition">Career Transition App</h3>  <!-- Changed Workbook to App -->
-    <p>A structured, supportive guide to help you navigate career change with clarity and confidence.</p>
-    <p><strong>Perfect for:</strong> Academics considering roles beyond traditional university settings.</p>
-    <button onclick="showSignup('Career Transition App')">Request Access</button>  <!-- Changed Workbook to App -->
-</div>
+        <section id="how-to-use">
+            <h2>How to Use These Assessments</h2>
+            <div class="app-grid">
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>1. Choose Your Starting Point</h3>
+                        <p>Begin with the assessment that most closely matches your current situation. If unsure, the Career Transformation Toolkit provides the most comprehensive overview.</p>
+                    </div>
+                </div>
+                
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>2. Complete Thoughtfully</h3>
+                        <p>Set aside uninterrupted time to engage meaningfully with each assessment. Your honest responses will yield the most valuable insights.</p>
+                    </div>
+                </div>
+                
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>3. Reflect and Act</h3>
+                        <p>Use your results as starting points for deeper reflection. Consider discussing insights with trusted colleagues or in a coaching conversation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!-- LIFE BALANCE CARD -->
-            <div class="tool-card">
-                <h3 id="life-balance">Life Balance Scorecard</h3>
-                <p>Assess your work-life balance across four key areas and create a strategic plan for wellbeing.</p>
-                <p><strong>Perfect for:</strong> Senior academics managing multiple responsibilities and seeking sustainable balance.</p>
-                <button onclick="showSignup('Life Balance Scorecard')">Request Access</button>
+        <section id="next-steps" style="background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%); padding: 3rem 2rem; border-radius: 12px; margin: 3rem 0; border: 2px solid var(--colour-secondary); text-align: center;">
+            <h2 style="border: none; margin-bottom: 1rem;">Ready for Personalised Support?</h2>
+            <p class="intro-text">These assessments provide valuable insights, but real transformation often requires personalised guidance and accountability.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="coaching.html" class="btn">Explore Coaching Programmes</a>
+                <a href="workbooks.html" class="btn btn-secondary">Download Workbooks</a>
             </div>
-                        <!-- RESILIENCE APP CARD -->
-            <div class="tool-card">
-                <h3 id="resilience">Academic Resilience Assessment</h3>
-                <p>Evaluate your resilience levels across different dimensions of academic life. Identify strengths and areas for development in managing pressure and setbacks.</p>
-                <p><strong>Perfect for:</strong> Academics navigating high-pressure environments, institutional change, or seeking sustainable coping strategies.</p>
-                <button onclick="showSignup('Academic Resilience Assessment')">Request Access</button>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <!-- EMAIL SIGNUP MODAL -->
-    <div id="signup-modal" class="modal">
-        <div class="modal-content">
-            <h3>Get Full Access</h3>
-            <p>Enter your email to get access to <span id="tool-name"></span></p>
-            <form action="https://formspree.io/f/meolzkeg" method="POST">
-    <input type="hidden" name="_format" value="json" />
-    <!-- ADD THIS NEW HIDDEN FIELD -->
-    <input type="hidden" name="requested_tool" id="requested-tool-input" value="">
-    <input type="email" name="email" placeholder="Your email address" required>
-    <button type="submit">Get Access</button>
-</form>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.</p>
-        </div>
+    <footer role="contentinfo">
+        <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
+        Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
     </footer>
 
-   <script>
-    function showSignup(toolName) {
-        // 1. Display the tool name in the modal text
-        document.getElementById('tool-name').textContent = toolName;
+    <!-- Return to Top Button -->
+    <button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
+
+    <script>
+        // Return to Top Button
+        const returnToTopButton = document.querySelector('.return-to-top');
         
-        // 2. SET THE HIDDEN INPUT VALUE to the tool name
-        document.getElementById('requested-tool-input').value = toolName;
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                returnToTopButton.classList.add('visible');
+            } else {
+                returnToTopButton.classList.remove('visible');
+            }
+        });
         
-        // 3. Show the modal
-        document.getElementById('signup-modal').style.display = 'flex';
-    }
-</script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        console.log('Assessment Apps page loaded successfully');
+    </script>
 </body>
 </html>
