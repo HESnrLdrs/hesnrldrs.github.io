@@ -64,11 +64,13 @@
             text-decoration: none;
         }
         
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+       .nav-menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2rem;
+    order: initial;
+}
         
         .nav-menu a {
             color: var(--colour-dark);
@@ -84,6 +86,10 @@
             color: var(--colour-primary);
             background-color: var(--colour-light);
         }
+        .nav-menu li {
+    order: initial;
+    flex-shrink: 0;
+}
         
         .mobile-menu-toggle {
             display: none;
