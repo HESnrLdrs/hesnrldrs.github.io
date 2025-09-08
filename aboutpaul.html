@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Paul | Senior Academic Transformations</title>
+    <meta name="description" content="Meet Paul Thomas - supporting senior academics in Higher Education since the early 1990s. From Royal Navy Lieutenant to trusted coach and consultant.">
+    
+    <style>
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.7; 
+            color: var(--colour-dark); 
+            background-color: var(--colour-light); 
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background: var(--colour-white);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--colour-primary);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--colour-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+        }
+        
+        .container { 
+            width: 90%; 
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 2rem 0; 
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h2 { 
+            color: var(--colour-accent); 
+            border-bottom: 2px solid var(--colour-secondary); 
+            padding-bottom: 0.5rem; 
+            margin: 3rem 0 2rem 0; 
+            font-size: 2rem;
+        }
+        
+        .intro-section {
+            background: var(--colour-white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .intro-text { 
+            font-size: 1.2rem; 
+            line-height: 1.8; 
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-text {
+            color: var(--colour-primary);
+            font-weight: 600;
+        }
+        
+        .content-section {
+            background: var(--colour-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            margin: 2rem 0;
+        }
+        
+        .experience-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 1.5rem; 
+            margin: 2rem 0; 
+        }
+        
+        .experience-card { 
+            background: var(--colour-light); 
+            border-radius: 8px; 
+            padding: 1.5rem; 
+            border-left: 4px solid var(--colour-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .experience-title {
+            color: var(--colour-accent);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+        
+        .experience-desc {
+            color: var(--colour-dark);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .approach-section {
+            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--colour-secondary);
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .approach-section h2 {
+            border: none;
+            margin-bottom: 1.5rem;
+            color: var(--colour-accent);
+        }
+        
+        .contact-cta {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .contact-cta h2 {
+            border: none;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn { 
+            display: inline-block; 
+            background-color: var(--colour-primary); 
+            color: white; 
+            padding: 1rem 2rem; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 1rem; 
+            text-align: center;
+        }
+        
+        .btn:hover { 
+            background-color: var(--colour-accent); 
+            transform: translateY(-2px);
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--colour-primary);
+            border: 2px solid white;
+        }
+        
+        .btn-white:hover {
+            background: transparent;
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--colour-primary);
+        }
+        
+        .phone-number {
+            color: white;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        
+        footer { 
+            background-color: var(--colour-dark); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 0; 
+            margin-top: 4rem; 
+        }
+        
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+        
+        /* Return to Top Button */
+        .return-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--colour-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .return-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .return-to-top:hover {
+            background-color: var(--colour-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 1rem 0;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .intro-section,
+            .content-section,
+            .approach-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="apps.html">Assessment Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="about.html" class="active">About Paul</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>About Paul Thomas</h1>
+        <p>From 'Educational Failure' to Supporting Senior Academics Worldwide</p>
+    </header>
+
+    <main class="container">
+        <section class="intro-section">
+            <p class="intro-text">
+                At 16, I was labelled an <span class="highlight-text">"educational failure."</span> Many decades later, I've coached senior leaders and supported organisations worldwide to grow and succeed.
+            </p>
+            <p class="intro-text">
+                My journey—from engineering apprentice to Lieutenant in the Royal Navy, to trusted coach and consultant—has been shaped by <span class="highlight-text">resilience, curiosity and lifelong learning.</span>
+            </p>
+            <p class="intro-text">
+                Since the early 1990s, I've been privileged to support academic professionals in Higher Education, helping them navigate the unique challenges and opportunities of senior leadership in complex institutional environments.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Professional Journey</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-title">Royal Navy</div>
+                    <div class="experience-desc">Lieutenant in the Royal Navy where I discovered my passion for learning and development, understanding how to support people through complex transitions.</div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-title">Kellogg's</div>
+                    <div class="experience-desc">Training and Development Manager for a greenfield site which introduced pioneering team working to the UK, learning organisational transformation from the ground up.</div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-title">UK Higher Education</div>
+                    <div class="experience-desc">Coached and supported senior managers from nearly 50 UK universities who were managing complex organisational change projects, understanding the unique pressures of academic leadership.</div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-title">International Consultancy</div>
+                    <div class="experience-desc">Delivered MBA units in Saudi Arabia and worked with CEOs in the Czech Republic, bringing evidence-based leadership development to diverse cultural contexts.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="approach-section">
+            <h2>My Approach to Supporting Academics</h2>
+            <p class="intro-text">
+                I bring a <span class="highlight-text">people-first approach</span> to everything I do—listening carefully, supporting consistently, and challenging appropriately.
+            </p>
+            <p class="intro-text">
+                Having worked extensively within Higher Education, I understand the unique culture, pressures, and opportunities that define academic careers. I create space for <span class="highlight-text">clarity, confidence and meaningful progress</span> using evidence-based frameworks that respect both rigorous thinking and personal development.
+            </p>
+            <p class="intro-text">
+                Whether you're exploring options beyond traditional academia, stepping into senior leadership roles, or seeking to enhance your impact within Higher Education, my role is to provide the strategic thinking partner you need to navigate these important decisions with confidence.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Academic Expertise</h2>
+            <p class="intro-text">My work with senior academics encompasses several key areas:</p>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-title">Career Transition</div>
+                    <div class="experience-desc">Supporting academics exploring opportunities beyond traditional university roles, from industry consulting to policy work and entrepreneurship.</div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-title">Leadership Development</div>
+                    <div class="experience-desc">Helping academics step into senior institutional roles with confidence, from Head of Department to Pro-Vice-Chancellor positions.</div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-title">Academic Resilience</div>
+                    <div class="experience-desc">Building sustainable practices for managing the unique pressures of academic life whilst maintaining personal wellbeing and professional effectiveness.</div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-title">Strategic Thinking</div>
+                    <div class="experience-desc">Applying evidence-based frameworks to complex career decisions, helping academics think strategically about their next chapter.</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-cta">
+            <h2>Ready to Explore Your Next Chapter?</h2>
+            <p style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 1rem;">
+                Looking for thoughtful support, honest challenge and real results? Let's start with a conversation about your goals and aspirations.
+            </p>
+            <div class="contact-buttons">
+                <a href="contact.html" class="btn btn-white">Book Discovery Call</a>
+                <a href="tel:+447368621415" class="btn btn-outline">Call Now</a>
+            </div>
+            <p class="phone-number">+44 7368 621415</p>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
+        Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
+    </footer>
+
+    <!-- Return to Top Button -->
+    <button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
+
+    <script>
+        // Return to Top Button
+        const returnToTopButton = document.querySelector('.return-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                returnToTopButton.classList.add('visible');
+            } else {
+                returnToTopButton.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        console.log('About Paul page loaded successfully');
+    </script>
+</body>
+</html>
