@@ -72,14 +72,32 @@
     order: initial;
 }
         
-        .nav-menu a {
-            color: var(--colour-dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
+       .nav-menu {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: var(--colour-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    letter-spacing: 0.3px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--colour-primary);
+    background-color: var(--colour-light);
+    transform: translateY(-1px);
+}
         
         .nav-menu a:hover,
         .nav-menu a.active {
@@ -444,7 +462,7 @@
             <a href="index.html" class="logo">Senior Academic Transformations</a>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>  <!-- DELETE THIS -->
                 <li><a href="apps.html">Assessment Apps</a></li>
                 <li><a href="workbooks.html">Workbooks</a></li>
                 <li><a href="toolkit.html">Free Toolkit</a></li>
