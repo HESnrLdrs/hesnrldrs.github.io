@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Book Discovery Call | Senior Academic Transformations</title>
+    <meta name="description" content="Book your free 45-minute Discovery Call with Paul Thomas. Confidential consultation to explore your career transformation goals.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #2c5aa0;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .page-hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Discovery Call Section */
+        .discovery-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .discovery-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .discovery-info h2 {
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .discovery-info p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .discovery-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .discovery-features li {
+            color: #555;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .discovery-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: #f0f7ff;
+            border-left: 4px solid #2c5aa0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #2c5aa0;
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            margin: 1.5rem 0;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: flex-start;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .submit-button {
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #218838;
+        }
+
+        /* Alternative Contact Section */
+        .alternative-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .alternative-content {
+            text-align: center;
+        }
+
+        .alternative-content h2 {
+            color: #2c5aa0;
+            margin-bottom: 2rem;
+        }
+
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-option {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .contact-option h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .contact-option p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .contact-option a {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-option a:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .faq-content h2 {
+            text-align: center;
+            color: #2c5aa0;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .faq-item h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c5aa0;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .discovery-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Senior Academic Transformations</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="apps.html">Assessment Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="about.html">About Paul</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Book Your Free Discovery Call</h1>
+                <p class="subtitle">45 minutes • Completely confidential • No commitment required</p>
+                <p>Every transformation begins with a conversation. Let's explore your goals, assess your situation, and determine the best path forward together.</p>
+            </div>
+        </section>
+
+        <!-- Discovery Call Section -->
+        <section class="discovery-section">
+            <div class="container">
+                <div class="discovery-content">
+                    <div class="discovery-info">
+                        <h2>What to Expect from Your Discovery Call</h2>
+                        <p>This is a professional consultation designed to understand your unique situation and explore how I can best support your career transformation goals.</p>
+                        
+                        <div class="highlight-box">
+                            <p><strong>Duration:</strong> 45 minutes<br>
+                            <strong>Format:</strong> Video call (Zoom) or telephone<br>
+                            <strong>Cost:</strong> Completely free<br>
+                            <strong>Commitment:</strong> None required</p>
+                        </div>
+                        
+                        <h3>During our call, we'll explore:</h3>
+                        <ul class="discovery-features">
+                            <li>Your current situation and what's driving your interest in change</li>
+                            <li>Your goals, aspirations, and vision for your future</li>
+                            <li>Any challenges or constraints you're currently facing</li>
+                            <li>How my coaching approach could support your transformation</li>
+                            <li>Whether there's a good fit for working together</li>
+                            <li>Next steps and available options for your development</li>
+                        </ul>
+                        
+                        <p><strong>Complete confidentiality guaranteed.</strong> Everything we discuss remains strictly between us, and there's no pressure to commit to any programme.</p>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Book Your Discovery Call</h3>
+                        <form id="discovery-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="role">Current Role *</label>
+                                <select id="role" name="role" required>
+                                    <option value="">Select your role...</option>
+                                    <option value="professor">Professor</option>
+                                    <option value="associate-professor">Associate Professor</option>
+                                    <option value="senior-lecturer">Senior Lecturer</option>
+                                    <option value="reader">Reader</option>
+                                    <option value="head-of-department">Head of Department</option>
+                                    <option value="dean">Dean</option>
+                                    <option value="pro-vice-chancellor">Pro-Vice-Chancellor</option>
+                                    <option value="vice-chancellor">Vice-Chancellor</option>
+                                    <option value="director">Director</option>
+                                    <option value="other">Other Senior Academic Role</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="institution">Institution/University</label>
+                                <input type="text" id="institution" name="institution">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="situation">What best describes your current situation? *</label>
+                                <select id="situation" name="situation" required>
+                                    <option value="">Select...</option>
+                                    <option value="seeking-change">Actively seeking career change</option>
+                                    <option value="exploring-options">Exploring my options</option>
+                                    <option value="leadership-development">Seeking leadership development</option>
+                                    <option value="work-life-balance">Improving work-life balance</option>
+                                    <option value="feeling-stuck">Feeling stuck in current role</option>
+                                    <option value="major-transition">Facing major life transition</option>
+                                    <option value="other">Other (please specify in message)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="timeline">When are you hoping to see changes?</label>
+                                <select id="timeline" name="timeline">
+                                    <option value="">Select timeframe...</option>
+                                    <option value="immediate">Within 3 months</option>
+                                    <option value="short-term">3-6 months</option>
+                                    <option value="medium-term">6-12 months</option>
+                                    <option value="long-term">1-2 years</option>
+                                    <option value="exploratory">Just exploring at this stage</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Tell me a bit about your situation and what you hope to achieve (Optional)</label>
+                                <textarea id="message" name="message" placeholder="Any additional context that would help me prepare for our conversation..."></textarea>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="privacy" required>
+                                    I understand that all information shared will be kept strictly confidential and I consent to being contacted to arrange the discovery call.
+                                </label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="updates">
+                                    I'd like to receive occasional updates about new assessment tools and development resources (you can unsubscribe at any time).
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="submit-button">Request Discovery Call</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alternative Contact -->
+        <section class="alternative-section">
+            <div class="container">
+                <div class="alternative-content">
+                    <h2>Alternative Ways to Connect</h2>
+                    <p>Prefer a different approach? Here are other ways to get in touch:</p>
+                    
+                    <div class="contact-options">
+                        <div class="contact-option">
+                            <h3>📧 Email</h3>
+                            <p>Send me a message directly</p>
+                            <a href="mailto:paul@senioracademictransformations.com">paul@senioracademictransformations.com</a>
+                        </div>
+                        
+                        <div class="contact-option">
+                            <h3>📱 LinkedIn</h3>
+                            <p>Connect professionally</p>
+                            <a href="#" target="_blank">Connect on LinkedIn</a>
+                        </div>
+                        
+                        <div class="contact-option">
+                            <h3>🎯 Start with Toolkit</h3>
+                            <p>Try our free assessment first</p>
+                            <a href="toolkit.html">Free Transformation Toolkit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-content">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <h3>What happens after I book a discovery call?</h3>
+                        <p>I'll contact you within 24 hours to arrange a convenient time for our call. You'll receive a calendar invitation with video call details and a brief preparation guide to help you get the most from our conversation.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Is there any cost or commitment?</h3>
+                        <p>The discovery call is completely free with no strings attached. It's an opportunity for both of us to explore whether there's a good fit for working together. There's no pressure to commit to any programme.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How confidential is our conversation?</h3>
+                        <p>Everything we discuss is strictly confidential. I understand the sensitive nature of career transitions in academia and maintain the highest standards of professional discretion.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What if I'm not sure about making changes yet?</h3>
+                        <p>That's perfectly normal and exactly why the discovery call exists. Many of my clients start by simply exploring their options. There's no expectation that you need to have made any decisions before we talk.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Do you work with academics outside the UK?</h3>
+                        <p>Yes, I work with senior academics globally. All coaching sessions can be conducted via video call, and the fundamental challenges facing academic leaders are remarkably similar across different higher education systems.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What's your background in supporting academics?</h3>
+                        <p>I've been supporting academic professionals since the early 1990s, with particular expertise in career transitions, leadership development, and work-life balance. You can learn more about my background on the <a href="about.html" style="color: #2c5aa0;">About Paul</a> page.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Senior Academic Transformations. All conversations are strictly confidential.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('discovery-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            const requiredFields = ['name', 'email', 'role', 'situation'];
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field);
+                if (!input.value.trim()) {
+                    input.style.borderColor = '#dc3545';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '#e0e0e0';
+                }
+            });
+            
+            const privacyCheckbox = document.querySelector('input[name="privacy"]');
+            if (!privacyCheckbox.checked) {
+                alert('Please confirm that you understand the confidentiality terms.');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Here you would normally send the form data to your server
+                // For now, we'll show a success message
+                alert('Thank you for your interest! I will contact you within 24 hours to arrange your discovery call.');
+                
+                // Reset form
+                this.reset();
+            } else {
+                alert('Please fill in all required fields marked with *');
+            }
+        });
+        
+        // Email validation
+        document.getElementById('email').addEventListener('blur', function() {
+            const email = this.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                this.style.borderColor = '#dc3545';
+            } else {
+                this.style.borderColor = '#e0e0e0';
+            }
+        });
+    </script>
+</body>
+</html>
