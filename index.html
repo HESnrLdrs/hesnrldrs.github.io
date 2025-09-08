@@ -48,38 +48,32 @@
             z-index: 100;
         }
         
-        .nav-container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--colour-primary);
-            text-decoration: none;
-        }
-        
-       .nav-menu {
+      .nav-container {
     display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 2rem;
-    order: initial;
+    justify-content: space-between;
+    align-items: center;  /* This should center everything vertically */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    min-height: 80px;     /* ADD THIS - gives consistent height */
 }
-        
-       .nav-menu {
+
+.logo {
+    flex-shrink: 0;       /* ADD THIS - prevents logo from shrinking */
+    margin-right: 2rem;   /* ADD THIS - adds space between logo and menu */
+}
+
+.nav-menu {
     display: flex;
     justify-content: center;
+    align-items: center;  /* ADD THIS - centers menu items vertically */
     flex: 1;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .nav-menu a {
