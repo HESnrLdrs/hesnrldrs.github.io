@@ -48,15 +48,14 @@
             z-index: 100;
         }
         
-     .nav-container {
+    .nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;  /* Changed from center */
+    align-items: center;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
-    gap: 2rem;               /* ADD THIS - forces space between logo and menu */
+    padding: 0 1rem;
 }
 
 .logo {
@@ -66,23 +65,24 @@
 }
 
 .nav-menu {
-    flex: 1;
     display: flex;
-    justify-content: flex-end;  /* Changed - pushes menu to right side */
-    align-items: center;
+    justify-content: center;
+    flex: 1;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1rem;              /* Reduced from 1.5rem */
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
-    min-width: 0;            /* Allows proper shrinking */
+    flex-wrap: nowrap;      /* Changed from wrap */
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: var(--colour-primary);
-    background-color: var(--colour-light);
-    transform: translateY(-1px);
+.nav-menu a {
+    color: var(--colour-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;   /* Reduced padding */
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    white-space: nowrap;    /* Prevents text wrapping */
 }
         
         .nav-menu a:hover,
