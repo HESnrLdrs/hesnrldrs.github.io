@@ -28,30 +28,74 @@
             background-color: var(--colour-light); 
         }
         
-        .header-nav {
+        /* Navigation Styles */
+        nav {
             background: var(--colour-white);
             box-shadow: var(--shadow-light);
             padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        
+
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
-        
-        .back-link {
-            display: flex;
-            align-items: center;
+
+        .logo {
+            font-size: 1.2em;
+            font-weight: 600;
             color: var(--colour-primary);
             text-decoration: none;
-            font-weight: 500;
         }
-        
-        .back-link:hover { color: var(--colour-accent); }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            list-style: none;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap;
+        }
+
+        .nav-menu a {
+            color: var(--colour-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active,
+        .nav-menu a.current {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+        }
+
+        .nav-menu li {
+            order: initial;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--colour-primary);
+        }
         
         .toolkit-badge {
             background: var(--colour-success);
@@ -254,71 +298,63 @@
         
         .hidden { display: none; }
         
+        /* Mobile Navigation */
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--colour-white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-light);
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li:nth-child(1) { order: 1; }
+            .nav-menu li:nth-child(2) { order: 2; }
+            .nav-menu li:nth-child(3) { order: 3; }
+            .nav-menu li:nth-child(4) { order: 4; }
+            .nav-menu li:nth-child(5) { order: 5; }
+            .nav-menu li:nth-child(6) { order: 6; }
+            .nav-menu li:nth-child(7) { order: 7; }
+            
             .container { padding: 1rem; }
             .toolkit-header h1 { font-size: 2rem; }
             .form-grid { grid-template-columns: 1fr; }
             .cta-buttons { flex-direction: column; align-items: center; }
         }
-   /* Navigation Styles */
-.main-nav {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.main-nav a {
-    color: #333;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.main-nav a:hover {
-    background-color: #f0f8ff;
-    color: #2c5aa0;
-}
-
-.main-nav a.current {
-    background-color: #2c5aa0;
-    color: white;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-.header-nav {
-    background: white;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-} </style>
+    </style>
 </head>
 <body>
-    <div class="header-nav">
-    <div class="nav-container">
-        <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="apps.html">Apps</a>
-            <a href="workbooks.html">Workbooks</a>
-            <a href="toolkit.html" class="current">Free Toolkit</a>
-            <a href="coaching.html">Coaching</a>
-            <a href="contact.html">Contact</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="about.html">About</a>
-        </nav>
-        <div class="toolkit-badge">Free Interactive Toolkit</div>
-    </div>
-</div>
-    </div>
+    <!-- Navigation -->
+    <nav role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html" class="current">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
+            </ul>
+            <div class="toolkit-badge">Free Interactive Toolkit</div>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="toolkit-header">
@@ -482,7 +518,7 @@
             <a href="apps.html">Assessment Apps</a>
             <a href="workbooks.html">Workbooks</a>
             <a href="coaching.html">Coaching</a>
-            <a href="about.html">About Paul</a>
+            <a href="aboutpaul.html">About Paul</a>
         </div>
         
         <!-- Academic References -->
@@ -505,6 +541,29 @@
 
     <script>
         let userData = {};
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                // Update aria-label for accessibility
+                const isOpen = navMenu.classList.contains('active');
+                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+                });
+            });
+        }
 
         function startToolkit() {
             const name = document.getElementById('userName').value;
