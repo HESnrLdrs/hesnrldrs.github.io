@@ -145,6 +145,55 @@
             background-color: #fff3cd;
             color: #856404;
         }
+        /* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--colour-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--colour-white);
+        flex-direction: column;
+        gap: 0;
+        box-shadow: var(--shadow-medium);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .nav-menu.mobile-open {
+        max-height: 500px;
+    }
+    
+    .nav-menu a {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #eee;
+        display: block;
+    }
+    
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-container {
+        position: relative;
+        padding: 0 1rem;
+    }
+}
         
         .btn { 
             display: inline-block; 
@@ -328,6 +377,30 @@
                         <div class="reference-note">
                             Based on learning preference research (Kolb, 1984) and leadership development frameworks.
                         </div>
+                        // Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('mobile-open');
+            
+            // Update aria-label for accessibility
+            const isOpen = navMenu.classList.contains('mobile-open');
+            mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('mobile-open');
+                mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+            });
+        });
+    }
+});
                         
                         <a href="https://hesnrldrs.github.io/support-style-app/" target="_blank" rel="noopener" class="btn btn-success">Launch Assessment</a>
                     </div>
