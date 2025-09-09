@@ -401,7 +401,29 @@
         }
     </style>
 </head>
-<body>
+<!-- Return to Top Button -->
+<button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
+
+<script>
+// Return to Top Button
+const returnToTopButton = document.querySelector('.return-to-top');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        returnToTopButton.classList.add('visible');
+    } else {
+        returnToTopButton.classList.remove('visible');
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+</script>
+    <body>
     <!-- Navigation -->
     <nav role="navigation">
         <div class="nav-container">
