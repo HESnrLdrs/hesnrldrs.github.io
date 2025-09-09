@@ -335,6 +335,35 @@
             .form-grid { grid-template-columns: 1fr; }
             .cta-buttons { flex-direction: column; align-items: center; }
         }
+   /* Return to Top Button */
+.return-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--colour-primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-medium);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.return-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.return-to-top:hover {
+    background-color: var(--colour-accent);
+    transform: translateY(-2px);
+}
     </style>
 </head>
 <!-- Return to Top Button -->
