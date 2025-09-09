@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact & Book Discovery Call | Senior Academic Transformations</title>
     <meta name="description" content="Book your free 45-minute Discovery Call with Paul Thomas. Confidential consultation to explore your career transformation goals.">
+    
     <style>
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,8 +28,8 @@
         body {
             font-family: Georgia, 'Times New Roman', serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            color: var(--colour-dark);
+            background-color: var(--colour-light);
         }
 
         .container {
@@ -25,47 +38,78 @@
             padding: 0 20px;
         }
 
-        /* Header */
-        header {
-            background: #2c5aa0;
-            color: white;
+        /* Navigation Styles */
+        nav {
+            background: var(--colour-white);
+            box-shadow: var(--shadow-light);
             padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        nav {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: white;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--colour-primary);
             text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: #ffd700;
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            list-style: none;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap;
+        }
+
+        .nav-menu a {
+            color: var(--colour-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active,
+        .nav-menu a.current {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+        }
+
+        .nav-menu li {
+            order: initial;
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--colour-primary);
         }
 
         /* Hero Section */
         .page-hero {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            background: linear-gradient(135deg, var(--colour-success) 0%, #20c997 100%);
             color: white;
             padding: 4rem 0;
             text-align: center;
@@ -93,7 +137,7 @@
         /* Discovery Call Section */
         .discovery-section {
             padding: 4rem 0;
-            background: white;
+            background: var(--colour-white);
         }
 
         .discovery-content {
@@ -104,7 +148,7 @@
         }
 
         .discovery-info h2 {
-            color: #2c5aa0;
+            color: var(--colour-primary);
             margin-bottom: 1.5rem;
             font-size: 2rem;
         }
@@ -131,13 +175,13 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #28a745;
+            color: var(--colour-success);
             font-weight: bold;
         }
 
         .highlight-box {
             background: #f0f7ff;
-            border-left: 4px solid #2c5aa0;
+            border-left: 4px solid var(--colour-primary);
             padding: 1.5rem;
             margin: 2rem 0;
             border-radius: 0 5px 5px 0;
@@ -147,11 +191,11 @@
             background: #f8f9fa;
             border-radius: 10px;
             padding: 3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-medium);
         }
 
         .contact-form h3 {
-            color: #2c5aa0;
+            color: var(--colour-primary);
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
@@ -164,7 +208,7 @@
             display: block;
             font-weight: bold;
             margin-bottom: 0.5rem;
-            color: #333;
+            color: var(--colour-dark);
         }
 
         .form-group input,
@@ -181,7 +225,7 @@
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
-            border-color: #2c5aa0;
+            border-color: var(--colour-primary);
             outline: none;
         }
 
@@ -208,7 +252,7 @@
         }
 
         .submit-button {
-            background: #28a745;
+            background: var(--colour-success);
             color: white;
             padding: 15px 30px;
             border: none;
@@ -235,7 +279,7 @@
         }
 
         .alternative-content h2 {
-            color: #2c5aa0;
+            color: var(--colour-primary);
             margin-bottom: 2rem;
         }
 
@@ -247,15 +291,15 @@
         }
 
         .contact-option {
-            background: white;
+            background: var(--colour-white);
             border-radius: 8px;
             padding: 2rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-light);
             text-align: center;
         }
 
         .contact-option h3 {
-            color: #2c5aa0;
+            color: var(--colour-primary);
             margin-bottom: 1rem;
         }
 
@@ -265,7 +309,7 @@
         }
 
         .contact-option a {
-            color: #2c5aa0;
+            color: var(--colour-primary);
             text-decoration: none;
             font-weight: bold;
         }
@@ -277,12 +321,12 @@
         /* FAQ Section */
         .faq-section {
             padding: 4rem 0;
-            background: white;
+            background: var(--colour-white);
         }
 
         .faq-content h2 {
             text-align: center;
-            color: #2c5aa0;
+            color: var(--colour-primary);
             margin-bottom: 3rem;
         }
 
@@ -291,11 +335,11 @@
             border-radius: 8px;
             padding: 2rem;
             margin-bottom: 1rem;
-            border-left: 4px solid #2c5aa0;
+            border-left: 4px solid var(--colour-primary);
         }
 
         .faq-item h3 {
-            color: #2c5aa0;
+            color: var(--colour-primary);
             margin-bottom: 1rem;
         }
 
@@ -305,14 +349,44 @@
 
         /* Footer */
         footer {
-            background: #2c5aa0;
+            background: var(--colour-primary);
             color: white;
             text-align: center;
             padding: 2rem 0;
         }
 
-        /* Responsive */
+        /* Mobile Navigation */
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--colour-white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-light);
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li:nth-child(1) { order: 1; }
+            .nav-menu li:nth-child(2) { order: 2; }
+            .nav-menu li:nth-child(3) { order: 3; }
+            .nav-menu li:nth-child(4) { order: 4; }
+            .nav-menu li:nth-child(5) { order: 5; }
+            .nav-menu li:nth-child(6) { order: 6; }
+            .nav-menu li:nth-child(7) { order: 7; }
+            
             .discovery-content {
                 grid-template-columns: 1fr;
             }
@@ -328,20 +402,22 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Senior Academic Transformations</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="apps.html">Assessment Apps</a></li>
+    <!-- Navigation -->
+    <nav role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="apps.html">Apps</a></li>
                 <li><a href="workbooks.html">Workbooks</a></li>
                 <li><a href="toolkit.html">Free Toolkit</a></li>
                 <li><a href="coaching.html">Coaching</a></li>
-                <li><a href="about.html">About Paul</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html" class="current">Contact</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <!-- Page Hero -->
@@ -536,7 +612,7 @@
                     
                     <div class="faq-item">
                         <h3>What's your background in supporting academics?</h3>
-                        <p>I've been supporting academic professionals since the early 1990s, with particular expertise in career transitions, leadership development, and work-life balance. You can learn more about my background on the <a href="about.html" style="color: #2c5aa0;">About Paul</a> page.</p>
+                        <p>I've been supporting academic professionals since the early 1990s, with particular expertise in career transitions, leadership development, and work-life balance. You can learn more about my background on the <a href="aboutpaul.html" style="color: var(--colour-primary);">About Paul</a> page.</p>
                     </div>
                 </div>
             </div>
@@ -550,6 +626,29 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                // Update aria-label for accessibility
+                const isOpen = navMenu.classList.contains('active');
+                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+                });
+            });
+        }
+
         // Form submission handling
         document.getElementById('discovery-form').addEventListener('submit', function(e) {
             e.preventDefault();
