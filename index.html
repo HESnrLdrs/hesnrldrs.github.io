@@ -596,10 +596,10 @@
         const form = document.querySelector('form');
         if (form) {
             form.addEventListener('submit', function(e) {
-                e.preventDefault(); // Remove this in production
-                console.log('Form submitted');
-               alert('Thank you! I'm delighted you're interested in exploring your career transformation. I'll be in touch within 24 hours to arrange your discovery call.');
-        }
+    // Show the message but don't prevent submission
+    alert('Thank you! I'm delighted you're interested in exploring your career transformation. I'll be in touch within 24 hours to arrange your discovery call.');
+    // Form will submit normally after alert
+});
         
         // Return to Top Button
         const returnToTopButton = document.querySelector('.return-to-top');
