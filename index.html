@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Academic Transformations | Paul Thomas Coaching</title>
-    <meta name="description" content="Career transformation support for senior academics. Interactive tools, comprehensive workbooks, and personalised coaching to help you navigate your next chapter with confidence.">
-    
-    <!-- SEO Meta Tags -->
-    <meta property="og:title" content="Senior Academic Transformations">
-    <meta property="og:description" content="Professional development tools and coaching for senior academics exploring their next chapter">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hesnrldrs.github.io">
-    
+    <title>Senior Academic Transformations</title>
     <style>
+        /* EXACT Navigation CSS from working homepage */
         :root { 
             --colour-primary: #4A6FA5; 
             --colour-secondary: #E6B89C; 
@@ -48,52 +41,54 @@
             z-index: 100;
         }
         
-    .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-.logo {
-    font-size: 1.2em;        /* Larger than default */
-    font-weight: 600;        /* Make it bolder too */
-    color: var(--colour-primary);
-}
+        .logo {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--colour-primary);
+            text-decoration: none;
+        }
 
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    list-style: none;
-    gap: 1rem;              /* Reduced from 1.5rem */
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;      /* Changed from wrap */
-}
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            list-style: none;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap;
+        }
 
-.nav-menu a {
-    color: var(--colour-dark);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;   /* Reduced padding */
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    white-space: nowrap;    /* Prevents text wrapping */
-}
+        .nav-menu a {
+            color: var(--colour-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
         
         .nav-menu a:hover,
         .nav-menu a.active {
             color: var(--colour-primary);
             background-color: var(--colour-light);
         }
+
         .nav-menu li {
-    order: initial;
-    flex-shrink: 0;
-}
+            order: initial;
+            flex-shrink: 0;
+        }
         
         .mobile-menu-toggle {
             display: none;
@@ -166,13 +161,13 @@
             font-size: 1.8rem;
         }
         
-        /* Feature Grid */
+        /* 2x2 Grid Layouts */
         .feature-grid { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 2rem; 
-    margin: 3rem 0; 
-}
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 2rem; 
+            margin: 3rem 0; 
+        }
         
         .feature-card { 
             background: var(--colour-white); 
@@ -258,35 +253,13 @@
             text-align: center;
         }
         
-        .form-container {
+        /* Welcome Section */
+        .welcome-section {
             background: var(--colour-white);
-            padding: 2rem;
-            border-radius: 8px;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
             box-shadow: var(--shadow-light);
-            max-width: 500px;
-            margin: 2rem auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: Georgia, serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--colour-primary);
         }
         
         /* Footer */
@@ -314,43 +287,6 @@
             margin-bottom: 1.5rem;
         }
         
-        /* Hero Section */
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        /* Return to Top Button */
-        .return-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: var(--colour-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-medium);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-        }
-        
-        .return-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .return-to-top:hover {
-            background-color: var(--colour-accent);
-            transform: translateY(-2px);
-        }
-        
         /* Responsive Design */
         @media (max-width: 768px) {
             .mobile-menu-toggle {
@@ -374,23 +310,15 @@
             .nav-menu.active {
                 display: flex;
             }
-            .nav-menu.active {
-    display: flex;
-}
 
-/* Add this new CSS: */
-.nav-menu li {
-    order: initial;
-}
-
-.nav-menu li:nth-child(1) { order: 1; }
-.nav-menu li:nth-child(2) { order: 2; }
-.nav-menu li:nth-child(3) { order: 3; }
-.nav-menu li:nth-child(4) { order: 4; }
-.nav-menu li:nth-child(5) { order: 5; }
-.nav-menu li:nth-child(6) { order: 6; }
-.nav-menu li:nth-child(7) { order: 7; }
-.nav-menu li:nth-child(8) { order: 8; }
+            .nav-menu li:nth-child(1) { order: 1; }
+            .nav-menu li:nth-child(2) { order: 2; }
+            .nav-menu li:nth-child(3) { order: 3; }
+            .nav-menu li:nth-child(4) { order: 4; }
+            .nav-menu li:nth-child(5) { order: 5; }
+            .nav-menu li:nth-child(6) { order: 6; }
+            .nav-menu li:nth-child(7) { order: 7; }
+            .nav-menu li:nth-child(8) { order: 8; }
             
             header h1 {
                 font-size: 2.2rem;
@@ -419,32 +347,9 @@
                 font-size: 1.8rem;
             }
         }
-        
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* Focus states */
-        .btn:focus,
-        input:focus,
-        textarea:focus,
-        .nav-menu a:focus {
-            outline: 3px solid var(--colour-secondary);
-            outline-offset: 2px;
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav role="navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">Senior Academic Transformations</a>
@@ -455,164 +360,116 @@
                 <li><a href="toolkit.html">Free Toolkit</a></li>
                 <li><a href="coaching.html">Coaching</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="pricing.html">Pricing</a></li> 
-                 <li><a href="aboutpaul.html">About</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <header role="banner">
+    <header>
         <div class="hero-content">
             <h1>Senior Academic Transformations</h1>
-            <p>Evidence-based support for academic professionals navigating their next chapter</p>
-            
+            <p>Navigate your next chapter with clarity and confidence</p>
             <div class="hero-buttons">
-    <a href="contact.html" class="btn btn-success btn-large">Book Discovery Call</a>
-    <a href="toolkit.html" class="btn">Free Career Toolkit</a>
-</div>
+                <a href="toolkit.html" class="btn btn-success btn-large">Free Toolkit</a>
+                <a href="pricing.html" class="btn btn-large">View Coaching Packages</a>
+            </div>
+        </div>
     </header>
 
     <main class="container">
-        <section class="hero-content">
-            <h2>Transform Your Academic Career with Clarity and Confidence</h2>
-            <p class="intro-text">Hello. I'm Paul Thomas, and I've been supporting academic professionals in Higher Education since the early 1990s. This platform is designed for senior academics like you, who are navigating pivotal moments in their careers.</p>
-            
-            <p class="intro-text">Whether you're stepping into a new leadership role, seeking to enhance your impact, or contemplating your future direction, our comprehensive platform provides the tools and guidance for thoughtful, evidence-based self-reflection and development.</p>
+        <section class="welcome-section">
+            <h2>A Warm Welcome</h2>
+            <p class="intro-text">Hello. I'm Paul Thomas, and I've been supporting academic professionals in Higher Education since the early 1990s. This platform is designed for senior academics like you, who are navigating pivotal moments in your careers.</p>
+            <p>Whether you're stepping into a new leadership role, seeking to enhance your impact, or contemplating your future direction, this centre provides the tools and guidance for thoughtful, evidence-based self-reflection and development.</p>
+            <a href="pricing.html" class="btn">View Coaching Packages</a>
         </section>
 
-        <section id="platform-overview">
-            <h2>Your Complete Development Platform</h2>
-            <div class="feature-grid">
-                <!-- Assessment Apps -->
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h4>Assessment Apps</h4>
-                    <p>Web-based tools providing immediate, confidential insights into your motivations, challenges, and opportunities. Quick assessments with personalised recommendations.</p>
-                    <a href="apps.html" class="btn">Explore Apps</a>
-                </div>
-                
-                <!-- Workbooks -->
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h4>Comprehensive Workbooks</h4>
-                    <p>In-depth, downloadable resources for sustained personal development. Structured exercises, frameworks, and tools you can work through at your own pace.</p>
-                    <a href="workbooks.html" class="btn">Browse Workbooks</a>
-                </div>
-                
-                <!-- Coaching -->
-                <div class="feature-card">
-                    <div class="feature-icon">🎭</div>
-                    <h4>Personalised Coaching</h4>
-                    <p>Book a free discovery call to explore how coaching can accelerate your transformation. No commitment required - just a conversation about your goals.</p>
-                    <a href="contact.html" class="btn btn-success">Book Discovery Call</a>
-                </div>
-                
-                <!-- Interactive Toolkit -->
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h4>Free Transformation Toolkit</h4>
-                    <p>Interactive tools to help you design your strategic career transformation. A structured approach to exploring your options and creating your action plan.</p>
-                    <p style="font-size: 0.9rem; color: #666; font-style: italic;">Based on established transition theory (Schlossberg, 1981) and career development frameworks.</p>
-                    <a href="toolkit.html" class="btn btn-secondary">Try the Toolkit</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="getting-started">
+        <section>
             <h2>What Would You Like to Explore?</h2>
             <div class="feature-grid">
-                <!-- Quick Assessment -->
                 <div class="feature-card">
-                    <h4>I want quick insights about myself</h4>
-                    <p>Start with our assessment apps. Each takes 10-15 minutes and provides immediate insights into your leadership style, career readiness, and personal balance.</p>
-                    <a href="apps.html" class="btn">Start an Assessment</a>
+                    <div class="feature-icon">🎯</div>
+                    <h4>Support Style Finder</h4>
+                    <p>Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
+                    <a href="apps.html#support-style" class="btn">Learn More</a>
                 </div>
-                
-                <!-- Strategic Planning -->
+
                 <div class="feature-card">
-                    <h4>I want to explore my options strategically</h4>
-                    <p>Our interactive toolkit guides you through the essential components of career transformation. Perfect for getting clarity on your next steps.</p>
-                    <a href="toolkit.html" class="btn btn-secondary">Try the Free Toolkit</a>
+                    <div class="feature-icon">🚀</div>
+                    <h4>Career Transition App</h4>
+                    <p>A structured, supportive guide to help you navigate career change with clarity and confidence.</p>
+                    <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn">Learn More</a>
                 </div>
-                
-                <!-- Deep Dive -->
+
                 <div class="feature-card">
-                    <h4>I want comprehensive resources</h4>
-                    <p>Download our detailed workbooks for sustained development. Perfect for working through complex challenges at your own pace with structured guidance.</p>
-                    <a href="workbooks.html" class="btn">Download Workbooks</a>
+                    <div class="feature-icon">⚖️</div>
+                    <h4>Life Balance Scorecard</h4>
+                    <p>Assess your work-life balance across four key areas and create a strategic plan for wellbeing.</p>
+                    <a href="apps.html#life-balance" class="btn">Learn More</a>
                 </div>
-                
-                <!-- Personal Support -->
-                
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>Academic Resilience Assessment</h4>
+                    <p>Evaluate your resilience levels across different dimensions of academic life and identify strategies to thrive under pressure.</p>
+                    <a href="apps.html#resilience" class="btn">Learn More</a>
+                </div>
             </div>
         </section>
 
-        <!-- Lead Capture -->
-        <section id="free-offer" class="lead-capture">
+        <section>
             <h2>Begin Your Transformation Journey</h2>
-            <p class="intro-text">Ready to explore what's next? Book your complimentary Discovery Call to assess your situation, identify opportunities, and determine the best path forward.</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h4>Assessment Tools</h4>
+                    <p>Evidence-based assessments designed specifically for senior academics to provide insights and clarity.</p>
+                    <a href="apps.html" class="btn">Explore Tools</a>
+                </div>
 
-            <div class="form-container">
-                <h3>Get Started Today</h3>
-                <form action="https://formspree.io/f/meolzkeg?_next=https://hesnrldrs.github.io/thank-you.html" method="post" aria-label="Request free consultation">
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h4>Workbooks</h4>
+                    <p>Practical, structured workbooks to guide your reflection and development journey at your own pace.</p>
+                    <a href="workbooks.html" class="btn">Download Workbooks</a>
+                </div>
 
-    <div class="form-group">
-        <label for="full-name" class="sr-only">Full Name</label>
-        <input type="text" id="full-name" name="full-name" placeholder="Full Name" required>
-    </div>
-    <div class="form-group">
-        <label for="email" class="sr-only">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Email Address" required>
-    </div>
-    <div class="form-group">
-        <label for="message" class="sr-only">Tell me about your situation</label>
-        <textarea id="message" name="message" placeholder="Tell me briefly about your current situation and what you'd like to explore" rows="4"></textarea>
-    </div>
-    <button type="submit" class="btn btn-success" style="width: 100%; margin-top: 0;">Request Discovery Call</button>
-</form>
-                <p style="color: #666; font-size: 0.9rem; margin-top: 1rem; text-align: center; font-style: italic;">We respect your privacy and will never share your information.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Personal Coaching</h4>
+                    <p>One-to-one coaching support tailored to your specific situation and career aspirations.</p>
+                    <a href="coaching.html" class="btn">Learn About Coaching</a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h4>Request a Discovery Call</h4>
+                    <p>Book a free 30-minute conversation to explore your situation and discuss how we can support your next steps.</p>
+                    <a href="contact.html" class="btn btn-success">Book Discovery Call</a>
+                </div>
             </div>
+        </section>
+
+        <section class="lead-capture">
+            <h2>Ready to Begin?</h2>
+            <p>Take the first step towards your transformation with our free assessment toolkit.</p>
+            <a href="toolkit.html" class="btn btn-success btn-large">Start Your Free Assessment</a>
         </section>
     </main>
 
-    <footer role="contentinfo">
-        <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
-        Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Senior Academic Transformations. All rights reserved.</p>
+            <p><a href="aboutpaul.html">About Paul Thomas</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
     </footer>
 
-    <!-- Return to Top Button -->
-    <button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
-
-    <!-- Navigation JavaScript -->
     <script>
         // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        mobileMenuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
         });
-        
-        
-        // Return to Top Button
-        const returnToTopButton = document.querySelector('.return-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                returnToTopButton.classList.add('visible');
-            } else {
-                returnToTopButton.classList.remove('visible');
-            }
-        });
-        
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-        
-        console.log('Senior Academic Transformations homepage loaded successfully');
     </script>
 </body>
 </html>
