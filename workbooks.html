@@ -1,94 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workbooks | Senior Academic Transformations</title>
-    <meta name="description" content="Comprehensive development workbooks for senior academics. In-depth resources for career transition, resilience building, and leadership development.">
-    
+    <title>Workbooks - Senior Academic Transformations</title>
     <style>
-        :root { 
-            --colour-primary: #4A6FA5; 
-            --colour-secondary: #E6B89C; 
-            --colour-accent: #166088; 
-            --colour-light: #F9F5EB; 
-            --colour-dark: #333333; 
-            --colour-white: #ffffff;
+        /* Navigation CSS - From index.html */
+        :root {
+            --colour-primary: #2c5aa0;
+            --colour-dark: #333;
+            --colour-white: #fff;
+            --colour-light: #f0f8ff;
             --colour-success: #28a745;
-            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
-            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+            --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 8px rgba(0,0,0,0.15);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body { 
-            font-family: 'Georgia', 'Times New Roman', serif; 
-            line-height: 1.7; 
-            color: var(--colour-dark); 
-            background-color: var(--colour-light); 
+
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: var(--colour-dark);
+            background-color: #f8f9fa;
         }
-        
+
         /* Navigation Styles */
         nav {
             background: var(--colour-white);
-            box-shadow: var(--shadow-light);
             padding: 1rem 0;
+            box-shadow: var(--shadow-light);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-        
-    .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
 
-.logo {
-    font-size: 1.2em;        /* Larger than default */
-    font-weight: 600;        /* Make it bolder too */
-    color: var(--colour-primary);
-}
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    list-style: none;
-    gap: 1rem;              /* Reduced from 1.5rem */
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;      /* Changed from wrap */
-}
-
-.nav-menu a {
-    color: var(--colour-dark);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;   /* Reduced padding */
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    white-space: nowrap;    /* Prevents text wrapping */
-}
-        
-        .nav-menu a:hover,
-        .nav-menu a.active {
+        .logo {
+            font-size: 1.3em;
+            font-weight: 700;
             color: var(--colour-primary);
-            background-color: var(--colour-light);
+            text-decoration: none;
         }
-        .nav-menu li {
-    order: initial;
-    flex-shrink: 0;
-}
-        
+
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -96,261 +63,40 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
-        .container { 
-            width: 90%; 
-            max-width: 1140px; 
-            margin: 0 auto; 
-            padding: 2rem 0; 
-        }
-        
-        /* Header Styles */
-        header { 
-            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%); 
-            color: white; 
-            text-align: center; 
-            padding: 4rem 1rem 3rem; 
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header h1 { 
-            margin: 0; 
-            font-size: 2.8rem; 
-            font-weight: normal; 
-            position: relative;
-            z-index: 1;
-        }
-        
-        header p { 
-            font-size: 1.4rem; 
-            font-weight: lighter; 
-            margin-top: 0.5rem; 
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Hero Buttons */
-        .hero-buttons {
+
+        .nav-menu {
             display: flex;
-            gap: 1rem;
             justify-content: center;
+            flex: 1;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
             flex-wrap: wrap;
-            margin-top: 2rem;
         }
-        
-        /* Section Styles */
-        section { 
-            margin: 4rem 0; 
-        }
-        
-        h2 { 
-            color: var(--colour-accent); 
-            border-bottom: 2px solid var(--colour-secondary); 
-            padding-bottom: 0.5rem; 
-            margin-bottom: 2rem; 
-            font-size: 2.2rem;
-        }
-        
-        h3 { 
-            color: var(--colour-primary); 
-            margin-top: 2.5rem; 
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-        
-        /* Feature Grid */
-        .feature-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 2rem; 
-            margin: 3rem 0; 
-        }
-        
-        .feature-card { 
-            background: var(--colour-white); 
-            border-radius: 12px; 
-            padding: 2rem; 
-            box-shadow: var(--shadow-light); 
-            transition: all 0.3s ease; 
-            border: 1px solid #eee; 
-            text-align: center;
-        }
-        
-        .feature-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: var(--shadow-medium); 
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h4 {
-            color: var(--colour-accent);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        /* Button Styles */
-        .btn { 
-            display: inline-block; 
-            background-color: var(--colour-primary); 
-            color: white; 
-            padding: 0.9rem 1.8rem; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            margin-top: 1.2rem; 
-            transition: all 0.3s ease; 
-            border: none; 
-            cursor: pointer; 
-            font-size: 1rem; 
-            text-align: center;
-        }
-        
-        .btn:hover { 
-            background-color: var(--colour-accent); 
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .btn-secondary {
-            background-color: var(--colour-secondary);
+
+        .nav-menu a {
             color: var(--colour-dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #d4a574;
-        }
-        
-        .btn-success {
-            background-color: var(--colour-success);
-            color: white;
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
-        }
-        
-        .btn-success:hover {
-            background-color: #218838;
-        }
-        
-        .btn-large {
-            font-size: 1.2rem;
-            padding: 1.2rem 2.5rem;
-        }
-        
-        /* Lead Capture */
-        .lead-capture {
-            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            border: 2px solid var(--colour-secondary);
-            text-align: center;
-        }
-        
-        .form-container {
-            background: var(--colour-white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            max-width: 500px;
-            margin: 2rem auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: Georgia, serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--colour-primary);
-        }
-        
-        /* Footer */
-        footer { 
-            background-color: var(--colour-dark); 
-            color: white; 
-            text-align: center; 
-            padding: 2.5rem 0; 
-            margin-top: 4rem; 
-        }
-        
-        footer a {
-            color: var(--colour-secondary);
             text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Intro Text */
-        .intro-text { 
-            font-size: 1.15rem; 
-            line-height: 1.8; 
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Hero Section */
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        /* Return to Top Button */
-        .return-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: var(--colour-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-medium);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
             transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
+            border-radius: 8px;
+            letter-spacing: 0.3px;
         }
-        
-        .return-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+
+        .nav-menu a:hover,
+        .nav-menu a.current {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+            transform: translateY(-1px);
         }
-        
-        .return-to-top:hover {
-            background-color: var(--colour-accent);
-            transform: translateY(-2px);
-        }
-        
-        /* Responsive Design */
+
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             .nav-menu {
                 display: none;
                 position: absolute;
@@ -361,366 +107,326 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: var(--shadow-light);
-                gap: 1.5rem;
-                flex-wrap: wrap;
             }
-            
+
             .nav-menu.active {
                 display: flex;
             }
-            .nav-menu.active {
-    display: flex;
-}
 
-/* Add this new CSS: */
-.nav-menu li {
-    order: initial;
-}
+            .nav-menu li {
+                order: initial;
+            }
 
-.nav-menu li:nth-child(1) { order: 1; }
-.nav-menu li:nth-child(2) { order: 2; }
-.nav-menu li:nth-child(3) { order: 3; }
-.nav-menu li:nth-child(4) { order: 4; }
-.nav-menu li:nth-child(5) { order: 5; }
-.nav-menu li:nth-child(6) { order: 6; }
-.nav-menu li:nth-child(7) { order: 7; }
-.nav-menu li:nth-child(8) { order: 8; }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            header p {
-                font-size: 1.2rem;
-            }
-            
+            .nav-menu li:nth-child(1) { order: 1; }
+            .nav-menu li:nth-child(2) { order: 2; }
+            .nav-menu li:nth-child(3) { order: 3; }
+            .nav-menu li:nth-child(4) { order: 4; }
+            .nav-menu li:nth-child(5) { order: 5; }
+            .nav-menu li:nth-child(6) { order: 6; }
+            .nav-menu li:nth-child(7) { order: 7; }
+
             .container {
                 width: 95%;
                 padding: 1rem 0;
             }
-            
-            .feature-grid {
+        }
+
+        /* Workbooks Page Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--colour-primary);
+            margin: 3rem 0 1.5rem 0;
+            text-align: center;
+        }
+
+        /* How to Use Cards */
+        .app-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .card-content h3 {
+            color: var(--colour-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .card-content a {
+            color: var(--colour-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .card-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Workbooks Grid */
+        .workbooks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .workbook-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .workbook-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .workbook-title {
+            font-size: 1.4rem;
+            color: var(--colour-primary);
+            margin-bottom: 1rem;
+        }
+
+        .workbook-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .workbook-status {
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .status-available {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-coming-soon {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--colour-success), #20c997);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #218838, #1ba085);
+            transform: translateY(-2px);
+        }
+
+        .notify-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .notify-btn:hover {
+            background: linear-gradient(135deg, #5a6268, #3d4142);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .app-cards,
+            .workbooks-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+
+            .app-card,
+            .workbook-card {
+                padding: 1.5rem;
             }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* Focus states */
-        .btn:focus,
-        input:focus,
-        textarea:focus,
-        .nav-menu a:focus {
-            outline: 3px solid var(--colour-secondary);
-            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-   <nav role="navigation">
-    <div class="nav-container">
-        <a href="index.html" class="logo">Senior Academic Transformations</a>
-        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
-        <ul class="nav-menu">
-            <li><a href="apps.html">Apps</a></li>
-            <li><a href="workbooks.html" class="current">Workbooks</a></li>
-            <li><a href="toolkit.html">Free Toolkit</a></li>
-            <li><a href="coaching.html">Coaching</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="aboutpaul.html">About</a></li>
-        </ul>
-    </div>
-</nav>
-
-    <header class="page-header">
-        <h1>Comprehensive Workbooks</h1>
-        <p>In-depth, structured resources for sustained personal and professional development</p>
-    </header>
+    <nav role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="workbooks.html" class="current">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main class="container">
-        <section id="workbooks-intro">
-            <p class="intro-text">Our workbooks provide structured frameworks, exercises, and tools for deep personal development. Unlike quick assessments, these resources are designed for sustained engagement over weeks or months, helping you work through complex challenges at your own pace with expert guidance.</p>
+        <section class="page-hero">
+            <h1>Transformation Workbooks</h1>
+            <p>Practical, research-based workbooks designed to guide senior academics through career transitions and personal development.</p>
         </section>
 
-        <section id="free-resources">
-            <h2>Free Starter Resources</h2>
-            
-            <div class="workbook-grid">
-                <div class="workbook-card">
-                    <div class="card-content">
-                        <span class="status-badge status-free">Free Download</span>
-                        <h3>Moving On: Introduction</h3>
-                        
-                        <p>A comprehensive introduction to career transition planning for senior academics. This sampler guide introduces our methodology and helps you assess whether you're ready for deeper exploration.</p>
-                        
-                        <div class="workbook-specs">
-                            <strong>Format:</strong> PDF Download | <strong>Pages:</strong> 15 | <strong>Time:</strong> 1-2 hours
-                        </div>
-                        
-                        <ul class="workbook-features">
-                            <li>Career satisfaction assessment</li>
-                            <li>Values clarification exercise</li>
-                            <li>Initial exploration framework</li>
-                            <li>Resource links and next steps</li>
-                        </ul>
-                        
-                        <div class="reference-note">
-                            Introduction to transition theory frameworks and career development principles.
-                        </div>
-                        
-                        <a href="#" class="btn btn-success">Download Free</a>
-                    </div>
+        <h2 class="section-title">How to Use These Workbooks</h2>
+        
+        <div class="app-cards">
+            <div class="app-card">
+                <div class="card-content">
+                    <h3>1. Choose Your Focus</h3>
+                    <p>Select the workbook that best matches your current situation or development goals. Each workbook is designed to work independently.</p>
                 </div>
             </div>
-        </section>
 
-        <section id="available-workbooks">
-            <h2>Available Workbooks</h2>
-            
-            <div class="workbook-grid">
-                <!-- WORKBOOK 2 - LIFE BALANCE -->
-                <div class="workbook-card">
-                    <div class="card-content">
-                        <span class="status-badge status-live">Available</span>
-                        <h3>Personal Life Balance Scorecard</h3>
-                        
-                        <p>A practical guide to creating sustainable balance between professional demands and personal wellbeing, based on research-backed strategies for long-term academic success.</p>
-                        
-                        <div class="workbook-specs">
-                            <strong>Format:</strong> PDF Download | <strong>Pages:</strong> 40 | <strong>Completion Time:</strong> 2-3 weeks
-                        </div>
-                        
-                        <ul class="workbook-features">
-                            <li>Time audit tools and analysis worksheets</li>
-                            <li>Priority alignment exercises</li>
-                            <li>Energy management techniques</li>
-                            <li>Recovery planning templates</li>
-                            <li>Goal-setting frameworks</li>
-                            <li>Progress tracking systems</li>
-                        </ul>
-                        
-                        <div class="reference-note">
-                            Based on work-life balance research (Greenhaus & Beutell, 1985) and balanced scorecard methodology (Kaplan & Norton, 1992).
-                        </div>
-                        
-                        <a href="#" class="btn">Purchase & Download - £29</a>
-                    </div>
-                </div>
-                
-                <!-- WORKBOOK 4 - RESILIENCE -->
-                <div class="workbook-card">
-                    <div class="card-content">
-                        <span class="status-badge status-live">Available</span>
-                        <h3>Academic Resilience Workbook</h3>
-                        
-                        <p>A comprehensive guide to developing robust coping strategies, maintaining wellbeing under pressure, and building sustainable resilience practices for academic careers.</p>
-                        
-                        <div class="workbook-specs">
-                            <strong>Format:</strong> PDF Download | <strong>Pages:</strong> 45 | <strong>Completion Time:</strong> 3-4 weeks
-                        </div>
-                        
-                        <ul class="workbook-features">
-                            <li>Stress assessment tools and tracking sheets</li>
-                            <li>Coping strategy framework and implementation guide</li>
-                            <li>Mindfulness exercises and meditation scripts</li>
-                            <li>Boundary-setting techniques for work-life balance</li>
-                            <li>Energy management strategies</li>
-                            <li>Crisis response planning templates</li>
-                        </ul>
-                        
-                        <div class="reference-note">
-                            Assessment framework based on academic resilience research (Martin & Marsh, 2009).
-                        </div>
-                        
-                        <a href="#" class="btn">Purchase & Download - £35</a>
-                    </div>
+            <div class="app-card">
+                <div class="card-content">
+                    <h3>2. Work Through Systematically</h3>
+                    <p>Follow the structured exercises and reflection prompts. Allow time for thoughtful consideration - transformation takes time.</p>
                 </div>
             </div>
-        </section>
 
-        <section id="coming-soon">
-            <h2>In Development</h2>
-            
-            <div class="workbook-grid">
-                <!-- WORKBOOK 1 - MOVING ON -->
-                <div class="workbook-card featured">
-                    <div class="card-content">
-                        <span class="status-badge status-featured">Coming Soon</span>
-                        <h3>Moving On: The Complete Career Transition Workbook</h3>
-                        
-                        <p>Our flagship comprehensive guide for academics contemplating career change. This workbook provides structured exercises, reflective activities, and practical frameworks to help you navigate your transition with clarity and confidence.</p>
-                        
-                        <div class="workbook-specs">
-                            <strong>Expected:</strong> March 2025 | <strong>Estimated Pages:</strong> 60+ | <strong>Estimated Price:</strong> £49
-                        </div>
-                        
-                        <ul class="workbook-features">
-                            <li>Self-assessment questionnaires and scoring guides</li>
-                            <li>Skills translation frameworks for non-academic roles</li>
-                            <li>Networking strategy templates and scripts</li>
-                            <li>Interview preparation guides and practice questions</li>
-                            <li>Personal action planning worksheets</li>
-                            <li>Financial planning templates for career change</li>
-                            <li>Confidence-building exercises and affirmations</li>
-                            <li>Resource lists and recommended reading</li>
-                        </ul>
-                        
-                        <div class="reference-note">
-                            Comprehensive synthesis of transition theory (Schlossberg, 1981), career development research, and practical implementation strategies.
-                        </div>
-                        
-                        <a href="#" class="btn btn-secondary">Notify When Available</a>
-                    </div>
-                </div>
-                
-                <!-- WORKBOOK 3 - MATRIX REENGINEERING -->
-                <div class="workbook-card">
-                    <div class="card-content">
-                        <span class="status-badge status-coming-soon">Coming Soon</span>
-                        <h3>Matrix Reengineering: Reprogramming Your Internal Software</h3>
-                        
-                        <p>Examine the limiting beliefs that shape your decisions and learn to rewrite your internal operating systems. A practical guide to identifying and transforming unconscious patterns that hold you back.</p>
-                        
-                        <div class="workbook-specs">
-                            <strong>Expected:</strong> April 2025 | <strong>Estimated Pages:</strong> 50 | <strong>Estimated Price:</strong> £42
-                        </div>
-                        
-                        <ul class="workbook-features">
-                            <li>Limiting belief identification frameworks</li>
-                            <li>Cognitive restructuring exercises</li>
-                            <li>Mindset transformation strategies</li>
-                            <li>Self-awareness development tools</li>
-                            <li>Behaviour change implementation guides</li>
-                            <li>Progress tracking and reflection templates</li>
-                        </ul>
-                        
-                        <div class="reference-note">
-                            Based on cognitive behavioural therapy principles and mindset research.
-                        </div>
-                        
-                        <a href="#" class="btn btn-secondary">Notify When Available</a>
-                    </div>
+            <div class="app-card">
+                <div class="card-content">
+                    <h3>3. Apply and Reflect</h3>
+                    <p>Implement the insights and strategies in your daily work. Regular reflection deepens the learning and solidifies change.</p>
                 </div>
             </div>
-        </section>
 
-        <section id="how-workbooks-work">
-            <h2>How Our Workbooks Work</h2>
-            <div class="workbook-grid">
-                <div class="workbook-card">
-                    <div class="card-content">
-                        <h3>Instant Download</h3>
-                        <p>After purchase, receive immediate access to your workbook as a professionally formatted PDF. Print it out or work digitally - whatever works best for you.</p>
-                    </div>
-                </div>
-                
-                <div class="workbook-card">
-                    <div class="card-content">
-                        <h3>Self-Paced Learning</h3>
-                        <p>Work through exercises at your own pace. Most workbooks are designed for 2-6 weeks of engagement, with suggestions for daily or weekly activities.</p>
-                    </div>
-                </div>
-                
-                <div class="workbook-card">
-                    <div class="card-content">
-                        <h3>Email Support</h3>
-                        <p>All workbooks include email support. Get clarification on exercises, share insights, or ask questions about implementation.</p>
-                    </div>
-                </div>
-                
-                <div class="workbook-card">
-                    <div class="card-content">
-                        <h3>Lifetime Access</h3>
-                        <p>Once purchased, the workbook is yours forever. Return to exercises as needed, track your progress over time, and revisit insights as you grow.</p>
-                    </div>
+            <div class="app-card">
+                <div class="card-content">
+                    <h3>4. What would you really find helpful?</h3>
+                    <p>If there's an assessment or workbook that's missing from your toolkit, <a href="contact.html">let's have a conversation</a> about how we can work together to create exactly what you need.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section id="next-steps" style="background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%); padding: 3rem 2rem; border-radius: 12px; margin: 3rem 0; border: 2px solid var(--colour-secondary); text-align: center;">
-            <h2 style="border: none; margin-bottom: 1rem;">Ready for Guided Support?</h2>
-            <p class="intro-text">While our workbooks provide comprehensive frameworks for self-development, many academics find that personalised coaching accelerates their progress significantly.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                <a href="coaching.html" class="btn">Explore Coaching Programmes</a>
-                <a href="apps.html" class="btn btn-secondary">Try Our Assessment Apps</a>
+        <h2 class="section-title">Available Workbooks</h2>
+        
+        <div class="workbooks-grid">
+            <div class="workbook-card">
+                <h3 class="workbook-title">Moving On: A Career Transition Guide</h3>
+                <p class="workbook-description">A comprehensive guide for senior academics considering their next career move, with practical exercises and strategic planning tools.</p>
+                <div class="workbook-status status-available">Available Now</div>
+                <a href="#" class="download-btn">Download Free</a>
             </div>
-        </section>
+
+            <div class="workbook-card">
+                <h3 class="workbook-title">30-Day Reflective Journal</h3>
+                <p class="workbook-description">A structured daily reflection practice designed to help senior academics gain clarity, process transitions, and develop self-awareness over 30 days.</p>
+                <div class="workbook-status status-available">Available Now</div>
+                <a href="#" class="download-btn">Download Free</a>
+            </div>
+
+            <div class="workbook-card">
+                <h3 class="workbook-title">Leadership Presence in Academia</h3>
+                <p class="workbook-description">Develop your authentic leadership style and increase your influence within academic and non-academic environments.</p>
+                <div class="workbook-status status-coming-soon">Coming Soon</div>
+                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
+            </div>
+
+            <div class="workbook-card">
+                <h3 class="workbook-title">Research to Impact</h3>
+                <p class="workbook-description">Transform your research expertise into broader professional impact, whether in policy, industry, or consulting.</p>
+                <div class="workbook-status status-coming-soon">Coming Soon</div>
+                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
+            </div>
+
+            <div class="workbook-card">
+                <h3 class="workbook-title">Academic Resilience Toolkit</h3>
+                <p class="workbook-description">Build sustainable practices for managing stress, uncertainty, and the unique challenges of academic careers.</p>
+                <div class="workbook-status status-coming-soon">Coming Soon</div>
+                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
+            </div>
+
+            <div class="workbook-card">
+                <h3 class="workbook-title">Networking Beyond Academia</h3>
+                <p class="workbook-description">Strategic approaches to building professional relationships and networks outside traditional academic circles.</p>
+                <div class="workbook-status status-coming-soon">Coming Soon</div>
+                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
+            </div>
+
+            <div class="workbook-card">
+                <h3 class="workbook-title">Financial Planning for Academics</h3>
+                <p class="workbook-description">Practical financial strategies for academics transitioning between sectors or planning for life beyond academia.</p>
+                <div class="workbook-status status-coming-soon">Coming Soon</div>
+                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
+            </div>
+        </div>
     </main>
-
-    <footer role="contentinfo">
-        <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
-        Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
-    </footer>
-
-    <!-- Return to Top Button -->
-    <button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
 
     <script>
         // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (mobileMenuToggle && navMenu) {
-            mobileMenuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                
-                // Update aria-label for accessibility
-                const isOpen = navMenu.classList.contains('active');
-                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
-            });
-            
-            // Close mobile menu when clicking on a link
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
-                });
-            });
-        }
-        
-        // Return to Top Button
-        const returnToTopButton = document.querySelector('.return-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                returnToTopButton.classList.add('visible');
-            } else {
-                returnToTopButton.classList.remove('visible');
-            }
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
         });
-        
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-        
-        console.log('Workbooks page loaded successfully');
     </script>
 </body>
 </html>
