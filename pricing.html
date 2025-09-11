@@ -1,94 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coaching Packages | Senior Academic Transformations</title>
-    <meta name="description" content="Structured coaching packages designed for senior academics ready to make transformative changes. From discovery calls to complete transformation support.">
-    
+    <title>Pricing - Senior Academic Transformations</title>
     <style>
-        :root { 
-            --colour-primary: #4A6FA5; 
-            --colour-secondary: #E6B89C; 
-            --colour-accent: #166088; 
-            --colour-light: #F9F5EB; 
-            --colour-dark: #333333; 
-            --colour-white: #ffffff;
+        /* Navigation CSS - From index.html */
+        :root {
+            --colour-primary: #2c5aa0;
+            --colour-dark: #333;
+            --colour-white: #fff;
+            --colour-light: #f0f8ff;
             --colour-success: #28a745;
-            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
-            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+            --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 8px rgba(0,0,0,0.15);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body { 
-            font-family: 'Georgia', 'Times New Roman', serif; 
-            line-height: 1.7; 
-            color: var(--colour-dark); 
-            background-color: var(--colour-light); 
+
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: var(--colour-dark);
+            background-color: #f8f9fa;
         }
-        
+
         /* Navigation Styles */
         nav {
             background: var(--colour-white);
-            box-shadow: var(--shadow-light);
             padding: 1rem 0;
+            box-shadow: var(--shadow-light);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-        
-    .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
 
-.logo {
-    font-size: 1.2em;        /* Larger than default */
-    font-weight: 600;        /* Make it bolder too */
-    color: var(--colour-primary);
-}
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    list-style: none;
-    gap: 1rem;              /* Reduced from 1.5rem */
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;      /* Changed from wrap */
-}
-
-.nav-menu a {
-    color: var(--colour-dark);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;   /* Reduced padding */
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    white-space: nowrap;    /* Prevents text wrapping */
-}
-        
-        .nav-menu a:hover,
-        .nav-menu a.active {
+        .logo {
+            font-size: 1.3em;
+            font-weight: 700;
             color: var(--colour-primary);
-            background-color: var(--colour-light);
+            text-decoration: none;
         }
-        .nav-menu li {
-    order: initial;
-    flex-shrink: 0;
-}
-        
+
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -96,261 +63,40 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
-        .container { 
-            width: 90%; 
-            max-width: 1140px; 
-            margin: 0 auto; 
-            padding: 2rem 0; 
-        }
-        
-        /* Header Styles */
-        header { 
-            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%); 
-            color: white; 
-            text-align: center; 
-            padding: 4rem 1rem 3rem; 
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header h1 { 
-            margin: 0; 
-            font-size: 2.8rem; 
-            font-weight: normal; 
-            position: relative;
-            z-index: 1;
-        }
-        
-        header p { 
-            font-size: 1.4rem; 
-            font-weight: lighter; 
-            margin-top: 0.5rem; 
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Hero Buttons */
-        .hero-buttons {
+
+        .nav-menu {
             display: flex;
-            gap: 1rem;
             justify-content: center;
+            flex: 1;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
             flex-wrap: wrap;
-            margin-top: 2rem;
         }
-        
-        /* Section Styles */
-        section { 
-            margin: 4rem 0; 
-        }
-        
-        h2 { 
-            color: var(--colour-accent); 
-            border-bottom: 2px solid var(--colour-secondary); 
-            padding-bottom: 0.5rem; 
-            margin-bottom: 2rem; 
-            font-size: 2.2rem;
-        }
-        
-        h3 { 
-            color: var(--colour-primary); 
-            margin-top: 2.5rem; 
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-        
-        /* Feature Grid */
-        .feature-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 2rem; 
-            margin: 3rem 0; 
-        }
-        
-        .feature-card { 
-            background: var(--colour-white); 
-            border-radius: 12px; 
-            padding: 2rem; 
-            box-shadow: var(--shadow-light); 
-            transition: all 0.3s ease; 
-            border: 1px solid #eee; 
-            text-align: center;
-        }
-        
-        .feature-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: var(--shadow-medium); 
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h4 {
-            color: var(--colour-accent);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        /* Button Styles */
-        .btn { 
-            display: inline-block; 
-            background-color: var(--colour-primary); 
-            color: white; 
-            padding: 0.9rem 1.8rem; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            margin-top: 1.2rem; 
-            transition: all 0.3s ease; 
-            border: none; 
-            cursor: pointer; 
-            font-size: 1rem; 
-            text-align: center;
-        }
-        
-        .btn:hover { 
-            background-color: var(--colour-accent); 
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .btn-secondary {
-            background-color: var(--colour-secondary);
+
+        .nav-menu a {
             color: var(--colour-dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #d4a574;
-        }
-        
-        .btn-success {
-            background-color: var(--colour-success);
-            color: white;
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
-        }
-        
-        .btn-success:hover {
-            background-color: #218838;
-        }
-        
-        .btn-large {
-            font-size: 1.2rem;
-            padding: 1.2rem 2.5rem;
-        }
-        
-        /* Lead Capture */
-        .lead-capture {
-            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            border: 2px solid var(--colour-secondary);
-            text-align: center;
-        }
-        
-        .form-container {
-            background: var(--colour-white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            max-width: 500px;
-            margin: 2rem auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: Georgia, serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--colour-primary);
-        }
-        
-        /* Footer */
-        footer { 
-            background-color: var(--colour-dark); 
-            color: white; 
-            text-align: center; 
-            padding: 2.5rem 0; 
-            margin-top: 4rem; 
-        }
-        
-        footer a {
-            color: var(--colour-secondary);
             text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Intro Text */
-        .intro-text { 
-            font-size: 1.15rem; 
-            line-height: 1.8; 
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Hero Section */
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        /* Return to Top Button */
-        .return-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: var(--colour-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-medium);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
             transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
+            border-radius: 8px;
+            letter-spacing: 0.3px;
         }
-        
-        .return-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+
+        .nav-menu a:hover,
+        .nav-menu a.current {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+            transform: translateY(-1px);
         }
-        
-        .return-to-top:hover {
-            background-color: var(--colour-accent);
-            transform: translateY(-2px);
-        }
-        
-        /* Responsive Design */
+
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             .nav-menu {
                 display: none;
                 position: absolute;
@@ -361,230 +107,318 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: var(--shadow-light);
-                gap: 1.5rem;
-                flex-wrap: wrap;
             }
-            
+
             .nav-menu.active {
                 display: flex;
             }
-            .nav-menu.active {
-    display: flex;
-}
 
-/* Add this new CSS: */
-.nav-menu li {
-    order: initial;
-}
+            .nav-menu li {
+                order: initial;
+            }
 
-.nav-menu li:nth-child(1) { order: 1; }
-.nav-menu li:nth-child(2) { order: 2; }
-.nav-menu li:nth-child(3) { order: 3; }
-.nav-menu li:nth-child(4) { order: 4; }
-.nav-menu li:nth-child(5) { order: 5; }
-.nav-menu li:nth-child(6) { order: 6; }
-.nav-menu li:nth-child(7) { order: 7; }
-.nav-menu li:nth-child(8) { order: 8; }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            header p {
-                font-size: 1.2rem;
-            }
-            
+            .nav-menu li:nth-child(1) { order: 1; }
+            .nav-menu li:nth-child(2) { order: 2; }
+            .nav-menu li:nth-child(3) { order: 3; }
+            .nav-menu li:nth-child(4) { order: 4; }
+            .nav-menu li:nth-child(5) { order: 5; }
+            .nav-menu li:nth-child(6) { order: 6; }
+            .nav-menu li:nth-child(7) { order: 7; }
+
             .container {
                 width: 95%;
                 padding: 1rem 0;
             }
-            
-            .feature-grid {
+        }
+
+        /* Pricing Page Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: #ff6b35;
+            transform: scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6b35;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--colour-primary);
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price .currency {
+            font-size: 1.5rem;
+            vertical-align: top;
+        }
+
+        .pricing-description {
+            margin-bottom: 1.5rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .pricing-cta {
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .btn-free {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+        }
+
+        .btn-free:hover {
+            background: linear-gradient(135deg, #219a52, #27ae60);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--colour-primary), #3949ab);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1e4080, var(--colour-primary));
+            transform: translateY(-2px);
+        }
+
+        .btn-featured {
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: white;
+        }
+
+        .btn-featured:hover {
+            background: linear-gradient(135deg, #e55a2b, #e57a35);
+            transform: translateY(-2px);
+        }
+
+        .pricing-note {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+            margin-top: 2rem;
+        }
+
+        .pricing-note h3 {
+            color: var(--colour-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .pricing-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+
+            .pricing-card {
+                padding: 2rem;
             }
-            
-            h2 {
-                font-size: 1.8rem;
+
+            .pricing-card.featured {
+                transform: none;
             }
-        }
-        
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* Focus states */
-        .btn:focus,
-        input:focus,
-        textarea:focus,
-        .nav-menu a:focus {
-            outline: 3px solid var(--colour-secondary);
-            outline-offset: 2px;
         }
     </style>
 </head>
-<!-- Return to Top Button -->
-<button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
-
-<script>
-// Return to Top Button
-const returnToTopButton = document.querySelector('.return-to-top');
-
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        returnToTopButton.classList.add('visible');
-    } else {
-        returnToTopButton.classList.remove('visible');
-    }
-});
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-</script>
-    <body>
-    <!-- Navigation -->
+<body>
     <nav role="navigation">
-    <div class="nav-container">
-        <a href="index.html" class="logo">Senior Academic Transformations</a>
-        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
-        <ul class="nav-menu">
-            <li><a href="apps.html">Apps</a></li>
-            <li><a href="workbooks.html">Workbooks</a></li>
-            <li><a href="toolkit.html">Free Toolkit</a></li>
-            <li><a href="coaching.html">Coaching</a></li>
-            <li><a href="contact.html" class="current">Contact</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="aboutpaul.html">About</a></li>
-        </ul>
-    </div>
-</nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html" class="current">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <main class="container">
-        <section class="pricing-hero">
-            <h1>Find Your Path Forward</h1>
-            <p>Choose a coaching package designed for senior academics ready to make a transformative change.</p>
+        <section class="page-hero">
+            <h1>Investment in Your Future</h1>
+            <p>Transparent pricing for transformational coaching designed specifically for senior academics ready to make their next career move.</p>
         </section>
 
-        <div class="tiers-grid">
-            <!-- TIER 1: DISCOVERY -->
-            <div class="tier-card">
-                <h3 class="tier-name">Discovery Call + Workbook</h3>
-                <div class="tier-price">FREE</div>
-                <p>Start with a no-obligation conversation and receive your complimentary "Moving On" workbook.</p>
-                <ul class="tier-features">
+        <div class="pricing-grid">
+            <!-- FREE TIER -->
+            <div class="pricing-card">
+                <h3 class="pricing-title">Discovery Call</h3>
+                <div class="pricing-price">FREE</div>
+                <p class="pricing-description">Start with a no-obligation conversation and receive your complimentary "Moving On" workbook.</p>
+                <ul class="pricing-features">
                     <li>30-minute video call</li>
                     <li>Identify core challenges</li>
                     <li>Personalised recommendations</li>
+                    <li>Free "Moving On" workbook</li>
                     <li>No obligation to continue</li>
                 </ul>
-                <div class="tier-cta">
-                    <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" class="btn btn-success" target="_blank" rel="noopener">Book Your Call + Get Workbook</a>
+                <div class="pricing-cta">
+                    <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" class="btn btn-free" target="_blank" rel="noopener">Book Your Free Call</a>
                 </div>
             </div>
 
-            <!-- TIER 2: FOUNDATIONS -->
-            <div class="tier-card">
-                <div class="tier-badge">Popular</div>
-                <h3 class="tier-name">Foundations Package</h3>
-                <div class="tier-price">£497</div>
-                <p>Gain clarity and a concrete action plan.</p>
-                <ul class="tier-features">
-                    <li>1 x In-Depth Assessment App</li>
-                    <li>1 x 60min Strategy Session</li>
-                    <li>Personalised Action Plan</li>
-                    <li>Email support for 2 weeks</li>
+            <!-- FOUNDATIONS TIER -->
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <h3 class="pricing-title">Foundations Package</h3>
+                <div class="pricing-price"><span class="currency">£</span>497</div>
+                <p class="pricing-description">Gain clarity and create a concrete action plan for your next career move.</p>
+                <ul class="pricing-features">
+                    <li>1 x In-depth assessment session</li>
+                    <li>1 x 60-minute strategy session</li>
+                    <li>Personalised action plan</li>
+                    <li>Email follow-up support</li>
+                    <li>Resource recommendations</li>
                 </ul>
-                <div class="tier-cta">
-                    <a href="contact.html" class="btn">Get Started</a>
+                <div class="pricing-cta">
+                    <a href="contact.html" class="btn btn-featured">Get Started</a>
                 </div>
             </div>
 
-            <!-- TIER 3: MOMENTUM -->
-            <div class="tier-card featured">
-                <div class="tier-badge">Most Popular</div>
-                <h3 class="tier-name">Momentum Package</h3>
-                <div class="tier-price">£997</div>
-                <p>Build sustained progress with ongoing support.</p>
-                <ul class="tier-features">
-                    <li>2 x In-Depth Assessment Apps</li>
-                    <li>2 x 60min Coaching Sessions</li>
-                    <li>Supported Implementation</li>
-                    <li>Priority email support for 1 month</li>
-                </ul>
-                <div class="tier-cta">
-                    <a href="contact.html" class="btn">Build Momentum</a>
-                </div>
-            </div>
-
-            <!-- TIER 4: TRANSFORMATION -->
-            <div class="tier-card">
-                <h3 class="tier-name">Transformation Package</h3>
-                <div class="tier-price">£2,497</div>
-                <p>Complete support for a major career transition.</p>
-                <ul class="tier-features">
-                    <li>Access to ALL Assessment Apps & Workbooks</li>
-                    <li>12 months of coaching support (monthly calls)</li>
+            <!-- TRANSFORMATION TIER -->
+            <div class="pricing-card">
+                <h3 class="pricing-title">Transformation Journey</h3>
+                <div class="pricing-price"><span class="currency">£</span>1,997</div>
+                <p class="pricing-description">Complete 3-month guided transformation with comprehensive support throughout your journey.</p>
+                <ul class="pricing-features">
+                    <li>6 x 60-minute coaching sessions</li>
+                    <li>Complete assessment suite</li>
+                    <li>Weekly check-in emails</li>
                     <li>Unlimited email support</li>
-                    <li>CV & LinkedIn profile review</li>
-                    <li>Interview & negotiation preparation</li>
+                    <li>Progress tracking tools</li>
+                    <li>All workbooks included</li>
                 </ul>
-                <div class="tier-cta">
-                    <a href="contact.html" class="btn">Begin Transformation</a>
+                <div class="pricing-cta">
+                    <a href="contact.html" class="btn btn-primary">Transform Your Career</a>
                 </div>
             </div>
+        </div>
+
+        <div class="pricing-note">
+            <h3>Need Something Different?</h3>
+            <p>Every senior academic's situation is unique. If none of these packages quite fit your needs, let's have a conversation about creating a bespoke coaching arrangement that works perfectly for you.</p>
+            <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; width: auto; padding: 0.75rem 1.5rem;">Discuss Custom Options</a>
         </div>
     </main>
 
-    <footer role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
-            Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
-        </div>
-    </footer>
-
     <script>
         // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (mobileMenuToggle && navMenu) {
-            mobileMenuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                
-                // Update aria-label for accessibility
-                const isOpen = navMenu.classList.contains('active');
-                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
-            });
-            
-            // Close mobile menu when clicking on a link
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
-                });
-            });
-        }
-
-        console.log('Coaching packages page loaded successfully');
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
     </script>
 </body>
 </html>
