@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senior Academic Transformations</title>
     <style>
-        /* EXACT Navigation CSS from working homepage */
         :root { 
             --colour-primary: #4A6FA5; 
             --colour-secondary: #E6B89C; 
@@ -31,7 +30,6 @@
             background-color: var(--colour-light); 
         }
         
-        /* Navigation Styles */
         nav {
             background: var(--colour-white);
             box-shadow: var(--shadow-light);
@@ -105,7 +103,6 @@
             padding: 2rem 0; 
         }
         
-        /* Header Styles */
         header { 
             background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%); 
             color: white; 
@@ -132,7 +129,6 @@
             z-index: 1;
         }
         
-        /* Hero Buttons */
         .hero-buttons {
             display: flex;
             gap: 1rem;
@@ -141,7 +137,6 @@
             margin-top: 2rem;
         }
         
-        /* Section Styles */
         section { 
             margin: 4rem 0; 
         }
@@ -161,7 +156,6 @@
             font-size: 1.8rem;
         }
         
-        /* 2x2 Grid Layouts */
         .feature-grid { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
@@ -195,7 +189,6 @@
             font-size: 1.4rem;
         }
         
-        /* Button Styles */
         .btn { 
             display: inline-block; 
             background-color: var(--colour-primary); 
@@ -218,15 +211,6 @@
             box-shadow: var(--shadow-light);
         }
         
-        .btn-secondary {
-            background-color: var(--colour-secondary);
-            color: var(--colour-dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #d4a574;
-        }
-        
         .btn-success {
             background-color: var(--colour-success);
             color: white;
@@ -243,7 +227,6 @@
             padding: 1.2rem 2.5rem;
         }
         
-        /* Lead Capture */
         .lead-capture {
             background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
             padding: 3rem 2rem;
@@ -253,7 +236,6 @@
             text-align: center;
         }
         
-        /* Welcome Section */
         .welcome-section {
             background: var(--colour-white);
             padding: 3rem 2rem;
@@ -262,7 +244,14 @@
             box-shadow: var(--shadow-light);
         }
         
-        /* Footer */
+        /* Force consistent paragraph sizing */
+        .welcome-section p {
+            font-size: 1.15rem !important;
+            line-height: 1.8 !important;
+            margin-bottom: 1.5rem !important;
+            font-weight: normal !important;
+        }
+        
         footer { 
             background-color: var(--colour-dark); 
             color: white; 
@@ -280,21 +269,6 @@
             text-decoration: underline;
         }
         
-        /* Intro Text - Make both paragraphs same size */
-        .intro-text { 
-            font-size: 1.15rem !important; 
-            line-height: 1.8 !important; 
-            margin-bottom: 1.5rem !important;
-        }
-        
-        /* Make sure welcome section paragraphs are consistent */
-        .welcome-section p {
-            font-size: 1.15rem !important;
-            line-height: 1.8 !important;
-            margin-bottom: 1.5rem !important;
-        }
-        
-        /* Responsive Design */
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
@@ -375,21 +349,21 @@
 
     <header>
         <div class="hero-content">
-            <h1>Senior Academic Transformations</h1>
-            <p>Navigate your next chapter with clarity and confidence</p>
+            <h1>Navigate Your Next Chapter with Confidence</h1>
+            <p>Thoughtful guidance for senior academics ready to transform their careers with clarity and purpose</p>
             <div class="hero-buttons">
-                <a href="toolkit.html" class="btn btn-success btn-large">Free Toolkit</a>
-                <a href="pricing.html" class="btn btn-large">View Coaching Packages</a>
+                <a href="toolkit.html" class="btn btn-success btn-large">Start Your Free Assessment</a>
+                <a href="contact.html" class="btn btn-large">Book Discovery Call</a>
             </div>
         </div>
     </header>
 
     <main class="container">
         <section class="welcome-section">
-            <h2>A Warm Welcome</h2>
-            <p class="intro-text">Hello. I'm Paul Thomas, and I've been supporting academic professionals in Higher Education since the early 1990s. This platform is designed for senior academics like you, who are navigating pivotal moments in your careers.</p>
-            <p>Whether you're stepping into a new leadership role, seeking to enhance your impact, or contemplating your future direction, this centre provides the tools and guidance for thoughtful, evidence-based self-reflection and development.</p>
-            <a href="pricing.html" class="btn">View Coaching Packages</a>
+            <h2>A Personal Welcome</h2>
+            <p>Hello. I'm Paul Thomas, and I've been supporting academic professionals in Higher Education since the early 1990s. This platform is designed specifically for senior academics like you, who find themselves at pivotal moments in their careers.</p>
+            <p>Whether you're considering a move into senior leadership, seeking to amplify your impact beyond academia, or contemplating an entirely new direction, you'll find the tools and guidance here for thoughtful, evidence-based self-reflection and strategic career development.</p>
+            <a href="aboutpaul.html" class="btn">Discover My Story</a>
         </section>
 
         <section>
@@ -398,29 +372,29 @@
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
                     <h4>Support Style Finder</h4>
-                    <p>Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
-                    <a href="apps.html#support-style" class="btn">Learn More</a>
+                    <p>Discover your natural preferences for receiving support and development. Understand which approaches resonate most deeply with your leadership style.</p>
+                    <a href="apps.html#support-style" class="btn">Discover Your Style</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🚀</div>
-                    <h4>Career Transition App</h4>
-                    <p>A structured, supportive guide to help you navigate career change with clarity and confidence.</p>
-                    <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn">Learn More</a>
+                    <h4>Career Transition Navigator</h4>
+                    <p>A thoughtfully designed guide to help you navigate career change with confidence, clarity, and strategic purpose.</p>
+                    <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn">Begin Your Journey</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">⚖️</div>
                     <h4>Life Balance Scorecard</h4>
-                    <p>Assess your work-life balance across four key areas and create a strategic plan for wellbeing.</p>
-                    <a href="apps.html#life-balance" class="btn">Learn More</a>
+                    <p>Evaluate your work-life integration across four essential dimensions and create a personalised strategy for sustainable wellbeing.</p>
+                    <a href="apps.html#life-balance" class="btn">Assess Your Balance</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
                     <h4>Academic Resilience Assessment</h4>
-                    <p>Evaluate your resilience levels across different dimensions of academic life and identify strategies to thrive under pressure.</p>
-                    <a href="apps.html#resilience" class="btn">Learn More</a>
+                    <p>Understand your resilience patterns and develop strategies to thrive under pressure whilst maintaining your wellbeing.</p>
+                    <a href="apps.html#resilience" class="btn">Explore Resilience</a>
                 </div>
             </div>
         </section>
@@ -431,28 +405,28 @@
                 <div class="feature-card">
                     <div class="feature-icon">📚</div>
                     <h4>Assessment Tools</h4>
-                    <p>Evidence-based assessments designed specifically for senior academics to provide insights and clarity.</p>
-                    <a href="apps.html" class="btn">Explore Tools</a>
+                    <p>Evidence-based assessments meticulously designed for senior academics to provide meaningful insights and strategic clarity.</p>
+                    <a href="apps.html" class="btn">View Assessment Apps</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📖</div>
-                    <h4>Workbooks</h4>
-                    <p>Practical, structured workbooks to guide your reflection and development journey at your own pace.</p>
-                    <a href="workbooks.html" class="btn">Download Workbooks</a>
+                    <h4>Practical Workbooks</h4>
+                    <p>Thoughtfully structured workbooks to guide your reflection and development journey at your own pace, whenever suits you best.</p>
+                    <a href="workbooks.html" class="btn">Access Workbooks</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
                     <h4>Personal Coaching</h4>
-                    <p>One-to-one coaching support tailored to your specific situation and career aspirations.</p>
-                    <a href="coaching.html" class="btn">Learn About Coaching</a>
+                    <p>Bespoke one-to-one coaching support carefully tailored to your unique situation, aspirations, and career goals.</p>
+                    <a href="coaching.html" class="btn">Discover Coaching</a>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📞</div>
                     <h4>Request a Discovery Call</h4>
-                    <p>Book a free 30-minute conversation to explore your situation and discuss how we can support your next steps.</p>
+                    <p>Book a complimentary 30-minute conversation to explore your situation and discover how we can support your next steps.</p>
                     <a href="contact.html" class="btn btn-success">Book Discovery Call</a>
                 </div>
             </div>
@@ -473,7 +447,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
         });
