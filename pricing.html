@@ -19,7 +19,11 @@
             --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body { 
             font-family: 'Georgia', 'Times New Roman', serif; 
@@ -37,191 +41,169 @@
             top: 0;
             z-index: 100;
         }
+        
+    .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
+.logo {
+    font-size: 1.2em;        /* Larger than default */
+    font-weight: 600;        /* Make it bolder too */
+    color: var(--colour-primary);
+}
 
-        .logo {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: var(--colour-primary);
-            text-decoration: none;
-        }
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    list-style: none;
+    gap: 1rem;              /* Reduced from 1.5rem */
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;      /* Changed from wrap */
+}
 
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-            list-style: none;
-            gap: 1rem;
-            margin: 0;
-            padding: 0;
-            flex-wrap: nowrap;
-        }
-
-        .nav-menu a {
-            color: var(--colour-dark);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            white-space: nowrap;
-        }
-
+.nav-menu a {
+    color: var(--colour-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;   /* Reduced padding */
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    white-space: nowrap;    /* Prevents text wrapping */
+}
+        
         .nav-menu a:hover,
-        .nav-menu a.active,
-        .nav-menu a.current {
+        .nav-menu a.active {
             color: var(--colour-primary);
             background-color: var(--colour-light);
         }
-
         .nav-menu li {
-            order: initial;
-            flex-shrink: 0;
-        }
-
+    order: initial;
+    flex-shrink: 0;
+}
+        
         .mobile-menu-toggle {
             display: none;
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--colour-primary);
         }
-
+        
         .container { 
             width: 90%; 
             max-width: 1140px; 
             margin: 0 auto; 
             padding: 2rem 0; 
         }
-
-        /* Pricing specific styles */
-        .pricing-hero {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-        }
-
-        .pricing-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: normal;
-        }
-
-        .pricing-hero p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-        }
-
-        .tiers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .tier-card {
-            background: var(--colour-white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-medium);
-            text-align: center;
+        
+        /* Header Styles */
+        header { 
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%); 
+            color: white; 
+            text-align: center; 
+            padding: 4rem 1rem 3rem; 
             position: relative;
-            border: 2px solid #eee;
-            transition: all 0.3s ease;
+            overflow: hidden;
         }
-
-        .tier-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
+        
+        header h1 { 
+            margin: 0; 
+            font-size: 2.8rem; 
+            font-weight: normal; 
+            position: relative;
+            z-index: 1;
         }
-
-        .tier-card.featured {
-            border-color: var(--colour-secondary);
-            transform: scale(1.02);
+        
+        header p { 
+            font-size: 1.4rem; 
+            font-weight: lighter; 
+            margin-top: 0.5rem; 
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
-
-        .tier-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: var(--colour-secondary);
-            color: var(--colour-dark);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.8em;
+        
+        /* Hero Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
-
-        .tier-name {
-            color: var(--colour-primary);
+        
+        /* Section Styles */
+        section { 
+            margin: 4rem 0; 
+        }
+        
+        h2 { 
+            color: var(--colour-accent); 
+            border-bottom: 2px solid var(--colour-secondary); 
+            padding-bottom: 0.5rem; 
+            margin-bottom: 2rem; 
+            font-size: 2.2rem;
+        }
+        
+        h3 { 
+            color: var(--colour-primary); 
+            margin-top: 2.5rem; 
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        /* Feature Grid */
+        .feature-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+            margin: 3rem 0; 
+        }
+        
+        .feature-card { 
+            background: var(--colour-white); 
+            border-radius: 12px; 
+            padding: 2rem; 
+            box-shadow: var(--shadow-light); 
+            transition: all 0.3s ease; 
+            border: 1px solid #eee; 
+            text-align: center;
+        }
+        
+        .feature-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: var(--shadow-medium); 
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h4 {
+            color: var(--colour-accent);
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
-
-        .tier-price {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: var(--colour-accent);
-            margin: 1rem 0;
-        }
-
-        .price-period {
-            font-size: 0.4em;
-            color: #666;
-            font-weight: normal;
-        }
-
-        .tier-features {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-            text-align: left;
-        }
-
-        .tier-features li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .tier-features li:last-child {
-            border-bottom: none;
-        }
-
-        .tier-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--colour-success);
-            font-weight: bold;
-        }
-
-        .tier-cta {
-            margin-top: 2rem;
-        }
-
+        
+        /* Button Styles */
         .btn { 
             display: inline-block; 
             background-color: var(--colour-primary); 
             color: white; 
-            padding: 1rem 2rem; 
+            padding: 0.9rem 1.8rem; 
             text-decoration: none; 
             border-radius: 8px; 
             font-weight: bold; 
+            margin-top: 1.2rem; 
             transition: all 0.3s ease; 
             border: none; 
             cursor: pointer; 
@@ -232,16 +214,76 @@
         .btn:hover { 
             background-color: var(--colour-accent); 
             transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
         }
-
+        
+        .btn-secondary {
+            background-color: var(--colour-secondary);
+            color: var(--colour-dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d4a574;
+        }
+        
         .btn-success {
             background-color: var(--colour-success);
+            color: white;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
         }
-
+        
         .btn-success:hover {
             background-color: #218838;
         }
-
+        
+        .btn-large {
+            font-size: 1.2rem;
+            padding: 1.2rem 2.5rem;
+        }
+        
+        /* Lead Capture */
+        .lead-capture {
+            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            border: 2px solid var(--colour-secondary);
+            text-align: center;
+        }
+        
+        .form-container {
+            background: var(--colour-white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            max-width: 500px;
+            margin: 2rem auto 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: Georgia, serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--colour-primary);
+        }
+        
+        /* Footer */
         footer { 
             background-color: var(--colour-dark); 
             color: white; 
@@ -254,8 +296,56 @@
             color: var(--colour-secondary);
             text-decoration: none;
         }
-
-        /* Mobile Navigation */
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Intro Text */
+        .intro-text { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Return to Top Button */
+        .return-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--colour-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .return-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .return-to-top:hover {
+            background-color: var(--colour-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
@@ -278,61 +368,73 @@
             .nav-menu.active {
                 display: flex;
             }
+            .nav-menu.active {
+    display: flex;
+}
+
+/* Add this new CSS: */
+.nav-menu li {
+    order: initial;
+}
+
+.nav-menu li:nth-child(1) { order: 1; }
+.nav-menu li:nth-child(2) { order: 2; }
+.nav-menu li:nth-child(3) { order: 3; }
+.nav-menu li:nth-child(4) { order: 4; }
+.nav-menu li:nth-child(5) { order: 5; }
+.nav-menu li:nth-child(6) { order: 6; }
+.nav-menu li:nth-child(7) { order: 7; }
+.nav-menu li:nth-child(8) { order: 8; }
             
-            .nav-menu li:nth-child(1) { order: 1; }
-            .nav-menu li:nth-child(2) { order: 2; }
-            .nav-menu li:nth-child(3) { order: 3; }
-            .nav-menu li:nth-child(4) { order: 4; }
-            .nav-menu li:nth-child(5) { order: 5; }
-            .nav-menu li:nth-child(6) { order: 6; }
-            .nav-menu li:nth-child(7) { order: 7; }
-
-            .tiers-grid {
-                grid-template-columns: 1fr;
+            header h1 {
+                font-size: 2.2rem;
             }
-
-            .pricing-hero h1 {
-                font-size: 2rem;
+            
+            header p {
+                font-size: 1.2rem;
             }
-
+            
             .container {
                 width: 95%;
                 padding: 1rem 0;
             }
-
-            .tier-card.featured {
-                transform: none;
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
             }
         }
-    /* Return to Top Button */
-.return-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: var(--colour-primary);
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    box-shadow: var(--shadow-medium);
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 999;
-}
-
-.return-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.return-to-top:hover {
-    background-color: var(--colour-accent);
-    transform: translateY(-2px);
-}
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus states */
+        .btn:focus,
+        input:focus,
+        textarea:focus,
+        .nav-menu a:focus {
+            outline: 3px solid var(--colour-secondary);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <!-- Return to Top Button -->
@@ -360,20 +462,20 @@ function scrollToTop() {
     <body>
     <!-- Navigation -->
     <nav role="navigation">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Senior Academic Transformations</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
-            <ul class="nav-menu">
-                <li><a href="apps.html">Apps</a></li>
-                <li><a href="workbooks.html">Workbooks</a></li>
-                <li><a href="toolkit.html">Free Toolkit</a></li>
-                <li><a href="coaching.html" class="current">Coaching</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="aboutpaul.html">About</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">Senior Academic Transformations</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+        <ul class="nav-menu">
+            <li><a href="apps.html">Apps</a></li>
+            <li><a href="workbooks.html">Workbooks</a></li>
+            <li><a href="toolkit.html">Free Toolkit</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="contact.html" class="current">Contact</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="aboutpaul.html">About</a></li>
+        </ul>
+    </div>
+</nav>
 
     <main class="container">
         <section class="pricing-hero">
