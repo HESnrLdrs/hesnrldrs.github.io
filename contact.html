@@ -1,94 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Book Discovery Call | Senior Academic Transformations</title>
-    <meta name="description" content="Book your free 45-minute Discovery Call with Paul Thomas. Confidential consultation to explore your career transformation goals.">
-    
+    <title>Contact - Senior Academic Transformations</title>
     <style>
-        :root { 
-            --colour-primary: #4A6FA5; 
-            --colour-secondary: #E6B89C; 
-            --colour-accent: #166088; 
-            --colour-light: #F9F5EB; 
-            --colour-dark: #333333; 
-            --colour-white: #ffffff;
+        /* Navigation CSS - From index.html */
+        :root {
+            --colour-primary: #2c5aa0;
+            --colour-dark: #333;
+            --colour-white: #fff;
+            --colour-light: #f0f8ff;
             --colour-success: #28a745;
-            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
-            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+            --shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-medium: 0 4px 8px rgba(0,0,0,0.15);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body { 
-            font-family: 'Georgia', 'Times New Roman', serif; 
-            line-height: 1.7; 
-            color: var(--colour-dark); 
-            background-color: var(--colour-light); 
+
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: var(--colour-dark);
+            background-color: #f8f9fa;
         }
-        
+
         /* Navigation Styles */
         nav {
             background: var(--colour-white);
-            box-shadow: var(--shadow-light);
             padding: 1rem 0;
+            box-shadow: var(--shadow-light);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-        
-    .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
 
-.logo {
-    font-size: 1.2em;        /* Larger than default */
-    font-weight: 600;        /* Make it bolder too */
-    color: var(--colour-primary);
-}
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    list-style: none;
-    gap: 1rem;              /* Reduced from 1.5rem */
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;      /* Changed from wrap */
-}
-
-.nav-menu a {
-    color: var(--colour-dark);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;   /* Reduced padding */
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    white-space: nowrap;    /* Prevents text wrapping */
-}
-        
-        .nav-menu a:hover,
-        .nav-menu a.active {
+        .logo {
+            font-size: 1.3em;
+            font-weight: 700;
             color: var(--colour-primary);
-            background-color: var(--colour-light);
+            text-decoration: none;
         }
-        .nav-menu li {
-    order: initial;
-    flex-shrink: 0;
-}
-        
+
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -96,261 +63,40 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
-        .container { 
-            width: 90%; 
-            max-width: 1140px; 
-            margin: 0 auto; 
-            padding: 2rem 0; 
-        }
-        
-        /* Header Styles */
-        header { 
-            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%); 
-            color: white; 
-            text-align: center; 
-            padding: 4rem 1rem 3rem; 
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header h1 { 
-            margin: 0; 
-            font-size: 2.8rem; 
-            font-weight: normal; 
-            position: relative;
-            z-index: 1;
-        }
-        
-        header p { 
-            font-size: 1.4rem; 
-            font-weight: lighter; 
-            margin-top: 0.5rem; 
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Hero Buttons */
-        .hero-buttons {
+
+        .nav-menu {
             display: flex;
-            gap: 1rem;
             justify-content: center;
+            flex: 1;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
             flex-wrap: wrap;
-            margin-top: 2rem;
         }
-        
-        /* Section Styles */
-        section { 
-            margin: 4rem 0; 
-        }
-        
-        h2 { 
-            color: var(--colour-accent); 
-            border-bottom: 2px solid var(--colour-secondary); 
-            padding-bottom: 0.5rem; 
-            margin-bottom: 2rem; 
-            font-size: 2.2rem;
-        }
-        
-        h3 { 
-            color: var(--colour-primary); 
-            margin-top: 2.5rem; 
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-        
-        /* Feature Grid */
-        .feature-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 2rem; 
-            margin: 3rem 0; 
-        }
-        
-        .feature-card { 
-            background: var(--colour-white); 
-            border-radius: 12px; 
-            padding: 2rem; 
-            box-shadow: var(--shadow-light); 
-            transition: all 0.3s ease; 
-            border: 1px solid #eee; 
-            text-align: center;
-        }
-        
-        .feature-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: var(--shadow-medium); 
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h4 {
-            color: var(--colour-accent);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        /* Button Styles */
-        .btn { 
-            display: inline-block; 
-            background-color: var(--colour-primary); 
-            color: white; 
-            padding: 0.9rem 1.8rem; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            margin-top: 1.2rem; 
-            transition: all 0.3s ease; 
-            border: none; 
-            cursor: pointer; 
-            font-size: 1rem; 
-            text-align: center;
-        }
-        
-        .btn:hover { 
-            background-color: var(--colour-accent); 
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .btn-secondary {
-            background-color: var(--colour-secondary);
+
+        .nav-menu a {
             color: var(--colour-dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #d4a574;
-        }
-        
-        .btn-success {
-            background-color: var(--colour-success);
-            color: white;
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
-        }
-        
-        .btn-success:hover {
-            background-color: #218838;
-        }
-        
-        .btn-large {
-            font-size: 1.2rem;
-            padding: 1.2rem 2.5rem;
-        }
-        
-        /* Lead Capture */
-        .lead-capture {
-            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            border: 2px solid var(--colour-secondary);
-            text-align: center;
-        }
-        
-        .form-container {
-            background: var(--colour-white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            max-width: 500px;
-            margin: 2rem auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: Georgia, serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--colour-primary);
-        }
-        
-        /* Footer */
-        footer { 
-            background-color: var(--colour-dark); 
-            color: white; 
-            text-align: center; 
-            padding: 2.5rem 0; 
-            margin-top: 4rem; 
-        }
-        
-        footer a {
-            color: var(--colour-secondary);
             text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Intro Text */
-        .intro-text { 
-            font-size: 1.15rem; 
-            line-height: 1.8; 
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Hero Section */
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        /* Return to Top Button */
-        .return-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: var(--colour-primary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-medium);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
             transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
+            border-radius: 8px;
+            letter-spacing: 0.3px;
         }
-        
-        .return-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+
+        .nav-menu a:hover,
+        .nav-menu a.current {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
+            transform: translateY(-1px);
         }
-        
-        .return-to-top:hover {
-            background-color: var(--colour-accent);
-            transform: translateY(-2px);
-        }
-        
-        /* Responsive Design */
+
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             .nav-menu {
                 display: none;
                 position: absolute;
@@ -361,398 +107,335 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: var(--shadow-light);
-                gap: 1.5rem;
-                flex-wrap: wrap;
             }
-            
+
             .nav-menu.active {
                 display: flex;
             }
-            .nav-menu.active {
-    display: flex;
-}
 
-/* Add this new CSS: */
-.nav-menu li {
-    order: initial;
-}
+            .nav-menu li {
+                order: initial;
+            }
 
-.nav-menu li:nth-child(1) { order: 1; }
-.nav-menu li:nth-child(2) { order: 2; }
-.nav-menu li:nth-child(3) { order: 3; }
-.nav-menu li:nth-child(4) { order: 4; }
-.nav-menu li:nth-child(5) { order: 5; }
-.nav-menu li:nth-child(6) { order: 6; }
-.nav-menu li:nth-child(7) { order: 7; }
-.nav-menu li:nth-child(8) { order: 8; }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            header p {
-                font-size: 1.2rem;
-            }
-            
+            .nav-menu li:nth-child(1) { order: 1; }
+            .nav-menu li:nth-child(2) { order: 2; }
+            .nav-menu li:nth-child(3) { order: 3; }
+            .nav-menu li:nth-child(4) { order: 4; }
+            .nav-menu li:nth-child(5) { order: 5; }
+            .nav-menu li:nth-child(6) { order: 6; }
+            .nav-menu li:nth-child(7) { order: 7; }
+
             .container {
                 width: 95%;
                 padding: 1rem 0;
             }
-            
-            .feature-grid {
+        }
+
+        /* Contact Page Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-info h3 {
+            color: var(--colour-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--colour-primary);
+        }
+
+        .contact-details strong {
+            display: block;
+            color: var(--colour-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-form h3 {
+            color: var(--colour-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--colour-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: Georgia, serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--colour-primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            margin: 1.5rem 0;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: flex-start;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, var(--colour-success), #20c997);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #218838, #1ba085);
+            transform: translateY(-2px);
+        }
+
+        .alternative-contact {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .alternative-contact h3 {
+            color: var(--colour-primary);
+            margin-bottom: 1rem;
+        }
+
+        .calendar-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .calendar-btn:hover {
+            background: linear-gradient(135deg, #e55a2b, #e57a35);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
             }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+
+            .contact-info,
+            .contact-form,
+            .alternative-contact {
+                padding: 2rem;
             }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* Focus states */
-        .btn:focus,
-        input:focus,
-        textarea:focus,
-        .nav-menu a:focus {
-            outline: 3px solid var(--colour-secondary);
-            outline-offset: 2px;
         }
     </style>
 </head>
-<!-- Return to Top Button -->
-<button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
-
-<script>
-// Return to Top Button
-const returnToTopButton = document.querySelector('.return-to-top');
-
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        returnToTopButton.classList.add('visible');
-    } else {
-        returnToTopButton.classList.remove('visible');
-    }
-});
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-</script>
-    <body>
-    <!-- Navigation -->
+<body>
     <nav role="navigation">
-    <div class="nav-container">
-        <a href="index.html" class="logo">Senior Academic Transformations</a>
-        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
-        <ul class="nav-menu">
-            <li><a href="apps.html">Apps</a></li>
-            <li><a href="workbooks.html">Workbooks</a></li>
-            <li><a href="toolkit.html">Free Toolkit</a></li>
-            <li><a href="coaching.html">Coaching</a></li>
-            <li><a href="contact.html" class="current">Contact</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="aboutpaul.html">About</a></li>
-        </ul>
-    </div>
-</nav>
-
-    <main>
-        <!-- Page Hero -->
-        <section class="page-hero">
-            <div class="container">
-                <h1>Book Your Free Discovery Call</h1>
-                <p class="subtitle">45 minutes • Completely confidential • No commitment required</p>
-                <p>Every transformation begins with a conversation. Let's explore your goals, assess your situation, and determine the best path forward together.</p>
-            </div>
-        </section>
-
-        <!-- Discovery Call Section -->
-        <section class="discovery-section">
-            <div class="container">
-                <div class="discovery-content">
-                    <div class="discovery-info">
-                        <h2>What to Expect from Your Discovery Call</h2>
-                        <p>This is a professional consultation designed to understand your unique situation and explore how I can best support your career transformation goals.</p>
-                        
-                        <div class="highlight-box">
-                            <p><strong>Duration:</strong> 45 minutes<br>
-                            <strong>Format:</strong> Video call (Zoom) or telephone<br>
-                            <strong>Cost:</strong> Completely free<br>
-                            <strong>Commitment:</strong> None required</p>
-                        </div>
-                        
-                        <h3>During our call, we'll explore:</h3>
-                        <ul class="discovery-features">
-                            <li>Your current situation and what's driving your interest in change</li>
-                            <li>Your goals, aspirations, and vision for your future</li>
-                            <li>Any challenges or constraints you're currently facing</li>
-                            <li>How my coaching approach could support your transformation</li>
-                            <li>Whether there's a good fit for working together</li>
-                            <li>Next steps and available options for your development</li>
-                        </ul>
-                        
-                        <p><strong>Complete confidentiality guaranteed.</strong> Everything we discuss remains strictly between us, and there's no pressure to commit to any programme.</p>
-                    </div>
-                    
-                    <div class="contact-form">
-                        <h3>Book Your Discovery Call</h3>
-                        <form id="discovery-form" action="#" method="POST">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="role">Current Role *</label>
-                                <select id="role" name="role" required>
-                                    <option value="">Select your role...</option>
-                                    <option value="professor">Professor</option>
-                                    <option value="associate-professor">Associate Professor</option>
-                                    <option value="senior-lecturer">Senior Lecturer</option>
-                                    <option value="reader">Reader</option>
-                                    <option value="head-of-department">Head of Department</option>
-                                    <option value="dean">Dean</option>
-                                    <option value="pro-vice-chancellor">Pro-Vice-Chancellor</option>
-                                    <option value="vice-chancellor">Vice-Chancellor</option>
-                                    <option value="director">Director</option>
-                                    <option value="other">Other Senior Academic Role</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="institution">Institution/University</label>
-                                <input type="text" id="institution" name="institution">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="situation">What best describes your current situation? *</label>
-                                <select id="situation" name="situation" required>
-                                    <option value="">Select...</option>
-                                    <option value="seeking-change">Actively seeking career change</option>
-                                    <option value="exploring-options">Exploring my options</option>
-                                    <option value="leadership-development">Seeking leadership development</option>
-                                    <option value="work-life-balance">Improving work-life balance</option>
-                                    <option value="feeling-stuck">Feeling stuck in current role</option>
-                                    <option value="major-transition">Facing major life transition</option>
-                                    <option value="other">Other (please specify in message)</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="timeline">When are you hoping to see changes?</label>
-                                <select id="timeline" name="timeline">
-                                    <option value="">Select timeframe...</option>
-                                    <option value="immediate">Within 3 months</option>
-                                    <option value="short-term">3-6 months</option>
-                                    <option value="medium-term">6-12 months</option>
-                                    <option value="long-term">1-2 years</option>
-                                    <option value="exploratory">Just exploring at this stage</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Tell me a bit about your situation and what you hope to achieve (Optional)</label>
-                                <textarea id="message" name="message" placeholder="Any additional context that would help me prepare for our conversation..."></textarea>
-                            </div>
-                            
-                            <div class="checkbox-group">
-                                <label>
-                                    <input type="checkbox" name="privacy" required>
-                                    I understand that all information shared will be kept strictly confidential and I consent to being contacted to arrange the discovery call.
-                                </label>
-                            </div>
-                            
-                            <div class="checkbox-group">
-                                <label>
-                                    <input type="checkbox" name="updates">
-                                    I'd like to receive occasional updates about new assessment tools and development resources (you can unsubscribe at any time).
-                                </label>
-                            </div>
-                            
-                            <button type="submit" class="submit-button">Request Discovery Call</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Alternative Contact -->
-        <section class="alternative-section">
-            <div class="container">
-                <div class="alternative-content">
-                    <h2>Alternative Ways to Connect</h2>
-                    <p>Prefer a different approach? Here are other ways to get in touch:</p>
-                    
-                    <div class="contact-options">
-                        <div class="contact-option">
-                            <h3>📧 Email</h3>
-                            <p>Send me a message directly</p>
-                            <a href="mailto:paul@senioracademictransformations.com">paul@senioracademictransformations.com</a>
-                        </div>
-                        
-                        <div class="contact-option">
-                            <h3>📱 LinkedIn</h3>
-                            <p>Connect professionally</p>
-                            <a href="#" target="_blank">Connect on LinkedIn</a>
-                        </div>
-                        
-                        <div class="contact-option">
-                            <h3>🎯 Start with Toolkit</h3>
-                            <p>Try our free assessment first</p>
-                            <a href="toolkit.html">Free Transformation Toolkit</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="container">
-                <div class="faq-content">
-                    <h2>Frequently Asked Questions</h2>
-                    
-                    <div class="faq-item">
-                        <h3>What happens after I book a discovery call?</h3>
-                        <p>I'll contact you within 24 hours to arrange a convenient time for our call. You'll receive a calendar invitation with video call details and a brief preparation guide to help you get the most from our conversation.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>Is there any cost or commitment?</h3>
-                        <p>The discovery call is completely free with no strings attached. It's an opportunity for both of us to explore whether there's a good fit for working together. There's no pressure to commit to any programme.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>How confidential is our conversation?</h3>
-                        <p>Everything we discuss is strictly confidential. I understand the sensitive nature of career transitions in academia and maintain the highest standards of professional discretion.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>What if I'm not sure about making changes yet?</h3>
-                        <p>That's perfectly normal and exactly why the discovery call exists. Many of my clients start by simply exploring their options. There's no expectation that you need to have made any decisions before we talk.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>Do you work with academics outside the UK?</h3>
-                        <p>Yes, I work with senior academics globally. All coaching sessions can be conducted via video call, and the fundamental challenges facing academic leaders are remarkably similar across different higher education systems.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>What's your background in supporting academics?</h3>
-                        <p>I've been supporting academic professionals since the early 1990s, with particular expertise in career transitions, leadership development, and work-life balance. You can learn more about my background on the <a href="aboutpaul.html" style="color: var(--colour-primary);">About Paul</a> page.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Senior Academic Transformations. All conversations are strictly confidential.</p>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html" class="current">Contact</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
+            </ul>
         </div>
-    </footer>
+    </nav>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Get In Touch</h1>
+            <p>Ready to start your transformation journey? Let's have a conversation about your goals and how we can support you.</p>
+        </section>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <ul class="contact-details">
+                    <li>
+                        <strong>Email</strong>
+                        paul@senioracademictransformations.com
+                    </li>
+                    <li>
+                        <strong>Phone</strong>
+                        +44 (0) 1234 567 890
+                    </li>
+                    <li>
+                        <strong>Response Time</strong>
+                        We typically respond within 24 hours during business days
+                    </li>
+                    <li>
+                        <strong>Best Times to Call</strong>
+                        Monday - Friday, 9:00 AM - 5:00 PM GMT
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="">Please select...</option>
+                            <option value="coaching">Coaching Inquiry</option>
+                            <option value="assessment">Assessment Tools</option>
+                            <option value="workbooks">Workbooks</option>
+                            <option value="speaking">Speaking Engagement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your current situation and how we might be able to help..." required></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="newsletter" value="yes">
+                            I'd like to receive occasional updates about new resources and tools
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="alternative-contact">
+            <h3>Prefer to Book Directly?</h3>
+            <p>Skip the back-and-forth emails and book a free 30-minute discovery call directly in my calendar.</p>
+            <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" class="calendar-btn" target="_blank" rel="noopener">Book Free Discovery Call</a>
+        </div>
+    </main>
 
     <script>
         // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (mobileMenuToggle && navMenu) {
-            mobileMenuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                
-                // Update aria-label for accessibility
-                const isOpen = navMenu.classList.contains('active');
-                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
-            });
-            
-            // Close mobile menu when clicking on a link
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
-                });
-            });
-        }
-
-        // Form submission handling
-        document.getElementById('discovery-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic form validation
-            const requiredFields = ['name', 'email', 'role', 'situation'];
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                const input = document.getElementById(field);
-                if (!input.value.trim()) {
-                    input.style.borderColor = '#dc3545';
-                    isValid = false;
-                } else {
-                    input.style.borderColor = '#e0e0e0';
-                }
-            });
-            
-            const privacyCheckbox = document.querySelector('input[name="privacy"]');
-            if (!privacyCheckbox.checked) {
-                alert('Please confirm that you understand the confidentiality terms.');
-                isValid = false;
-            }
-            
-            if (isValid) {
-                // Here you would normally send the form data to your server
-                // For now, we'll show a success message
-                alert('Thank you for your interest! I will contact you within 24 hours to arrange your discovery call.');
-                
-                // Reset form
-                this.reset();
-            } else {
-                alert('Please fill in all required fields marked with *');
-            }
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
         });
-        
-        // Email validation
-        document.getElementById('email').addEventListener('blur', function() {
-            const email = this.value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (email && !emailRegex.test(email)) {
-                this.style.borderColor = '#dc3545';
-            } else {
-                this.style.borderColor = '#e0e0e0';
-            }
+
+        // Form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
         });
     </script>
 </body>
