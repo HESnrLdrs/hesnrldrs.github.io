@@ -4,551 +4,346 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workbooks - Senior Academic Transformations</title>
-   <style>
-        :root { 
-            --colour-primary: #4A6FA5; 
-            --colour-secondary: #E6B89C; 
-            --colour-accent: #166088; 
-            --colour-light: #F9F5EB; 
-            --colour-dark: #333333; 
-            --colour-white: #ffffff;
-            --colour-success: #28a745;
-            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
-            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
-        }
-        
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body { 
-            font-family: 'Georgia', 'Times New Roman', serif; 
-            line-height: 1.7; 
-            color: var(--colour-dark); 
-            background-color: var(--colour-light); 
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
         }
-        
-        /* Navigation Styles */
-        nav {
-            background: var(--colour-white);
-            box-shadow: var(--shadow-light);
-            padding: 1rem 0;
+
+        /* NAVIGATION BAR - CONSISTENT WITH HOMEPAGE */
+        .main-nav {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-        
-    .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
 
-.logo {
-    font-size: 1.2em;        /* Larger than default */
-    font-weight: 600;        /* Make it bolder too */
-    color: var(--colour-primary);
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    list-style: none;
-    gap: 1rem;              /* Reduced from 1.5rem */
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;      /* Changed from wrap */
-}
-
-.nav-menu a {
-    color: var(--colour-dark);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;   /* Reduced padding */
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    white-space: nowrap;    /* Prevents text wrapping */
-}
-        
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--colour-primary);
-            background-color: var(--colour-light);
-        }
-        .nav-menu li {
-    order: initial;
-    flex-shrink: 0;
-}
-        
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .container { 
-            width: 90%; 
-            max-width: 1140px; 
-            margin: 0 auto; 
-            padding: 2rem 0; 
-        }
-        
-        /* Header Styles */
-        header { 
-            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%); 
-            color: white; 
-            text-align: center; 
-            padding: 4rem 1rem 3rem; 
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header h1 { 
-            margin: 0; 
-            font-size: 2.8rem; 
-            font-weight: normal; 
-            position: relative;
-            z-index: 1;
-        }
-        
-        header p { 
-            font-size: 1.4rem; 
-            font-weight: lighter; 
-            margin-top: 0.5rem; 
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Hero Buttons */
-        .hero-buttons {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        /* Section Styles */
-        section { 
-            margin: 4rem 0; 
-        }
-        
-        h2 { 
-            color: var(--colour-accent); 
-            border-bottom: 2px solid var(--colour-secondary); 
-            padding-bottom: 0.5rem; 
-            margin-bottom: 2rem; 
-            font-size: 2.2rem;
-        }
-        
-        h3 { 
-            color: var(--colour-primary); 
-            margin-top: 2.5rem; 
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-        
-        /* Feature Grid */
-        .feature-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 2rem; 
-            margin: 3rem 0; 
-        }
-        
-        .feature-card { 
-            background: var(--colour-white); 
-            border-radius: 12px; 
-            padding: 2rem; 
-            box-shadow: var(--shadow-light); 
-            transition: all 0.3s ease; 
-            border: 1px solid #eee; 
-            text-align: center;
-        }
-        
-        .feature-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: var(--shadow-medium); 
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h4 {
-            color: var(--colour-accent);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        /* Button Styles */
-        .btn { 
-            display: inline-block; 
-            background-color: var(--colour-primary); 
-            color: white; 
-            padding: 0.9rem 1.8rem; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            margin-top: 1.2rem; 
-            transition: all 0.3s ease; 
-            border: none; 
-            cursor: pointer; 
-            font-size: 1rem; 
-            text-align: center;
-        }
-        
-        .btn:hover { 
-            background-color: var(--colour-accent); 
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .btn-secondary {
-            background-color: var(--colour-secondary);
-            color: var(--colour-dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #d4a574;
-        }
-        
-        .btn-success {
-            background-color: var(--colour-success);
-            color: white;
-            font-size: 1.1rem;
+            justify-content: space-between;
+            align-items: center;
             padding: 1rem 2rem;
         }
-        
-        .btn-success:hover {
-            background-color: #218838;
-        }
-        
-        .btn-large {
-            font-size: 1.2rem;
-            padding: 1.2rem 2.5rem;
-        }
-        
-        /* Lead Capture */
-        .lead-capture {
-            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            border: 2px solid var(--colour-secondary);
-            text-align: center;
-        }
-        
-        .form-container {
-            background: var(--colour-white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            max-width: 500px;
-            margin: 2rem auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: Georgia, serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--colour-primary);
-        }
-        
-        /* Footer */
-        footer { 
-            background-color: var(--colour-dark); 
-            color: white; 
-            text-align: center; 
-            padding: 2.5rem 0; 
-            margin-top: 4rem; 
-        }
-        
-        footer a {
-            color: var(--colour-secondary);
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
             text-decoration: none;
         }
-        
-        footer a:hover {
-            text-decoration: underline;
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
-        
-        /* Intro Text */
-        .intro-text { 
-            font-size: 1.15rem; 
-            line-height: 1.8; 
-            margin-bottom: 1.5rem;
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
-        
-        /* Hero Section */
-        .hero-content {
+
+        .nav-menu a:hover {
+            color: #3498db;
+            background-color: #f8f9fa;
+        }
+
+        .nav-menu .current {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #666;
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
         }
-        
-        /* Return to Top Button */
-        .return-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: var(--colour-primary);
+
+        /* APP-WORKBOOK INTEGRATION SECTION */
+        .integration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .app-workbook-pair {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-workbook-pair:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .app-section {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .app-section h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-section p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .app-button {
+            background: #3498db;
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            padding: 0.7rem 1.5rem;
             border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-medium);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
         }
-        
-        .return-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+
+        .app-button:hover {
+            background: #2980b9;
         }
-        
-        .return-to-top:hover {
-            background-color: var(--colour-accent);
-            transform: translateY(-2px);
+
+        .workbook-section {
+            border-left: 4px solid #27ae60;
+            padding-left: 1rem;
         }
-        
-        /* Responsive Design */
+
+        .workbook-section h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .workbook-section p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .workbook-button {
+            background: #27ae60;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .workbook-button:hover {
+            background: #229954;
+        }
+
+        .coming-soon {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        .coming-soon:hover {
+            background: #95a5a6;
+        }
+
+        .flow-arrow {
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
+            .nav-container {
+                padding: 1rem;
             }
             
             .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--colour-white);
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: var(--shadow-light);
-                gap: 1.5rem;
-                flex-wrap: wrap;
+                gap: 1rem;
+                font-size: 0.9rem;
             }
             
-            .nav-menu.active {
-                display: flex;
-            }
-            .nav-menu.active {
-    display: flex;
-}
-
-/* Add this new CSS: */
-.nav-menu li {
-    order: initial;
-}
-
-.nav-menu li:nth-child(1) { order: 1; }
-.nav-menu li:nth-child(2) { order: 2; }
-.nav-menu li:nth-child(3) { order: 3; }
-.nav-menu li:nth-child(4) { order: 4; }
-.nav-menu li:nth-child(5) { order: 5; }
-.nav-menu li:nth-child(6) { order: 6; }
-.nav-menu li:nth-child(7) { order: 7; }
-.nav-menu li:nth-child(8) { order: 8; }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            header p {
-                font-size: 1.2rem;
-            }
-            
-            .container {
-                width: 95%;
-                padding: 1rem 0;
-            }
-            
-            .feature-grid {
+            .integration-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
             
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+            .container {
+                padding: 1rem;
             }
             
-            h2 {
-                font-size: 1.8rem;
+            .hero-section h1 {
+                font-size: 2rem;
             }
-        }
-        
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* Focus states */
-        .btn:focus,
-        input:focus,
-        textarea:focus,
-        .nav-menu a:focus {
-            outline: 3px solid var(--colour-secondary);
-            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    <nav role="navigation">
+    <!-- NAVIGATION BAR -->
+    <nav class="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo">Senior Academic Transformations</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <a href="/" class="logo">Senior Academic Transformations</a>
             <ul class="nav-menu">
-                <li><a href="apps.html">Apps</a></li>
-                <li><a href="workbooks.html" class="current">Workbooks</a></li>
-                <li><a href="toolkit.html">Free Toolkit</a></li>
-                <li><a href="coaching.html">Coaching</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="aboutpaul.html">About</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/apps.html">Assessment Tools</a></li>
+                <li><a href="/workbooks.html" class="current">Workbooks</a></li>
+                <li><a href="/coaching.html">Coaching</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
-        <section class="page-hero">
-            <h1>Transformation Workbooks</h1>
-            <p>Practical, research-based workbooks designed to guide senior academics through career transitions and personal development.</p>
-        </section>
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="hero-section">
+            <h1>Assessment Tools & Companion Workbooks</h1>
+            <p>Take our interactive assessments to gain insights, then deepen your learning with our comprehensive companion workbooks. Each assessment is paired with a structured workbook to help you implement your results.</p>
+        </div>
 
-        <h2 class="section-title">How to Use These Workbooks</h2>
-        
-        <div class="app-cards">
-            <div class="app-card">
-                <div class="card-content">
-                    <h3>1. Choose Your Focus</h3>
-                    <p>Select the workbook that best matches your current situation or development goals. Each workbook is designed to work independently.</p>
+        <!-- APP-WORKBOOK INTEGRATION GRID -->
+        <div class="integration-grid">
+            <!-- SUPPORT STYLE FINDER & WORKBOOK -->
+            <div class="app-workbook-pair">
+                <div class="app-section">
+                    <h3>🎯 Support Style Finder</h3>
+                    <p>Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
+                    <a href="/apps.html#support-style" class="app-button">Take Assessment</a>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="workbook-section">
+                    <h3>📖 Support Style Development Workbook</h3>
+                    <p>A comprehensive guide to understanding and leveraging your support style preferences for maximum development impact.</p>
+                    <a href="#" class="workbook-button coming-soon">Coming Soon</a>
                 </div>
             </div>
 
-            <div class="app-card">
-                <div class="card-content">
-                    <h3>2. Work Through Systematically</h3>
-                    <p>Follow the structured exercises and reflection prompts. Allow time for thoughtful consideration - transformation takes time.</p>
+            <!-- CAREER TRANSITION & WORKBOOK -->
+            <div class="app-workbook-pair">
+                <div class="app-section">
+                    <h3>🚀 Career Transition Navigator</h3>
+                    <p>A structured, supportive guide to help you navigate career change with clarity and confidence.</p>
+                    <a href="/career-transition-app/" class="app-button">Take Assessment</a>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="workbook-section">
+                    <h3>📖 Career Transition Workbook</h3>
+                    <p>Step-by-step exercises and planning tools to implement your transition strategy and navigate change successfully.</p>
+                    <a href="#" class="workbook-button coming-soon">Coming Soon</a>
                 </div>
             </div>
 
-            <div class="app-card">
-                <div class="card-content">
-                    <h3>3. Apply and Reflect</h3>
-                    <p>Implement the insights and strategies in your daily work. Regular reflection deepens the learning and solidifies change.</p>
+            <!-- LIFE BALANCE & WORKBOOK -->
+            <div class="app-workbook-pair">
+                <div class="app-section">
+                    <h3>⚖️ Life Balance Scorecard</h3>
+                    <p>Assess your work-life balance across four key areas and create a strategic plan for wellbeing.</p>
+                    <a href="/apps.html#life-balance" class="app-button">Take Assessment</a>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="workbook-section">
+                    <h3>📖 Life Balance Optimization Workbook</h3>
+                    <p>Practical exercises and strategies to implement sustainable work-life balance based on your scorecard results.</p>
+                    <a href="#" class="workbook-button coming-soon">Coming Soon</a>
                 </div>
             </div>
 
-            <div class="app-card">
-                <div class="card-content">
-                    <h3>4. What would you really find helpful?</h3>
-                    <p>If there's an assessment or workbook that's missing from your toolkit, <a href="contact.html">let's have a conversation</a> about how we can work together to create exactly what you need.</p>
+            <!-- RESILIENCE & WORKBOOK -->
+            <div class="app-workbook-pair">
+                <div class="app-section">
+                    <h3>💪 Academic Resilience Assessment</h3>
+                    <p>Evaluate your resilience levels across different dimensions of academic life and identify strategies to thrive under pressure.</p>
+                    <a href="/apps.html#resilience" class="app-button">Take Assessment</a>
+                </div>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <div class="workbook-section">
+                    <h3>📖 Resilience Building Workbook</h3>
+                    <p>Evidence-based techniques and exercises to strengthen your resilience and thrive in challenging academic environments.</p>
+                    <a href="#" class="workbook-button coming-soon">Coming Soon</a>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">Available Workbooks</h2>
-        
-        <div class="workbooks-grid">
-            <div class="workbook-card">
-                <h3 class="workbook-title">Moving On: A Career Transition Guide</h3>
-                <p class="workbook-description">A comprehensive guide for senior academics considering their next career move, with practical exercises and strategic planning tools.</p>
-                <div class="workbook-status status-available">Available Now</div>
-                <a href="#" class="download-btn">Download Free</a>
-            </div>
-
-            <div class="workbook-card">
-                <h3 class="workbook-title">30-Day Reflective Journal</h3>
-                <p class="workbook-description">A structured daily reflection practice designed to help senior academics gain clarity, process transitions, and develop self-awareness over 30 days.</p>
-                <div class="workbook-status status-available">Available Now</div>
-                <a href="#" class="download-btn">Download Free</a>
-            </div>
-
-            <div class="workbook-card">
-                <h3 class="workbook-title">Leadership Presence in Academia</h3>
-                <p class="workbook-description">Develop your authentic leadership style and increase your influence within academic and non-academic environments.</p>
-                <div class="workbook-status status-coming-soon">Coming Soon</div>
-                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
-            </div>
-
-            <div class="workbook-card">
-                <h3 class="workbook-title">Research to Impact</h3>
-                <p class="workbook-description">Transform your research expertise into broader professional impact, whether in policy, industry, or consulting.</p>
-                <div class="workbook-status status-coming-soon">Coming Soon</div>
-                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
-            </div>
-
-            <div class="workbook-card">
-                <h3 class="workbook-title">Academic Resilience Toolkit</h3>
-                <p class="workbook-description">Build sustainable practices for managing stress, uncertainty, and the unique challenges of academic careers.</p>
-                <div class="workbook-status status-coming-soon">Coming Soon</div>
-                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
-            </div>
-
-            <div class="workbook-card">
-                <h3 class="workbook-title">Networking Beyond Academia</h3>
-                <p class="workbook-description">Strategic approaches to building professional relationships and networks outside traditional academic circles.</p>
-                <div class="workbook-status status-coming-soon">Coming Soon</div>
-                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
-            </div>
-
-            <div class="workbook-card">
-                <h3 class="workbook-title">Financial Planning for Academics</h3>
-                <p class="workbook-description">Practical financial strategies for academics transitioning between sectors or planning for life beyond academia.</p>
-                <div class="workbook-status status-coming-soon">Coming Soon</div>
-                <a href="contact.html" class="notify-btn">Notify Me When Available</a>
+        <!-- HOW IT WORKS SECTION -->
+        <div style="background: white; border-radius: 10px; padding: 2rem; margin: 3rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">How It Works</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center;">
+                <div>
+                    <div style="background: #3498db; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">1</div>
+                    <h3 style="margin-bottom: 0.5rem; color: #2c3e50;">Take the Assessment</h3>
+                    <p style="color: #666;">Complete our interactive assessment tool to gain insights into your current situation and preferences.</p>
+                </div>
+                
+                <div>
+                    <div style="background: #27ae60; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">2</div>
+                    <h3 style="margin-bottom: 0.5rem; color: #2c3e50;">Review Your Results</h3>
+                    <p style="color: #666;">Receive detailed, personalized feedback with specific insights tailored to your responses.</p>
+                </div>
+                
+                <div>
+                    <div style="background: #e74c3c; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">3</div>
+                    <h3 style="margin-bottom: 0.5rem; color: #2c3e50;">Use the Workbook</h3>
+                    <p style="color: #666;">Download the companion workbook with practical exercises to implement your results and create lasting change.</p>
+                </div>
             </div>
         </div>
-    </main>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
-    </script>
+    </div>
 </body>
 </html>
