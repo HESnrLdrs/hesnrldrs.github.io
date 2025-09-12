@@ -1,349 +1,445 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workbooks - Senior Academic Transformations</title>
+    <title>Workbooks | Senior Academic Transformations</title>
+    <meta name="description" content="Comprehensive development workbooks for senior academics. In-depth resources for career transition, resilience building, and leadership development.">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.7; 
+            color: var(--colour-dark); 
+            background-color: var(--colour-light); 
         }
-
-        /* NAVIGATION BAR - CONSISTENT WITH HOMEPAGE */
-        .main-nav {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        
+        /* Navigation Styles - EXACT MATCH FROM APPS.HTML */
+        nav {
+            background: var(--colour-white);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--colour-primary);
             text-decoration: none;
         }
 
         .nav-menu {
             display: flex;
+            justify-content: center;
+            flex: 1;
             list-style: none;
-            gap: 2rem;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap;
         }
 
         .nav-menu a {
+            color: var(--colour-dark);
             text-decoration: none;
-            color: #333;
             font-weight: 500;
-            transition: color 0.3s ease;
             padding: 0.5rem 1rem;
-            border-radius: 5px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            white-space: nowrap;
         }
 
-        .nav-menu a:hover {
-            color: #3498db;
-            background-color: #f8f9fa;
+        .nav-menu a:hover,
+        .nav-menu a.active,
+        .nav-menu a.current {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
         }
 
-        .nav-menu .current {
-            color: #3498db;
-            font-weight: 600;
+        .nav-menu li {
+            order: initial;
+            flex-shrink: 0;
         }
 
-        /* MAIN CONTENT */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--colour-primary);
         }
-
-        .hero-section {
+        
+        .container { 
+            width: 90%; 
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 2rem 0; 
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
+            padding: 3rem 1rem;
         }
-
-        .hero-section h1 {
+        
+        .page-header h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
         }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
+        
+        h2 { 
+            color: var(--colour-accent); 
+            border-bottom: 2px solid var(--colour-secondary); 
+            padding-bottom: 0.5rem; 
+            margin: 3rem 0 2rem 0; 
+            font-size: 2rem;
         }
-
-        /* APP-WORKBOOK INTEGRATION SECTION */
-        .integration-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
+        
+        .app-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 2rem; 
+            margin: 2rem 0; 
         }
-
-        .app-workbook-pair {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        .app-card { 
+            background: var(--colour-white); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow-light); 
+            transition: all 0.3s ease; 
+            border: 1px solid #eee; 
         }
-
-        .app-workbook-pair:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        
+        .app-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: var(--shadow-medium); 
         }
-
-        .app-section {
-            border-left: 4px solid #3498db;
-            padding-left: 1rem;
-            margin-bottom: 2rem;
+        
+        .card-content { 
+            padding: 2rem; 
         }
-
-        .app-section h3 {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .app-section p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .app-button {
-            background: #3498db;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .app-button:hover {
-            background: #2980b9;
-        }
-
-        .workbook-section {
-            border-left: 4px solid #27ae60;
-            padding-left: 1rem;
-        }
-
-        .workbook-section h3 {
-            font-size: 1.3rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .workbook-section p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .workbook-button {
-            background: #27ae60;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .workbook-button:hover {
-            background: #229954;
-        }
-
-        .coming-soon {
-            background: #95a5a6;
-            cursor: not-allowed;
-        }
-
-        .coming-soon:hover {
-            background: #95a5a6;
-        }
-
-        .flow-arrow {
+        
+        .btn { 
+            display: inline-block; 
+            background-color: var(--colour-primary); 
+            color: white; 
+            padding: 0.9rem 1.8rem; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            margin-top: 1.2rem; 
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 1rem; 
             text-align: center;
-            margin: 1rem 0;
-            font-size: 1.5rem;
-            color: #3498db;
         }
-
-        /* RESPONSIVE DESIGN */
+        
+        .btn:hover { 
+            background-color: var(--colour-accent); 
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--colour-secondary);
+            color: var(--colour-dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #d4a574;
+        }
+        
+        .intro-text { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            margin-bottom: 1.5rem;
+        }
+        
+        footer { 
+            background-color: var(--colour-dark); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 0; 
+            margin-top: 4rem; 
+        }
+        
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+        
+        /* Return to Top Button */
+        .return-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--colour-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .return-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .return-to-top:hover {
+            background-color: var(--colour-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Navigation */
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 1rem;
+            .mobile-menu-toggle {
+                display: block;
             }
             
             .nav-menu {
-                gap: 1rem;
-                font-size: 0.9rem;
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--colour-white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-light);
+                gap: 1.5rem;
+                flex-wrap: wrap;
             }
             
-            .integration-grid {
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .app-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
             }
             
             .container {
-                padding: 1rem;
-            }
-            
-            .hero-section h1 {
-                font-size: 2rem;
+                width: 95%;
+                padding: 1rem 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION BAR -->
-    <nav class="main-nav">
+    <!-- Navigation - EXACT MATCH FROM APPS.HTML -->
+    <nav role="navigation">
         <div class="nav-container">
-            <a href="/" class="logo">Senior Academic Transformations</a>
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
             <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/apps.html">Assessment Tools</a></li>
-                <li><a href="/workbooks.html" class="current">Workbooks</a></li>
-                <li><a href="/coaching.html">Coaching</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="workbooks.html" class="current">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <div class="container">
-        <div class="hero-section">
-            <h1>Assessment Tools & Companion Workbooks</h1>
-            <p>Take our interactive assessments to gain insights, then deepen your learning with our comprehensive companion workbooks. Each assessment is paired with a structured workbook to help you implement your results.</p>
-        </div>
+    <header class="page-header">
+        <h1>Development Workbooks</h1>
+        <p>Comprehensive resources for strategic career development and transformation</p>
+    </header>
 
-        <!-- APP-WORKBOOK INTEGRATION GRID -->
-        <div class="integration-grid">
-            <!-- SUPPORT STYLE FINDER & WORKBOOK -->
-            <div class="app-workbook-pair">
-                <div class="app-section">
-                    <h3>🎯 Support Style Finder</h3>
-                    <p>Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
-                    <a href="/apps.html#support-style" class="app-button">Take Assessment</a>
+    <main class="container">
+        <section id="workbooks-intro">
+            <p class="intro-text">Our development workbooks provide in-depth, structured approaches to implementing insights from your assessment results. Each workbook contains evidence-based frameworks, practical exercises, and strategic planning tools designed specifically for senior academics.</p>
+        </section>
+
+        <section id="how-to-use">
+            <h2>How to Use These Workbooks</h2>
+            <div class="app-grid">
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>1. Complete the Assessment First</h3>
+                        <p>Begin with the relevant assessment tool to understand your current situation and receive personalised insights that will guide your workbook journey.</p>
+                    </div>
                 </div>
                 
-                <div class="flow-arrow">↓</div>
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>2. Work Through Systematically</h3>
+                        <p>Each workbook is designed as a structured programme. Set aside dedicated time to engage meaningfully with the exercises and reflection prompts.</p>
+                    </div>
+                </div>
                 
-                <div class="workbook-section">
-                    <h3>📖 Support Style Development Workbook</h3>
-                    <p>A comprehensive guide to understanding and leveraging your support style preferences for maximum development impact.</p>
-                    <a href="#" class="workbook-button coming-soon">Coming Soon</a>
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>3. Apply and Implement</h3>
+                        <p>Use the strategic planning tools and action templates to translate insights into concrete steps and sustainable changes in your professional life.</p>
+                    </div>
+                </div>
+                
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>4. What would you really find helpful?</h3>
+                        <p>If there's a workbook topic that's missing from your development toolkit, <a href="contact.html">let's have a conversation</a> about how we can work together to create exactly what you need.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- CAREER TRANSITION & WORKBOOK -->
-            <div class="app-workbook-pair">
-                <div class="app-section">
-                    <h3>🚀 Career Transition Navigator</h3>
-                    <p>A structured, supportive guide to help you navigate career change with clarity and confidence.</p>
-                    <a href="/career-transition-app/" class="app-button">Take Assessment</a>
-                </div>
-                
-                <div class="flow-arrow">↓</div>
-                
-                <div class="workbook-section">
-                    <h3>📖 Career Transition Workbook</h3>
-                    <p>Step-by-step exercises and planning tools to implement your transition strategy and navigate change successfully.</p>
-                    <a href="#" class="workbook-button coming-soon">Coming Soon</a>
-                </div>
-            </div>
-
-            <!-- LIFE BALANCE & WORKBOOK -->
-            <div class="app-workbook-pair">
-                <div class="app-section">
-                    <h3>⚖️ Life Balance Scorecard</h3>
-                    <p>Assess your work-life balance across four key areas and create a strategic plan for wellbeing.</p>
-                    <a href="/apps.html#life-balance" class="app-button">Take Assessment</a>
-                </div>
-                
-                <div class="flow-arrow">↓</div>
-                
-                <div class="workbook-section">
-                    <h3>📖 Life Balance Optimization Workbook</h3>
-                    <p>Practical exercises and strategies to implement sustainable work-life balance based on your scorecard results.</p>
-                    <a href="#" class="workbook-button coming-soon">Coming Soon</a>
-                </div>
-            </div>
-
-            <!-- RESILIENCE & WORKBOOK -->
-            <div class="app-workbook-pair">
-                <div class="app-section">
-                    <h3>💪 Academic Resilience Assessment</h3>
-                    <p>Evaluate your resilience levels across different dimensions of academic life and identify strategies to thrive under pressure.</p>
-                    <a href="/apps.html#resilience" class="app-button">Take Assessment</a>
-                </div>
-                
-                <div class="flow-arrow">↓</div>
-                
-                <div class="workbook-section">
-                    <h3>📖 Resilience Building Workbook</h3>
-                    <p>Evidence-based techniques and exercises to strengthen your resilience and thrive in challenging academic environments.</p>
-                    <a href="#" class="workbook-button coming-soon">Coming Soon</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- HOW IT WORKS SECTION -->
-        <div style="background: white; border-radius: 10px; padding: 2rem; margin: 3rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">How It Works</h2>
+        <section id="available-workbooks">
+            <h2>Assessment Tools & Companion Workbooks</h2>
+            <p class="intro-text">Take our interactive assessments to gain insights, then deepen your learning with our comprehensive companion workbooks. Each assessment is paired with a structured workbook to help you implement your results.</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center;">
-                <div>
-                    <div style="background: #3498db; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">1</div>
-                    <h3 style="margin-bottom: 0.5rem; color: #2c3e50;">Take the Assessment</h3>
-                    <p style="color: #666;">Complete our interactive assessment tool to gain insights into your current situation and preferences.</p>
+            <div class="app-grid">
+                <!-- SUPPORT STYLE FINDER & WORKBOOK -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>🎯 Support Style Development</h3>
+                        <p><strong>Assessment:</strong> Support Style Finder - Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
+                        <p><strong>Workbook:</strong> A comprehensive guide to understanding and leveraging your support style preferences for maximum development impact.</p>
+                        <a href="https://hesnrldrs.github.io/support-style-app/" class="btn">Take Assessment</a>
+                        <a href="#" class="btn btn-secondary">Workbook Coming Soon</a>
+                    </div>
                 </div>
-                
-                <div>
-                    <div style="background: #27ae60; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">2</div>
-                    <h3 style="margin-bottom: 0.5rem; color: #2c3e50;">Review Your Results</h3>
-                    <p style="color: #666;">Receive detailed, personalized feedback with specific insights tailored to your responses.</p>
+
+                <!-- CAREER TRANSITION & WORKBOOK -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>🚀 Career Transition Planning</h3>
+                        <p><strong>Assessment:</strong> Career Transition Navigator - A structured, supportive guide to help you navigate career change with clarity and confidence.</p>
+                        <p><strong>Workbook:</strong> Step-by-step exercises and planning tools to implement your transition strategy and navigate change successfully.</p>
+                        <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn">Take Assessment</a>
+                        <a href="#" class="btn btn-secondary">Workbook Coming Soon</a>
+                    </div>
                 </div>
-                
-                <div>
-                    <div style="background: #e74c3c; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;">3</div>
-                    <h3 style="margin-bottom: 0.5rem; color: #2c3e50;">Use the Workbook</h3>
-                    <p style="color: #666;">Download the companion workbook with practical exercises to implement your results and create lasting change.</p>
+
+                <!-- LIFE BALANCE & WORKBOOK -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>⚖️ Life Balance Optimization</h3>
+                        <p><strong>Assessment:</strong> Life Balance Scorecard - Assess your work-life balance across four key areas and create a strategic plan for wellbeing.</p>
+                        <p><strong>Workbook:</strong> Practical exercises and strategies to implement sustainable work-life balance based on your scorecard results.</p>
+                        <a href="https://hesnrldrs.github.io/life-balance-app/" class="btn">Take Assessment</a>
+                        <a href="#" class="btn btn-secondary">Workbook Coming Soon</a>
+                    </div>
+                </div>
+
+                <!-- RESILIENCE & WORKBOOK -->
+                <div class="app-card">
+                    <div class="card-content">
+                        <h3>💪 Resilience Building</h3>
+                        <p><strong>Assessment:</strong> Academic Resilience Assessment - Evaluate your resilience levels across different dimensions of academic life.</p>
+                        <p><strong>Workbook:</strong> Evidence-based techniques and exercises to strengthen your resilience and thrive in challenging academic environments.</p>
+                        <a href="https://hesnrldrs.github.io/resilience-app/" class="btn">Take Assessment</a>
+                        <a href="#" class="btn btn-secondary">Workbook Coming Soon</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section id="next-steps" style="background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%); padding: 3rem 2rem; border-radius: 12px; margin: 3rem 0; border: 2px solid var(--colour-secondary); text-align: center;">
+            <h2 style="border: none; margin-bottom: 1rem;">Ready to Begin Your Development Journey?</h2>
+            <p class="intro-text">Start with any assessment that resonates with your current situation, or explore our comprehensive toolkit for a complete transformation strategy.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="apps.html" class="btn">Start with Assessments</a>
+                <a href="toolkit.html" class="btn btn-secondary">Try Free Transformation Toolkit</a>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
+        Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
+    </footer>
+
+    <!-- Return to Top Button -->
+    <button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                // Update aria-label for accessibility
+                const isOpen = navMenu.classList.contains('active');
+                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+                });
+            });
+        }
+        
+        // Return to Top Button
+        const returnToTopButton = document.querySelector('.return-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                returnToTopButton.classList.add('visible');
+            } else {
+                returnToTopButton.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        console.log('Workbooks page loaded successfully');
+    </script>
 </body>
 </html>
