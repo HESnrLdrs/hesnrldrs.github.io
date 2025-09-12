@@ -1,104 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing - Senior Academic Transformations</title>
+    <title>Coaching | Senior Academic Transformations</title>
+    <meta name="description" content="Professional coaching programmes for senior academics. From free discovery calls to comprehensive transformation programmes.">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.7; 
+            color: var(--colour-dark); 
+            background-color: var(--colour-light); 
         }
-
-        /* NAVIGATION BAR - CONSISTENT WITH HOMEPAGE */
-        .main-nav {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        
+        /* Navigation Styles - EXACT MATCH */
+        nav {
+            background: var(--colour-white);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--colour-primary);
             text-decoration: none;
         }
 
         .nav-menu {
             display: flex;
+            justify-content: center;
+            flex: 1;
             list-style: none;
-            gap: 2rem;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap;
         }
 
         .nav-menu a {
+            color: var(--colour-dark);
             text-decoration: none;
-            color: #333;
             font-weight: 500;
-            transition: color 0.3s ease;
             padding: 0.5rem 1rem;
-            border-radius: 5px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            white-space: nowrap;
         }
 
-        .nav-menu a:hover {
-            color: #3498db;
-            background-color: #f8f9fa;
+        .nav-menu a:hover,
+        .nav-menu a.active,
+        .nav-menu a.current {
+            color: var(--colour-primary);
+            background-color: var(--colour-light);
         }
 
-        .nav-menu .current {
-            color: #3498db;
-            font-weight: 600;
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--colour-primary);
         }
-
-        /* MAIN CONTENT */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        
+        .container { 
+            width: 90%; 
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 2rem 0; 
         }
-
-        .hero-section {
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
+            padding: 3rem 1rem;
         }
-
-        .hero-section h1 {
+        
+        .page-header h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
         }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
+        
+        .intro-text { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            margin-bottom: 2rem;
+            text-align: center;
         }
-
+        
         /* 2×2 GRID LAYOUT */
-        .pricing-grid {
+        .coaching-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
             gap: 2rem;
             margin: 3rem 0;
             max-width: 1000px;
@@ -106,84 +129,97 @@
             margin-right: auto;
         }
 
-        .pricing-card {
-            background: white;
-            border-radius: 10px;
+        .coaching-card {
+            background: var(--colour-white);
+            border-radius: 12px;
             padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            border: 1px solid #eee;
         }
 
-        .pricing-card:hover {
+        .coaching-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-medium);
         }
 
-        .pricing-card h3 {
+        .coaching-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
+            color: var(--colour-accent);
         }
 
-        .pricing-card .price {
+        .coaching-card .price {
             font-size: 2rem;
             font-weight: bold;
-            color: #3498db;
+            color: var(--colour-primary);
             margin-bottom: 1rem;
         }
 
-        .pricing-card ul {
+        .coaching-card .price.free {
+            color: var(--colour-success);
+        }
+
+        .coaching-card ul {
             list-style: none;
             margin: 1rem 0;
             flex-grow: 1;
         }
 
-        .pricing-card ul li {
+        .coaching-card ul li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
             position: relative;
             padding-left: 1.5rem;
         }
 
-        .pricing-card ul li:before {
+        .coaching-card ul li:before {
             content: "✓";
-            color: #27ae60;
+            color: var(--colour-success);
             font-weight: bold;
             position: absolute;
             left: 0;
         }
 
-        .cta-button {
-            background: #3498db;
+        .btn {
+            background: var(--colour-primary);
             color: white;
             padding: 1rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             margin-top: 1rem;
         }
 
-        .cta-button:hover {
-            background: #2980b9;
+        .btn:hover {
+            background: var(--colour-accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: var(--colour-success);
+        }
+
+        .btn-success:hover {
+            background: #218838;
         }
 
         .featured {
-            border: 3px solid #3498db;
+            border: 3px solid var(--colour-primary);
             position: relative;
         }
 
         .featured:before {
             content: "MOST POPULAR";
-            background: #3498db;
+            background: var(--colour-primary);
             color: white;
             padding: 0.5rem 1rem;
             font-size: 0.8rem;
@@ -195,123 +231,261 @@
             border-radius: 15px;
         }
 
-        /* RESPONSIVE DESIGN */
+        .free-highlight {
+            border: 3px solid var(--colour-success);
+            position: relative;
+        }
+
+        .free-highlight:before {
+            content: "START HERE";
+            background: var(--colour-success);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+        }
+        
+        footer { 
+            background-color: var(--colour-dark); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 0; 
+            margin-top: 4rem; 
+        }
+        
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+        
+        /* Return to Top Button */
+        .return-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--colour-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .return-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .return-to-top:hover {
+            background-color: var(--colour-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile Navigation & Layout */
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 1rem;
+            .mobile-menu-toggle {
+                display: block;
             }
             
             .nav-menu {
-                gap: 1rem;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--colour-white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-light);
                 gap: 1.5rem;
             }
             
-            .container {
-                padding: 1rem;
+            .nav-menu.active {
+                display: flex;
             }
             
-            .hero-section h1 {
+            .coaching-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .page-header h1 {
                 font-size: 2rem;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 1rem 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION BAR -->
-    <nav class="main-nav">
+    <!-- Navigation -->
+    <nav role="navigation">
         <div class="nav-container">
-            <a href="/" class="logo">Senior Academic Transformations</a>
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
             <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/apps.html">Assessment Tools</a></li>
-                <li><a href="/workbooks.html">Workbooks</a></li>
-                <li><a href="/coaching.html">Coaching</a></li>
-                <li><a href="/pricing.html" class="current">Pricing</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html" class="current">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <div class="container">
-        <div class="hero-section">
-            <h1>Choose Your Transformation Journey</h1>
-            <p>Professional coaching and development programmes designed specifically for senior academics navigating career transitions and leadership challenges.</p>
-        </div>
+    <header class="page-header">
+        <h1>Professional Coaching</h1>
+        <p>Personalised support for senior academics navigating career transitions and leadership challenges</p>
+    </header>
 
-        <!-- 2×2 PRICING GRID -->
-        <div class="pricing-grid">
-            <!-- TOP LEFT -->
-            <div class="pricing-card">
+    <main class="container">
+        <p class="intro-text">Professional coaching provides the personalised guidance, accountability, and strategic support you need to navigate complex career decisions and leadership challenges with confidence.</p>
+
+        <!-- 2×2 COACHING GRID -->
+        <div class="coaching-grid">
+            <!-- TOP LEFT - FREE OFFER FIRST -->
+            <div class="coaching-card free-highlight">
                 <div>
-                    <h3>Discovery Session</h3>
-                    <div class="price">£150</div>
+                    <h3>🎯 Discovery Call</h3>
+                    <div class="price free">FREE</div>
                     <ul>
-                        <li>90-minute career assessment</li>
-                        <li>Personal SWOT analysis</li>
-                        <li>Initial action plan</li>
-                        <li>Resource recommendations</li>
-                        <li>Follow-up summary report</li>
+                        <li>45-minute career conversation</li>
+                        <li>Assess your current situation</li>
+                        <li>Identify key challenges and opportunities</li>
+                        <li>Explore how coaching could help</li>
+                        <li>No obligation to continue</li>
                     </ul>
                 </div>
-                <a href="/contact.html" class="cta-button">Book Discovery</a>
+                <a href="contact.html" class="btn btn-success">Book Free Discovery Call</a>
             </div>
 
-            <!-- TOP RIGHT -->
-            <div class="pricing-card">
+            <!-- TOP RIGHT - TIER 1 -->
+            <div class="coaching-card">
                 <div>
-                    <h3>Skills Development</h3>
+                    <h3>🌱 Foundation Programme</h3>
                     <div class="price">£750</div>
                     <ul>
-                        <li>6-session programme</li>
-                        <li>Targeted skill building</li>
-                        <li>Practice assignments</li>
-                        <li>Progress tracking</li>
-                        <li>Resource library access</li>
+                        <li>6 x 60-minute coaching sessions</li>
+                        <li>Assessment tools and frameworks</li>
+                        <li>Personal development planning</li>
+                        <li>Email support between sessions</li>
+                        <li>Progress tracking and review</li>
                     </ul>
                 </div>
-                <a href="/contact.html" class="cta-button">Start Development</a>
+                <a href="contact.html" class="btn">Start Foundation Programme</a>
             </div>
 
-            <!-- BOTTOM LEFT -->
-            <div class="pricing-card">
+            <!-- BOTTOM LEFT - TIER 2 -->
+            <div class="coaching-card">
                 <div>
-                    <h3>Leadership Transition</h3>
-                    <div class="price">£1,200</div>
+                    <h3>🚀 Leadership Transition</h3>
+                    <div class="price">£1,500</div>
                     <ul>
-                        <li>10-session intensive</li>
-                        <li>Leadership assessment tools</li>
-                        <li>Stakeholder management</li>
+                        <li>10 x 90-minute intensive sessions</li>
+                        <li>Leadership assessment and 360 feedback</li>
+                        <li>Stakeholder management strategies</li>
                         <li>Change navigation skills</li>
-                        <li>6-month email support</li>
+                        <li>3 months ongoing email support</li>
                     </ul>
                 </div>
-                <a href="/contact.html" class="cta-button">Begin Transition</a>
+                <a href="contact.html" class="btn">Begin Leadership Transition</a>
             </div>
 
-            <!-- BOTTOM RIGHT - FLAGSHIP -->
-            <div class="pricing-card featured">
+            <!-- BOTTOM RIGHT - TIER 3 FLAGSHIP -->
+            <div class="coaching-card featured">
                 <div>
-                    <h3>Complete Transformation</h3>
+                    <h3>🎖️ Complete Transformation</h3>
                     <div class="price">£3,500</div>
                     <ul>
                         <li>12-month comprehensive programme</li>
-                        <li>Monthly 1:1 coaching sessions</li>
+                        <li>Monthly 90-minute coaching sessions</li>
                         <li>All assessment tools included</li>
-                        <li>Career strategy development</li>
-                        <li>Leadership skills enhancement</li>
-                        <li>Ongoing email/phone support</li>
+                        <li>Strategic career planning</li>
+                        <li>Leadership development pathway</li>
+                        <li>Unlimited email and phone support</li>
                         <li>Quarterly progress reviews</li>
                     </ul>
                 </div>
-                <a href="/contact.html" class="cta-button">Transform Your Career</a>
+                <a href="contact.html" class="btn">Transform Your Career</a>
             </div>
         </div>
-    </div>
+
+        <section style="background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%); padding: 3rem 2rem; border-radius: 12px; margin: 3rem 0; border: 2px solid var(--colour-secondary); text-align: center;">
+            <h2 style="color: var(--colour-accent); margin-bottom: 1rem;">Not Sure Which Programme is Right for You?</h2>
+            <p class="intro-text">Start with a free discovery call to explore your situation and discuss which approach would be most beneficial for your goals.</p>
+            <div style="margin-top: 2rem;">
+                <a href="contact.html" class="btn btn-success" style="margin-right: 1rem;">Book Free Discovery Call</a>
+                <a href="apps.html" class="btn" style="background: var(--colour-secondary); color: var(--colour-dark);">Take Assessment First</a>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Paul Thomas Coaching. Senior Academic Transformations is a service of Paul Thomas Coaching.<br>
+        Website: <a href="https://www.senioracademictransformations.co.uk">www.senioracademictransformations.co.uk</a></p>
+    </footer>
+
+    <!-- Return to Top Button -->
+    <button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                const isOpen = navMenu.classList.contains('active');
+                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
+            });
+            
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
+                });
+            });
+        }
+        
+        // Return to Top Button
+        const returnToTopButton = document.querySelector('.return-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                returnToTopButton.classList.add('visible');
+            } else {
+                returnToTopButton.classList.remove('visible');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        console.log('Coaching page loaded successfully');
+    </script>
 </body>
 </html>
