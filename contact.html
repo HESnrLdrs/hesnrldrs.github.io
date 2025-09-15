@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Senior Academic Transformations</title>
     <style>
-        /* EXACT Navigation CSS from working homepage */
         :root { 
             --colour-primary: #4A6FA5; 
             --colour-secondary: #E6B89C; 
@@ -31,10 +30,9 @@
             background-color: var(--colour-light); 
         }
 
-        /* Navigation Styles */
+        /* STANDARDIZED BLUE GRADIENT NAVIGATION */
         nav {
-            background: var(--colour-white);
-            box-shadow: var(--shadow-light);
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -42,53 +40,36 @@
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
         }
 
         .logo {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: var(--colour-primary);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
             text-decoration: none;
         }
 
         .nav-menu {
             display: flex;
-            justify-content: center;
-            flex: 1;
             list-style: none;
-            gap: 1rem;
-            margin: 0;
-            padding: 0;
-            flex-wrap: nowrap;
+            gap: 2rem;
         }
 
         .nav-menu a {
-            color: var(--colour-dark);
+            color: white;
             text-decoration: none;
+            transition: color 0.3s;
             font-weight: 500;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            white-space: nowrap;
         }
 
-        .nav-menu a:hover,
-        .nav-menu a.active,
-        .nav-menu a.current {
-            color: var(--colour-primary);
-            background-color: var(--colour-light);
-        }
-
-        .nav-menu li {
-            order: initial;
-            flex-shrink: 0;
+        .nav-menu a:hover, .nav-menu a.active, .nav-menu a.current {
+            color: #ffd700;
         }
 
         .mobile-menu-toggle {
@@ -97,39 +78,7 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--colour-white);
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: var(--shadow-light);
-                gap: 1.5rem;
-                flex-wrap: wrap;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu li:nth-child(1) { order: 1; }
-            .nav-menu li:nth-child(2) { order: 2; }
-            .nav-menu li:nth-child(3) { order: 3; }
-            .nav-menu li:nth-child(4) { order: 4; }
-            .nav-menu li:nth-child(5) { order: 5; }
-            .nav-menu li:nth-child(6) { order: 6; }
-            .nav-menu li:nth-child(7) { order: 7; }
-            .nav-menu li:nth-child(8) { order: 8; }
+            color: white;
         }
 
         /* Contact Page Styles */
@@ -315,6 +264,26 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1.5rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
             .page-hero h1 {
                 font-size: 2.2rem;
             }
@@ -322,19 +291,6 @@
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .discovery-call-section {
-                padding: 2rem 1rem;
-            }
-
-            .discovery-form {
-                padding: 2rem;
             }
 
             .contact-info,
@@ -345,6 +301,7 @@
     </style>
 </head>
 <body>
+    <!-- STANDARDIZED NAVIGATION -->
     <nav role="navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">Senior Academic Transformations</a>
@@ -356,7 +313,7 @@
                 <li><a href="coaching.html">Coaching</a></li>
                 <li><a href="contact.html" class="current">Contact</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="aboutpaul.html">About</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
