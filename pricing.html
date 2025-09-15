@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing - Senior Academic Transformations</title>
+    <title>Coaching Packages - Senior Academic Transformations</title>
     <style>
         * {
             margin: 0;
@@ -15,303 +15,430 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
+            background: #f8f9fa;
         }
 
-        /* NAVIGATION BAR - CONSISTENT WITH HOMEPAGE */
-        .main-nav {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
         }
 
         .logo {
+            color: white;
             font-size: 1.5rem;
             font-weight: bold;
-            color: #2c3e50;
             text-decoration: none;
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        .nav-menu a {
+        .nav-links a {
+            color: white;
             text-decoration: none;
-            color: #333;
+            transition: color 0.3s;
             font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
         }
 
-        .nav-menu a:hover {
-            color: #3498db;
-            background-color: #f8f9fa;
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffd700;
         }
 
-        .nav-menu .current {
-            color: #3498db;
-            font-weight: 600;
-        }
-
-        /* MAIN CONTENT */
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
         }
 
-        .hero-section {
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 4rem 0;
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
         }
 
-        .hero-section h1 {
-            font-size: 2.5rem;
+        .page-hero h1 {
+            font-size: 2.8rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
+            font-weight: normal;
         }
 
-        .hero-section p {
+        .page-hero p {
             font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
+            opacity: 0.95;
         }
 
-        /* 2×2 GRID LAYOUT */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
-            max-width: 1000px;
+        /* Discovery Session Section */
+        .discovery-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .discovery-card {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .discovery-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .discovery-card .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .discovery-card p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .discovery-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        .discovery-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .discovery-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
         .pricing-card {
             background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
 
         .pricing-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #28a745;
+            transform: scale(1.05);
+        }
+
+        .featured-badge {
+            background: #28a745;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
         .pricing-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
+            color: #1e3a5f;
         }
 
         .pricing-card .price {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bold;
-            color: #3498db;
-            margin-bottom: 1rem;
+            color: #28a745;
+            margin-bottom: 0.5rem;
         }
 
-        .pricing-card ul {
+        .pricing-card .period {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .pricing-features {
             list-style: none;
-            margin: 1rem 0;
-            flex-grow: 1;
+            margin-bottom: 2rem;
+            text-align: left;
         }
 
-        .pricing-card ul li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-            position: relative;
+        .pricing-features li {
+            color: #555;
+            margin-bottom: 0.8rem;
             padding-left: 1.5rem;
+            position: relative;
         }
 
-        .pricing-card ul li:before {
+        .pricing-features li:before {
             content: "✓";
-            color: #27ae60;
-            font-weight: bold;
             position: absolute;
             left: 0;
-        }
-
-        .cta-button {
-            background: #3498db;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 1rem;
-        }
-
-        .cta-button:hover {
-            background: #2980b9;
-        }
-
-        .featured {
-            border: 3px solid #3498db;
-            position: relative;
-        }
-
-        .featured:before {
-            content: "MOST POPULAR";
-            background: #3498db;
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
+            color: #28a745;
             font-weight: bold;
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 15px;
         }
 
-        /* RESPONSIVE DESIGN */
+        .btn-primary {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, #ff6b35, #ff8e53);
+            color: white;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 1rem;
-            }
-            
-            .nav-menu {
-                gap: 1rem;
-            }
-            
             .pricing-grid {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                gap: 1.5rem;
             }
-            
-            .container {
-                padding: 1rem;
+
+            .pricing-card.featured {
+                transform: none;
             }
-            
-            .hero-section h1 {
+
+            .nav-links {
+                display: none;
+            }
+
+            .page-hero h1 {
                 font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- NAVIGATION BAR -->
-    <nav class="main-nav">
+    <!-- Navigation -->
+    <nav>
         <div class="nav-container">
-            <a href="/" class="logo">Senior Academic Transformations</a>
-            <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/apps.html">Assessment Tools</a></li>
-                <li><a href="/workbooks.html">Workbooks</a></li>
-                <li><a href="/coaching.html">Coaching</a></li>
-                <li><a href="/pricing.html" class="current">Pricing</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <div class="container">
-        <div class="hero-section">
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
             <h1>Choose Your Transformation Journey</h1>
             <p>Professional coaching and development programmes designed specifically for senior academics navigating career transitions and leadership challenges.</p>
         </div>
+    </section>
 
-        <!-- 2×2 PRICING GRID -->
-        <div class="pricing-grid">
-            <!-- TOP LEFT -->
-            <div class="pricing-card">
-                <div>
-                    <h3>Discovery Session</h3>
-                    <div class="price">£150</div>
-                    <ul>
-                        <li>90-minute career assessment</li>
-                        <li>Personal SWOT analysis</li>
-                        <li>Initial action plan</li>
-                        <li>Resource recommendations</li>
-                        <li>Follow-up summary report</li>
-                    </ul>
-                </div>
-                <a href="/contact.html" class="cta-button">Book Discovery</a>
-            </div>
-
-            <!-- TOP RIGHT -->
-            <div class="pricing-card">
-                <div>
-                    <h3>Skills Development</h3>
-                    <div class="price">£750</div>
-                    <ul>
-                        <li>6-session programme</li>
-                        <li>Targeted skill building</li>
-                        <li>Practice assignments</li>
-                        <li>Progress tracking</li>
-                        <li>Resource library access</li>
-                    </ul>
-                </div>
-                <a href="/contact.html" class="cta-button">Start Development</a>
-            </div>
-
-            <!-- BOTTOM LEFT -->
-            <div class="pricing-card">
-                <div>
-                    <h3>Leadership Transition</h3>
-                    <div class="price">£1,200</div>
-                    <ul>
-                        <li>10-session intensive</li>
-                        <li>Leadership assessment tools</li>
-                        <li>Stakeholder management</li>
-                        <li>Change navigation skills</li>
-                        <li>6-month email support</li>
-                    </ul>
-                </div>
-                <a href="/contact.html" class="cta-button">Begin Transition</a>
-            </div>
-
-            <!-- BOTTOM RIGHT - FLAGSHIP -->
-            <div class="pricing-card featured">
-                <div>
-                    <h3>Complete Transformation</h3>
-                    <div class="price">£3,500</div>
-                    <ul>
-                        <li>12-month comprehensive programme</li>
-                        <li>Monthly 1:1 coaching sessions</li>
-                        <li>All assessment tools included</li>
-                        <li>Career strategy development</li>
-                        <li>Leadership skills enhancement</li>
-                        <li>Ongoing email/phone support</li>
-                        <li>Quarterly progress reviews</li>
-                    </ul>
-                </div>
-                <a href="/contact.html" class="cta-button">Transform Your Career</a>
+    <!-- Discovery Session Section -->
+    <section class="discovery-section">
+        <div class="container">
+            <div class="discovery-card">
+                <h2>Start with a Free Discovery Session</h2>
+                <div class="price">FREE</div>
+                <p>A 30-minute conversation to explore your current situation, challenges, and aspirations. No obligation, just clarity and insight.</p>
+                <ul class="discovery-features">
+                    <li>Understand your unique situation</li>
+                    <li>Clarify your goals and challenges</li>
+                    <li>Explore how coaching could help</li>
+                    <li>Receive immediate insights and next steps</li>
+                    <li>No sales pressure, just genuine support</li>
+                </ul>
+                <a href="contact.html" class="btn-cta">Book Your Free Discovery Session</a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Coaching Programmes</h2>
+            <p class="section-subtitle">Choose the level of support that matches your needs and commitment to transformation.</p>
+            
+            <div class="pricing-grid">
+                <!-- Essential Package -->
+                <div class="pricing-card">
+                    <h3>Essential</h3>
+                    <div class="price">£150</div>
+                    <div class="period">per session</div>
+                    <p>Perfect for focused support on specific challenges or decisions you're facing.</p>
+                    <ul class="pricing-features">
+                        <li>One-off 90-minute session</li>
+                        <li>Assessment tool included</li>
+                        <li>Personalised action plan</li>
+                        <li>Follow-up resources</li>
+                        <li>Email support for 2 weeks</li>
+                    </ul>
+                    <a href="contact.html" class="btn-secondary">Book Essential Session</a>
+                </div>
+
+                <!-- Transformation Package (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Transformation</h3>
+                    <div class="price">£1,200</div>
+                    <div class="period">3-month programme</div>
+                    <p>Comprehensive support for significant career transitions and leadership development.</p>
+                    <ul class="pricing-features">
+                        <li>6 x 90-minute coaching sessions</li>
+                        <li>Complete assessment suite</li>
+                        <li>All workbooks included</li>
+                        <li>Strategic planning workshop</li>
+                        <li>Ongoing email support</li>
+                        <li>Resource library access</li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary">Start Transformation</a>
+                </div>
+
+                <!-- Executive Package -->
+                <div class="pricing-card">
+                    <h3>Executive</h3>
+                    <div class="price">£2,500</div>
+                    <div class="period">6-month programme</div>
+                    <p>Intensive support for senior leaders navigating complex organizational and career challenges.</p>
+                    <ul class="pricing-features">
+                        <li>12 x 90-minute coaching sessions</li>
+                        <li>360-degree feedback process</li>
+                        <li>Leadership development plan</li>
+                        <li>Monthly check-in calls</li>
+                        <li>Emergency support access</li>
+                        <li>Complete resource library</li>
+                        <li>Partner/team sessions available</li>
+                    </ul>
+                    <a href="contact.html" class="btn-secondary">Discuss Executive Programme</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: #666; margin-bottom: 2rem;">All programmes include assessment tools, workbooks, and ongoing support. Payment plans available.</p>
+                <a href="contact.html" class="btn-cta">Book Your Free Discovery Session</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
