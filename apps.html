@@ -234,7 +234,14 @@
             }
 
             .nav-links {
-                display: none;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
             }
 
             .page-hero h1 {
@@ -253,11 +260,13 @@
         <div class="nav-container">
             <a href="index.html" class="logo">Senior Academic Transformations</a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="apps.html" class="active">Apps</a></li>
                 <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="pricing.html#discovery">Free</a></li>
                 <li><a href="coaching.html">Coaching</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
