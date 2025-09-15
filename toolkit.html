@@ -1,37 +1,26 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Career Transformation Toolkit | Senior Academic Transformations</title>
-    <meta name="description" content="Interactive tools to design your strategic transformation. Five comprehensive assessments to help senior academics explore their career options with confidence.">
-    
+    <title>Free Toolkit - Senior Academic Transformations</title>
     <style>
-        :root { 
-            --colour-primary: #4A6FA5; 
-            --colour-secondary: #E6B89C; 
-            --colour-accent: #166088; 
-            --colour-light: #F9F5EB; 
-            --colour-dark: #333333; 
-            --colour-white: #ffffff;
-            --colour-success: #28a745;
-            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
-            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Georgia', 'Times New Roman', serif; 
-            line-height: 1.7; 
-            color: var(--colour-dark); 
-            background-color: var(--colour-light); 
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
         }
-        
-        /* Navigation Styles */
+
+        /* Navigation - STANDARDIZED BLUE GRADIENT */
         nav {
-            background: var(--colour-white);
-            box-shadow: var(--shadow-light);
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             padding: 1rem 0;
             position: sticky;
             top: 0;
@@ -39,627 +28,369 @@
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
         }
 
         .logo {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: var(--colour-primary);
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-            list-style: none;
-            gap: 1rem;
-            margin: 0;
-            padding: 0;
-            flex-wrap: nowrap;
-        }
-
-        .nav-menu a {
-            color: var(--colour-dark);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            white-space: nowrap;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active,
-        .nav-menu a.current {
-            color: var(--colour-primary);
-            background-color: var(--colour-light);
-        }
-
-        .nav-menu li {
-            order: initial;
-            flex-shrink: 0;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--colour-primary);
-        }
-        
-        .toolkit-badge {
-            background: var(--colour-success);
             color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.9rem;
+            font-size: 1.5rem;
             font-weight: bold;
+            text-decoration: none;
         }
-        
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffd700;
+        }
+
+        /* Container */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
         }
-        
-        .toolkit-header {
+
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 4rem 0;
             text-align: center;
-            margin-bottom: 3rem;
         }
-        
-        .toolkit-header h1 {
-            font-size: 2.5rem;
-            color: var(--colour-dark);
+
+        .page-hero h1 {
+            font-size: 2.8rem;
             margin-bottom: 1rem;
+            font-weight: normal;
         }
-        
-        .introduction {
-            background: var(--colour-white);
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+
+        .page-hero p {
+            font-size: 1.2rem;
             max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Toolkit Section */
+        .toolkit-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #666;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
-        
-        .introduction h2 {
-            color: var(--colour-accent);
+
+        /* 2x2 Toolkit Grid */
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .toolkit-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #28a745;
+        }
+
+        .toolkit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .toolkit-card h3 {
+            color: #1e3a5f;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
         }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+
+        .toolkit-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
-        
-        .benefit-list {
+
+        .toolkit-features {
             list-style: none;
+            margin-bottom: 1.5rem;
         }
-        
-        .benefit-list li {
-            margin: 0.8rem 0;
+
+        .toolkit-features li {
+            color: #555;
+            margin-bottom: 0.5rem;
             padding-left: 1.5rem;
             position: relative;
         }
-        
-        .benefit-list li:before {
+
+        .toolkit-features li:before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: var(--colour-success);
+            color: #28a745;
             font-weight: bold;
         }
-        
-        .outcomes-box {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
+
+        .btn-primary {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
         }
-        
-        .user-info-form {
-            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-            border: 2px solid var(--colour-success);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
         }
-        
-        .form-grid {
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
+        }
+
+        /* How to Use Section */
+        .how-to-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .how-to-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
         }
-        
-        .form-input {
-            padding: 0.8rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: Georgia, serif;
-            font-size: 1rem;
-        }
-        
-        .toolkit-content {
-            background: var(--colour-white);
+
+        .how-to-card {
+            background: white;
             border-radius: 12px;
             padding: 2rem;
-            box-shadow: var(--shadow-light);
-            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
-        .tool-section {
-            margin: 2rem 0;
-            padding: 2rem;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-        }
-        
-        .tool-section h3 {
-            color: var(--colour-primary);
-            margin-bottom: 1rem;
+
+        .step-number {
+            background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-input-full {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-family: Georgia, serif;
-            resize: vertical;
-        }
-        
-        .btn {
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-family: Georgia, serif;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-success {
-            background: var(--colour-success);
-            color: white;
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
-        }
-        
-        .btn-success:hover {
-            background: #218838;
-            transform: translateY(-2px);
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, var(--colour-primary) 0%, #9c27b0 100%);
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem auto;
         }
-        
-        .btn-white {
-            background: white;
-            color: var(--colour-primary);
+
+        .how-to-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
         }
-        
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
+
+        .how-to-card p {
+            color: #666;
+            line-height: 1.6;
         }
-        
-        .footer-links {
-            text-align: center;
-            margin: 2rem 0;
-            padding: 2rem 0;
-            border-top: 1px solid #ddd;
-        }
-        
-        .footer-links a {
-            color: var(--colour-primary);
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        
-        .hidden { display: none; }
-        
-        /* Mobile Navigation */
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
+            .toolkit-grid,
+            .how-to-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--colour-white);
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: var(--shadow-light);
-                gap: 1.5rem;
-                flex-wrap: wrap;
-            }
-            
-            .nav-menu.active {
+
+            .nav-links {
                 display: flex;
+                flex-direction: column;
+                gap: 1rem;
             }
-            
-            .nav-menu li:nth-child(1) { order: 1; }
-            .nav-menu li:nth-child(2) { order: 2; }
-            .nav-menu li:nth-child(3) { order: 3; }
-            .nav-menu li:nth-child(4) { order: 4; }
-            .nav-menu li:nth-child(5) { order: 5; }
-            .nav-menu li:nth-child(6) { order: 6; }
-            .nav-menu li:nth-child(7) { order: 7; }
-            
-            .container { padding: 1rem; }
-            .toolkit-header h1 { font-size: 2rem; }
-            .form-grid { grid-template-columns: 1fr; }
-            .cta-buttons { flex-direction: column; align-items: center; }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
         }
-   /* Return to Top Button */
-.return-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: var(--colour-primary);
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    box-shadow: var(--shadow-medium);
-    transition: all 0.3s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 999;
-}
-
-.return-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.return-to-top:hover {
-    background-color: var(--colour-accent);
-    transform: translateY(-2px);
-}
     </style>
 </head>
-<!-- Return to Top Button -->
-<button class="return-to-top" onclick="scrollToTop()" aria-label="Return to top">↑</button>
-
-<script>
-// Return to Top Button
-const returnToTopButton = document.querySelector('.return-to-top');
-
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        returnToTopButton.classList.add('visible');
-    } else {
-        returnToTopButton.classList.remove('visible');
-    }
-});
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-</script>
-    <body>
-    <!-- Navigation -->
-    <nav role="navigation">
+<body>
+    <!-- STANDARDIZED NAVIGATION -->
+    <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Senior Academic Transformations</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
-            <ul class="nav-menu">
+            <ul class="nav-links">
                 <li><a href="apps.html">Apps</a></li>
                 <li><a href="workbooks.html">Workbooks</a></li>
-                <li><a href="toolkit.html" class="current">Free Toolkit</a></li>
+                <li><a href="toolkit.html" class="active">Free Toolkit</a></li>
                 <li><a href="coaching.html">Coaching</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="aboutpaul.html">About</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="toolkit-header">
-            <h1>Academic Career Transformation Toolkit</h1>
-            <p style="font-size: 1.2rem; color: var(--colour-accent); margin-bottom: 0.5rem;">Interactive tools to design your strategic transformation to whatever comes next</p>
-            <p style="color: var(--colour-success); font-weight: bold;">Complimentary from Senior Academic Transformations</p>
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Free Assessment Toolkit</h1>
+            <p>Start your transformation journey with our comprehensive free assessment tools. Evidence-based, immediately actionable, and designed specifically for senior academics.</p>
+        </div>
+    </section>
 
-            <div class="introduction">
-                <h2>What is this toolkit?</h2>
-                <p>Whether you're contemplating a move into industry, considering consultancy, exploring entrepreneurship, transitioning to policy work, or simply reimagining your academic career, this comprehensive toolkit guides you through the five essential components of any successful career transformation.</p>
-
-                <h3 style="color: var(--colour-primary); margin: 1.5rem 0 1rem 0;">Why use these tools?</h3>
-                <div class="benefits-grid">
-                    <ul class="benefit-list">
-                        <li>Move beyond the "what am I supposed to do?" confusion</li>
-                        <li>Recognise your most valuable transferable skills</li>
-                        <li>Create a realistic timeline that actually works</li>
+    <!-- Toolkit Grid Section -->
+    <section class="toolkit-section">
+        <div class="container">
+            <h2 class="section-title">Your Complete Free Toolkit</h2>
+            <p class="section-subtitle">Four powerful assessment tools to give you immediate insights into your leadership style, career readiness, life balance, and resilience levels.</p>
+            
+            <!-- 2x2 Toolkit Grid -->
+            <div class="toolkit-grid">
+                <!-- Tool 1 -->
+                <div class="toolkit-card">
+                    <h3>Support Style Finder</h3>
+                    <p>Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
+                    <ul class="toolkit-features">
+                        <li>10-minute comprehensive assessment</li>
+                        <li>Instant personalized results</li>
+                        <li>Development recommendations</li>
+                        <li>PDF report download</li>
                     </ul>
-                    <ul class="benefit-list">
-                        <li>Explore options where you'll genuinely flourish</li>
-                        <li>Make the most of connections you already have</li>
-                        <li>Plan your finances to reduce transition anxiety</li>
+                    <a href="https://hesnrldrs.github.io/support-style-app/" class="btn-primary">Start Assessment</a>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="toolkit-card">
+                    <h3>Career Transition Navigator</h3>
+                    <p>Evaluate your readiness for career change and identify potential pathways beyond traditional academia.</p>
+                    <ul class="toolkit-features">
+                        <li>15-minute transition evaluation</li>
+                        <li>Career pathway insights</li>
+                        <li>Skills translation guidance</li>
+                        <li>Strategic next steps plan</li>
                     </ul>
+                    <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn-primary">Start Assessment</a>
                 </div>
 
-                <h3 style="color: var(--colour-primary); margin: 1.5rem 0 1rem 0;">What you'll discover:</h3>
-                <div class="outcomes-box">
-                    <ul style="list-style: none;">
-                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your unique professional story</strong> - How to articulate your academic experience beyond the university</li>
-                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your realistic transition timeline</strong> - Thoughtful phases based on your circumstances</li>
-                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your career possibilities</strong> - Structured evaluation of different paths</li>
-                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your existing connections</strong> - People you may not have considered as resources</li>
-                        <li style="margin: 0.8rem 0; color: var(--colour-accent);"><strong>Your financial clarity</strong> - Understanding your runway during change</li>
+                <!-- Tool 3 -->
+                <div class="toolkit-card">
+                    <h3>Life Balance Scorecard</h3>
+                    <p>Assess your work-life balance across four key dimensions and create a strategic plan for sustainable wellbeing.</p>
+                    <ul class="toolkit-features">
+                        <li>12-minute balance assessment</li>
+                        <li>Four-dimension analysis</li>
+                        <li>Visual dashboard results</li>
+                        <li>Improvement strategies</li>
                     </ul>
+                    <a href="https://hesnrldrs.github.io/life-balance-app/" class="btn-primary">Start Assessment</a>
                 </div>
-                
-                <p style="font-style: italic; color: #666; text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #ddd;">
-                    <strong>Time commitment:</strong> 30-45 minutes | <strong>Value:</strong> The strategic foundation that typically takes months to develop on your own
-                </p>
-            </div>
 
-            <div class="user-info-form" id="userInfoForm">
-                <h3 style="color: var(--colour-success); margin-bottom: 1rem;">Get Started - Tell us about yourself:</h3>
-                <p style="margin-bottom: 1.5rem; color: #2e7d32;">Complete your details to access the full toolkit and receive your personalised transformation strategy.</p>
-                <div class="form-grid">
-                    <input type="text" class="form-input" id="userName" placeholder="Your name" required>
-                    <input type="email" class="form-input" id="userEmail" placeholder="Email address" required>
-                    <input type="text" class="form-input" id="userRole" placeholder="Current academic role">
-                    <select class="form-input" id="userTimeframe">
-                        <option value="">Transition timeframe</option>
-                        <option value="immediate">Immediate (0-3 months)</option>
-                        <option value="short">Short-term (3-6 months)</option>
-                        <option value="medium">Medium-term (6-12 months)</option>
-                        <option value="long">Long-term (12+ months)</option>
-                    </select>
+                <!-- Tool 4 -->
+                <div class="toolkit-card">
+                    <h3>Academic Resilience Assessment</h3>
+                    <p>Evaluate your resilience levels across different dimensions of academic life and develop strategies for thriving under pressure.</p>
+                    <ul class="toolkit-features">
+                        <li>15-minute resilience evaluation</li>
+                        <li>Multi-dimensional profile</li>
+                        <li>Stress management insights</li>
+                        <li>Personal development plan</li>
+                    </ul>
+                    <a href="https://hesnrldrs.github.io/resilience-app/" class="btn-primary">Start Assessment</a>
                 </div>
-                <button class="btn btn-success" onclick="startToolkit()">Begin Your Transformation Journey</button>
             </div>
         </div>
+    </section>
 
-        <div class="toolkit-content" id="toolkitContent" style="display: none;">
-            <h2 style="color: var(--colour-accent); margin-bottom: 2rem; text-align: center;">Your Five-Step Transformation Process</h2>
+    <!-- How to Use Section -->
+    <section class="how-to-section">
+        <div class="container">
+            <h2 class="section-title">How to Use Your Free Toolkit</h2>
             
-            <div class="tool-section">
-                <h3>🎯 Step 1: Skills Translation Matrix</h3>
-                <p>Identify and articulate your transferable skills for various career paths.</p>
-                <div class="form-group">
-                    <label>Your top academic achievement:</label>
-                    <textarea class="form-input-full" rows="3" placeholder="Describe your most significant achievement and its impact..."></textarea>
+            <!-- 2x2 How-to Grid -->
+            <div class="how-to-grid">
+                <div class="how-to-card">
+                    <div class="step-number">1</div>
+                    <h3>Start Anywhere</h3>
+                    <p>Choose the assessment that most closely matches your current situation. Each tool provides immediate value and can be completed independently.</p>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <input type="text" class="form-input-full" placeholder="Key skills demonstrated">
-                    <input type="text" class="form-input-full" placeholder="Career equivalent value">
-                </div>
-            </div>
 
-            <div class="tool-section">
-                <h3>📅 Step 2: Strategic Timeline</h3>
-                <p>Create your realistic transition roadmap.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                    <div>
-                        <label>Target transition date:</label>
-                        <input type="date" class="form-input-full">
-                    </div>
-                    <div>
-                        <label>Financial runway:</label>
-                        <select class="form-input-full">
-                            <option>3 months</option>
-                            <option>6 months</option>
-                            <option>9 months</option>
-                            <option>12+ months</option>
-                        </select>
-                    </div>
+                <div class="how-to-card">
+                    <div class="step-number">2</div>
+                    <h3>Complete Thoughtfully</h3>
+                    <p>Set aside uninterrupted time to engage meaningfully with each assessment. Your honest responses will yield the most valuable insights.</p>
                 </div>
-                <div class="form-group">
-                    <label>Phase 1 goals (Months 1-2):</label>
-                    <textarea class="form-input-full" rows="2" placeholder="What will you focus on in the first phase?"></textarea>
-                </div>
-            </div>
 
-            <div class="tool-section">
-                <h3>📊 Step 3: Career Options Research</h3>
-                <p>Systematically evaluate potential career paths.</p>
-                <div class="form-group">
-                    <label>Career option 1:</label>
-                    <input type="text" class="form-input-full" placeholder="e.g., Corporate consulting, Policy work, Entrepreneurship">
+                <div class="how-to-card">
+                    <div class="step-number">3</div>
+                    <h3>Review Your Results</h3>
+                    <p>Take time to understand your personalized results. Each assessment provides immediate insights and actionable recommendations.</p>
                 </div>
-                <div class="form-group">
-                    <label>Why this appeals to you:</label>
-                    <textarea class="form-input-full" rows="2" placeholder="What draws you to this option?"></textarea>
-                </div>
-            </div>
 
-            <div class="tool-section">
-                <h3>👥 Step 4: Network Mapping</h3>
-                <p>Identify people who could provide insights or opportunities.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
-                    <input type="text" class="form-input-full" placeholder="Contact name">
-                    <input type="text" class="form-input-full" placeholder="Sector/field">
-                    <input type="text" class="form-input-full" placeholder="Organisation">
+                <div class="how-to-card">
+                    <div class="step-number">4</div>
+                    <h3>Take Action</h3>
+                    <p>Use your results as a foundation for deeper reflection or as a starting point for a coaching conversation about your next steps.</p>
                 </div>
-                <div class="form-group" style="margin-top: 1rem;">
-                    <label>Networking approach:</label>
-                    <textarea class="form-input-full" rows="2" placeholder="How will you reach out to explore opportunities?"></textarea>
-                </div>
-            </div>
-
-            <div class="tool-section">
-                <h3>💰 Step 5: Financial Planning</h3>
-                <p>Plan your financial runway during transition.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div>
-                        <label>Monthly expenses:</label>
-                        <input type="number" class="form-input-full" placeholder="£0">
-                    </div>
-                    <div>
-                        <label>Available savings:</label>
-                        <input type="number" class="form-input-full" placeholder="£0">
-                    </div>
-                </div>
-                <div style="margin-top: 1rem; padding: 1rem; background: #e8f5e8; border-radius: 8px;">
-                    <strong>Your financial runway:</strong> <span id="runwayResult">Complete the fields above</span>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin: 3rem 0;">
-                <button class="btn btn-success" onclick="completeToolkit()">Get My Complete Strategy</button>
             </div>
         </div>
-
-        <div class="cta-section" id="ctaSection" style="display: none;">
-            <h3>Ready to Take the Next Step?</h3>
-            <p>The Senior Academic Transformations programmes provide comprehensive support, accountability, and proven strategies to help you navigate your career transition with confidence and clarity.</p>
-            <div class="cta-buttons">
-                <a href="coaching.html" class="btn btn-white">View Coaching Programmes</a>
-                <a href="contact.html" class="btn btn-outline">Schedule Free Consultation</a>
-            </div>
-        </div>
-
-        <div class="footer-links">
-            <a href="apps.html">Assessment Apps</a>
-            <a href="workbooks.html">Workbooks</a>
-            <a href="coaching.html">Coaching</a>
-            <a href="aboutpaul.html">About Paul</a>
-        </div>
-        
-        <!-- Academic References -->
-        <div style="background: var(--colour-white); padding: 2rem; border-radius: 8px; margin: 2rem 0; border: 1px solid #ddd;">
-            <h4 style="color: var(--colour-primary); margin-bottom: 1rem;">Academic References</h4>
-            <div style="font-size: 0.9rem; line-height: 1.6; color: #666;">
-                <p><strong>Bridgstock, R.</strong> (2009). The graduate attributes we've overlooked: Enhancing graduate employability through career management skills. <em>Higher Education Research & Development</em>, 28(1), 31-44.</p>
-                
-                <p><strong>Kaplan, R. S., & Norton, D. P.</strong> (1992). The balanced scorecard—measures that drive performance. <em>Harvard Business Review</em>, 70(1), 71-79.</p>
-                
-                <p><strong>Schlossberg, N. K.</strong> (1981). A model for analyzing human adaptation to transition. <em>The Counseling Psychologist</em>, 9(2), 2-18.</p>
-                
-                <p style="margin-top: 1rem; font-style: italic;">This toolkit synthesises established frameworks from career development, transition theory, and organisational psychology research, adapted specifically for senior academic professionals.</p>
-            </div>
-        </div>
-        <p style="text-align: center; color: #666; font-size: 0.9rem;">
-            © 2025 Senior Academic Transformations - A service of Paul Thomas Coaching
-        </p>
-    </div>
-
-    <script>
-        let userData = {};
-
-        // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (mobileMenuToggle && navMenu) {
-            mobileMenuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                
-                // Update aria-label for accessibility
-                const isOpen = navMenu.classList.contains('active');
-                mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
-            });
-            
-            // Close mobile menu when clicking on a link
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-label', 'Open mobile menu');
-                });
-            });
-        }
-
-        function startToolkit() {
-            const name = document.getElementById('userName').value;
-            const email = document.getElementById('userEmail').value;
-            
-            if (!name || !email) {
-                alert('Please enter your name and email address to continue.');
-                return;
-            }
-
-            userData = {
-                name: name,
-                email: email,
-                role: document.getElementById('userRole').value,
-                timeframe: document.getElementById('userTimeframe').value
-            };
-
-            document.getElementById('userInfoForm').style.display = 'none';
-            document.getElementById('toolkitContent').style.display = 'block';
-        }
-
-        function completeToolkit() {
-            if (userData.email) {
-                document.getElementById('toolkitContent').style.display = 'none';
-                document.getElementById('ctaSection').style.display = 'block';
-                
-                alert(`Thank you ${userData.name}! Your comprehensive transformation strategy will be sent to ${userData.email}. You'll also receive our complete "Moving On" guide series and exclusive insights for senior academics exploring their next chapter.`);
-            }
-        }
-
-        // Calculate financial runway
-        document.addEventListener('input', function(e) {
-            if (e.target.type === 'number') {
-                calculateRunway();
-            }
-        });
-
-        function calculateRunway() {
-            const expenses = document.querySelector('input[placeholder="£0"]:first-of-type')?.value || 0;
-            const savings = document.querySelector('input[placeholder="£0"]:last-of-type')?.value || 0;
-            const runway = expenses > 0 ? Math.floor(savings / expenses) : 0;
-            
-            document.getElementById('runwayResult').textContent = runway > 0 ? `${runway} months` : 'Complete the fields above';
-        }
-
-        console.log('Academic Career Transformation Toolkit loaded successfully');
-    </script>
+    </section>
 </body>
 </html>
