@@ -3,22 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment Apps - Senior Academic Transformations</title>
+    <title>Contact - Senior Academic Transformations</title>
     <style>
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+        body { 
+            font-family: 'Georgia', 'Times New Roman', serif; 
+            line-height: 1.7; 
+            color: var(--colour-dark); 
+            background-color: var(--colour-light); 
         }
 
-        /* Navigation */
+        /* STANDARDIZED BLUE GRADIENT NAVIGATION */
         nav {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             padding: 1rem 0;
@@ -43,36 +55,46 @@
             text-decoration: none;
         }
 
-        .nav-links {
+        .nav-menu {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        .nav-links a {
+        .nav-menu a {
             color: white;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-menu a:hover, .nav-menu a.active, .nav-menu a.current {
             color: #ffd700;
         }
 
-        /* Container */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Contact Page Styles */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 2rem 1rem;
         }
 
-        /* Hero Section */
         .page-hero {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 4rem 2rem;
             text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 10px;
         }
 
         .page-hero h1 {
@@ -82,298 +104,309 @@
         }
 
         .page-hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            opacity: 0.95;
             max-width: 800px;
             margin: 0 auto;
-            opacity: 0.95;
         }
 
-        /* Apps Grid Section */
-        .apps-section {
-            padding: 4rem 0;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: #1e3a5f;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            color: #666;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* 2x2 Apps Grid */
-        .apps-grid {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 4rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
-        .app-card {
+        .contact-info {
             background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 4px solid #2c5aa0;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-medium);
         }
 
-        .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        .contact-info h3 {
+            color: var(--colour-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
 
-        .app-card h3 {
-            color: #1e3a5f;
-            font-size: 1.4rem;
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--colour-primary);
+        }
+
+        .contact-details strong {
+            display: block;
+            color: var(--colour-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-form h3 {
+            color: var(--colour-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--colour-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: Georgia, serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--colour-primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            margin: 1.5rem 0;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: flex-start;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, var(--colour-success), #20c997);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #218838, #1ba085);
+            transform: translateY(-2px);
+        }
+
+        .alternative-contact {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .alternative-contact h3 {
+            color: var(--colour-primary);
             margin-bottom: 1rem;
         }
 
-        .app-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .app-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .app-features li {
-            color: #555;
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .app-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #28a745;
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #28a745, #20c997);
+        .calendar-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
             color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
         }
 
-        .btn-primary:hover {
+        .calendar-btn:hover {
+            background: linear-gradient(135deg, #e55a2b, #e57a35);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
-        }
-
-        /* How to Use Section */
-        .how-to-section {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-
-        .how-to-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .how-to-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .step-number {
-            background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem auto;
-        }
-
-        .how-to-card h3 {
-            color: #1e3a5f;
-            margin-bottom: 1rem;
-        }
-
-        .how-to-card p {
-            color: #666;
-            line-height: 1.6;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .apps-grid,
-            .how-to-grid {
-                grid-template-columns: 1fr;
+            .mobile-menu-toggle {
+                display: block;
             }
 
-            .nav-links {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1.5rem;
+            }
+
+            .nav-menu.active {
                 display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
             }
 
             .page-hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
-            .container {
-                padding: 0 1rem;
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <!-- STANDARDIZED NAVIGATION -->
+    <nav role="navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">Senior Academic Transformations</a>
-            <ul class="nav-links">
-                <li><a href="apps.html" class="active">Apps</a></li>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="apps.html">Apps</a></li>
                 <li><a href="workbooks.html">Workbooks</a></li>
                 <li><a href="toolkit.html">Free Toolkit</a></li>
                 <li><a href="coaching.html">Coaching</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="current">Contact</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Assessment Apps</h1>
-            <p>Interactive tools designed specifically for senior academics navigating career transitions and leadership challenges. Each app provides immediate, evidence-based insights you can use straight away.</p>
-        </div>
-    </section>
+    <main class="container">
+        <section class="page-hero">
+            <h1>Get In Touch</h1>
+            <p>Ready to start your transformation journey? Let's have a conversation about your goals and how we can support you.</p>
+        </section>
 
-    <!-- Apps Grid Section -->
-    <section class="apps-section">
-        <div class="container">
-            <h2 class="section-title">Available Assessment Apps</h2>
-            <p class="section-subtitle">These interactive tools are live and ready to use. Each takes 10-15 minutes to complete and provides immediate insights.</p>
-            
-            <!-- 2x2 Apps Grid -->
-            <div class="apps-grid">
-                <!-- App 1 -->
-                <div class="app-card">
-                    <h3>Support Style Finder</h3>
-                    <p>Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
-                    <ul class="app-features">
-                        <li>10-minute comprehensive assessment</li>
-                        <li>Personalised development track</li>
-                        <li>Leadership growth strategies</li>
-                        <li>Instant PDF report</li>
-                    </ul>
-                    <a href="https://hesnrldrs.github.io/support-style-app/" class="btn-primary">Launch Assessment</a>
-                </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <ul class="contact-details">
+                    <li>
+                        <strong>Email</strong>
+                        paul@senioracademictransformations.com
+                    </li>
+                    <li>
+                        <strong>Phone</strong>
+                        +44 (0) 1234 567 890
+                    </li>
+                    <li>
+                        <strong>Response Time</strong>
+                        We typically respond within 24 hours during business days
+                    </li>
+                    <li>
+                        <strong>Best Times to Call</strong>
+                        Monday - Friday, 9:00 AM - 5:00 PM GMT
+                    </li>
+                </ul>
+            </div>
 
-                <!-- App 2 -->
-                <div class="app-card">
-                    <h3>Career Transition Navigator</h3>
-                    <p>A comprehensive assessment to evaluate your readiness for career change and identify potential pathways beyond traditional academia.</p>
-                    <ul class="app-features">
-                        <li>15-minute transition evaluation</li>
-                        <li>Career pathway recommendations</li>
-                        <li>Skills translation guidance</li>
-                        <li>Personalised next steps plan</li>
-                    </ul>
-                    <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn-primary">Launch Assessment</a>
-                </div>
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
 
-                <!-- App 3 -->
-                <div class="app-card">
-                    <h3>Life Balance Scorecard</h3>
-                    <p>Assess your work-life balance across four key dimensions and create a strategic plan for sustainable wellbeing.</p>
-                    <ul class="app-features">
-                        <li>12-minute balance assessment</li>
-                        <li>Four-dimension analysis</li>
-                        <li>Visual balance dashboard</li>
-                        <li>Improvement strategies</li>
-                    </ul>
-                    <a href="https://hesnrldrs.github.io/life-balance-app/" class="btn-primary">Launch Assessment</a>
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-                <!-- App 4 -->
-                <div class="app-card">
-                    <h3>Academic Resilience Assessment</h3>
-                    <p>Evaluate your resilience levels across different dimensions of academic life and develop strategies for thriving under pressure.</p>
-                    <ul class="app-features">
-                        <li>15-minute resilience evaluation</li>
-                        <li>Multi-dimensional profile</li>
-                        <li>Stress management strategies</li>
-                        <li>Development plan</li>
-                    </ul>
-                    <a href="https://hesnrldrs.github.io/resilience-app/" class="btn-primary">Launch Assessment</a>
-                </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="">Please select...</option>
+                            <option value="coaching">Coaching Inquiry</option>
+                            <option value="assessment">Assessment Tools</option>
+                            <option value="workbooks">Workbooks</option>
+                            <option value="speaking">Speaking Engagement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your current situation and how we might be able to help..." required></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="newsletter" value="yes">
+                            I'd like to receive occasional updates about new resources and tools
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
             </div>
         </div>
-    </section>
 
-    <!-- How to Use Section -->
-    <section class="how-to-section">
-        <div class="container">
-            <h2 class="section-title">How to Use These Assessments</h2>
-            
-            <!-- 2x2 How-to Grid -->
-            <div class="how-to-grid">
-                <div class="how-to-card">
-                    <div class="step-number">1</div>
-                    <h3>Choose Your Starting Point</h3>
-                    <p>Begin with the assessment that most closely matches your current situation. If unsure, start with the Support Style Finder for leadership insights.</p>
-                </div>
-
-                <div class="how-to-card">
-                    <div class="step-number">2</div>
-                    <h3>Complete Thoughtfully</h3>
-                    <p>Set aside uninterrupted time to engage meaningfully with each assessment. Your honest responses will yield the most valuable insights.</p>
-                </div>
-
-                <div class="how-to-card">
-                    <div class="step-number">3</div>
-                    <h3>Reflect and Act</h3>
-                    <p>Use your results as starting points for deeper reflection. Consider discussing insights with trusted colleagues or in a coaching conversation.</p>
-                </div>
-
-                <div class="how-to-card">
-                    <div class="step-number">4</div>
-                    <h3>Seek Support</h3>
-                    <p>These assessments provide valuable insights, but real transformation often requires personalised guidance and accountability.</p>
-                </div>
-            </div>
+        <div class="alternative-contact">
+            <h3>Prefer to Book Directly?</h3>
+            <p>Skip the back-and-forth emails and book a free 30-minute discovery call directly in my calendar.</p>
+            <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" class="calendar-btn" target="_blank" rel="noopener">Book Free Discovery Call</a>
         </div>
-    </section>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+        });
+    </script>
 </body>
 </html>
