@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Toolkit - Senior Academic Transformations</title>
+    <title>Career Transformation Toolkit - Senior Academic Transformations</title>
     <style>
         * {
             margin: 0;
@@ -18,7 +18,7 @@
             background: #f8f9fa;
         }
 
-        /* Navigation - STANDARDIZED BLUE GRADIENT */
+        /* STANDARDIZED NAVIGATION - MATCHES ALL OTHER PAGES */
         nav {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             padding: 1rem 0;
@@ -44,212 +44,383 @@
         }
 
         .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+            display: flex !important;
+            list-style: none !important;
+            gap: 2rem !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .nav-links li {
+            display: list-item !important;
         }
 
         .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
+            color: white !important;
+            text-decoration: none !important;
+            transition: color 0.3s !important;
+            font-weight: 500 !important;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #ffd700;
         }
 
-        /* Container */
-        .container {
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffd700;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Toolkit Styles */
+        .toolkit-container {
+            min-height: calc(100vh - 80px);
+            background: #f8f9fa;
+        }
+
+        .toolkit-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .header-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Hero Section */
-        .page-hero {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .page-hero h1 {
-            font-size: 2.8rem;
+        .toolkit-header h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: normal;
         }
 
-        .page-hero p {
+        .toolkit-header p {
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
             opacity: 0.95;
+            margin-bottom: 2rem;
         }
 
-        /* Toolkit Section */
-        .toolkit-section {
-            padding: 4rem 0;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            height: 8px;
             margin-bottom: 1rem;
-            color: #1e3a5f;
         }
 
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            color: #666;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .progress-bar {
+            background: #ffd700;
+            height: 8px;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            width: 0%;
         }
 
-        /* 2x2 Toolkit Grid */
-        .toolkit-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 4rem;
+        .progress-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
-        .toolkit-card {
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .step-content {
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 4px solid #28a745;
+            margin-bottom: 2rem;
         }
 
-        .toolkit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .toolkit-card h3 {
+        .step-title {
+            font-size: 1.8rem;
             color: #1e3a5f;
-            font-size: 1.4rem;
             margin-bottom: 1rem;
         }
 
-        .toolkit-card p {
+        .step-description {
             color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            margin-bottom: 2rem;
         }
 
-        .toolkit-features {
-            list-style: none;
+        /* Form Elements */
+        .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .toolkit-features li {
-            color: #555;
+        .form-group label {
+            display: block;
+            font-weight: 600;
             margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
+            color: #333;
         }
 
-        .toolkit-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #28a745;
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            padding: 1rem 0;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2c5aa0;
+            cursor: pointer;
+        }
+
+        .slider-value {
+            text-align: center;
             font-weight: bold;
+            color: #2c5aa0;
+            margin-top: 0.5rem;
+        }
+
+        /* List Management */
+        .list-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .list-input input {
+            flex: 1;
+        }
+
+        .add-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-btn:hover {
+            background: #218838;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #2c5aa0;
+        }
+
+        .list-item span {
+            flex: 1;
+        }
+
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .remove-btn:hover {
+            background: #c82333;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #28a745, #20c997);
+            background: #2c5aa0;
             color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s;
         }
 
         .btn-primary:hover {
+            background: #1e3a5f;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
+            background: #6c757d;
             color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s;
         }
 
         .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
+            background: #545b62;
         }
 
-        /* How to Use Section */
-        .how-to-section {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-
-        .how-to-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .how-to-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .step-number {
-            background: linear-gradient(135deg, #1e3a5f, #2c5aa0);
+        .btn-success {
+            background: #28a745;
             color: white;
-            width: 60px;
-            height: 60px;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .btn-warning {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+
+        .btn:disabled {
+            background: #e9ecef;
+            color: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Step Indicators */
+        .step-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .step-indicator {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
             font-weight: bold;
-            margin: 0 auto 1rem auto;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .how-to-card h3 {
-            color: #1e3a5f;
+        .step-indicator.active {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        .step-indicator.completed {
+            background: #28a745;
+            color: white;
+        }
+
+        .step-indicator.pending {
+            background: #e9ecef;
+            color: #6c757d;
+        }
+
+        /* Completion Section */
+        .completion-section {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .completion-section h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .how-to-card p {
-            color: #666;
-            line-height: 1.6;
+        .completion-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .toolkit-grid,
-            .how-to-grid {
-                grid-template-columns: 1fr;
-            }
-
             .nav-links {
                 display: flex;
                 flex-direction: column;
@@ -261,12 +432,22 @@
                 gap: 1rem;
             }
 
-            .page-hero h1 {
+            .toolkit-header h1 {
                 font-size: 2rem;
             }
 
-            .container {
-                padding: 0 1rem;
+            .main-content {
+                padding: 1rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .completion-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -288,109 +469,325 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Free Assessment Toolkit</h1>
-            <p>Start your transformation journey with our comprehensive free assessment tools. Evidence-based, immediately actionable, and designed specifically for senior academics.</p>
-        </div>
-    </section>
-
-    <!-- Toolkit Grid Section -->
-    <section class="toolkit-section">
-        <div class="container">
-            <h2 class="section-title">Your Complete Free Toolkit</h2>
-            <p class="section-subtitle">Four powerful assessment tools to give you immediate insights into your leadership style, career readiness, life balance, and resilience levels.</p>
-            
-            <!-- 2x2 Toolkit Grid -->
-            <div class="toolkit-grid">
-                <!-- Tool 1 -->
-                <div class="toolkit-card">
-                    <h3>Support Style Finder</h3>
-                    <p>Discover your natural preferences for leadership development and identify which type of support you respond to best.</p>
-                    <ul class="toolkit-features">
-                        <li>10-minute comprehensive assessment</li>
-                        <li>Instant personalized results</li>
-                        <li>Development recommendations</li>
-                        <li>PDF report download</li>
-                    </ul>
-                    <a href="https://hesnrldrs.github.io/support-style-app/" class="btn-primary">Start Assessment</a>
+    <!-- Toolkit Content -->
+    <div class="toolkit-container">
+        <!-- Header with Progress -->
+        <div class="toolkit-header">
+            <div class="header-content">
+                <h1>Career Transformation Toolkit</h1>
+                <p>Your comprehensive 5-step journey to career clarity and transformation</p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
                 </div>
-
-                <!-- Tool 2 -->
-                <div class="toolkit-card">
-                    <h3>Career Transition Navigator</h3>
-                    <p>Evaluate your readiness for career change and identify potential pathways beyond traditional academia.</p>
-                    <ul class="toolkit-features">
-                        <li>15-minute transition evaluation</li>
-                        <li>Career pathway insights</li>
-                        <li>Skills translation guidance</li>
-                        <li>Strategic next steps plan</li>
-                    </ul>
-                    <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn-primary">Start Assessment</a>
-                </div>
-
-                <!-- Tool 3 -->
-                <div class="toolkit-card">
-                    <h3>Life Balance Scorecard</h3>
-                    <p>Assess your work-life balance across four key dimensions and create a strategic plan for sustainable wellbeing.</p>
-                    <ul class="toolkit-features">
-                        <li>12-minute balance assessment</li>
-                        <li>Four-dimension analysis</li>
-                        <li>Visual dashboard results</li>
-                        <li>Improvement strategies</li>
-                    </ul>
-                    <a href="https://hesnrldrs.github.io/life-balance-app/" class="btn-primary">Start Assessment</a>
-                </div>
-
-                <!-- Tool 4 -->
-                <div class="toolkit-card">
-                    <h3>Academic Resilience Assessment</h3>
-                    <p>Evaluate your resilience levels across different dimensions of academic life and develop strategies for thriving under pressure.</p>
-                    <ul class="toolkit-features">
-                        <li>15-minute resilience evaluation</li>
-                        <li>Multi-dimensional profile</li>
-                        <li>Stress management insights</li>
-                        <li>Personal development plan</li>
-                    </ul>
-                    <a href="https://hesnrldrs.github.io/resilience-app/" class="btn-primary">Start Assessment</a>
-                </div>
+                <p class="progress-text" id="progressText">Step 1 of 5 - Getting Started</p>
             </div>
         </div>
-    </section>
 
-    <!-- How to Use Section -->
-    <section class="how-to-section">
-        <div class="container">
-            <h2 class="section-title">How to Use Your Free Toolkit</h2>
-            
-            <!-- 2x2 How-to Grid -->
-            <div class="how-to-grid">
-                <div class="how-to-card">
-                    <div class="step-number">1</div>
-                    <h3>Start Anywhere</h3>
-                    <p>Choose the assessment that most closely matches your current situation. Each tool provides immediate value and can be completed independently.</p>
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="step-content" id="stepContent">
+                <!-- Step content will be populated by JavaScript -->
+                <h2 class="step-title">Step 1: Self Assessment</h2>
+                <p class="step-description">Understanding where you are now is the foundation for planning where you want to go.</p>
+                
+                <div class="form-group">
+                    <label for="currentRole">Current Role/Position</label>
+                    <input type="text" id="currentRole" placeholder="e.g., Senior Lecturer in Psychology">
                 </div>
 
-                <div class="how-to-card">
-                    <div class="step-number">2</div>
-                    <h3>Complete Thoughtfully</h3>
-                    <p>Set aside uninterrupted time to engage meaningfully with each assessment. Your honest responses will yield the most valuable insights.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label>Job Satisfaction Level</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="10" value="5" class="slider" id="satisfactionSlider">
+                            <div class="slider-value" id="satisfactionValue">5/10</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Energy Level</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="10" value="5" class="slider" id="energySlider">
+                            <div class="slider-value" id="energyValue">5/10</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="how-to-card">
-                    <div class="step-number">3</div>
-                    <h3>Review Your Results</h3>
-                    <p>Take time to understand your personalized results. Each assessment provides immediate insights and actionable recommendations.</p>
+                <div class="form-group">
+                    <label>Your Key Strengths</label>
+                    <div class="list-input">
+                        <input type="text" id="strengthInput" placeholder="Add a strength...">
+                        <button type="button" class="add-btn" onclick="addStrength()">Add</button>
+                    </div>
+                    <div id="strengthsList"></div>
                 </div>
 
-                <div class="how-to-card">
-                    <div class="step-number">4</div>
-                    <h3>Take Action</h3>
-                    <p>Use your results as a foundation for deeper reflection or as a starting point for a coaching conversation about your next steps.</p>
+                <div class="form-group">
+                    <label>Current Challenges</label>
+                    <div class="list-input">
+                        <input type="text" id="challengeInput" placeholder="Add a challenge...">
+                        <button type="button" class="add-btn" onclick="addChallenge()">Add</button>
+                    </div>
+                    <div id="challengesList"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Core Values</label>
+                    <div class="list-input">
+                        <input type="text" id="valueInput" placeholder="Add a value...">
+                        <button type="button" class="add-btn" onclick="addValue()">Add</button>
+                    </div>
+                    <div id="valuesList"></div>
                 </div>
             </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousStep()" disabled>
+                    ← Previous
+                </button>
+                
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-warning" onclick="saveProgress()">
+                        💾 Save Progress
+                    </button>
+                    <button class="btn btn-primary" id="nextBtn" onclick="nextStep()">
+                        Next Step →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step Indicators -->
+            <div class="step-indicators">
+                <div class="step-indicator active" onclick="goToStep(1)">1</div>
+                <div class="step-indicator pending" onclick="goToStep(2)">2</div>
+                <div class="step-indicator pending" onclick="goToStep(3)">3</div>
+                <div class="step-indicator pending" onclick="goToStep(4)">4</div>
+                <div class="step-indicator pending" onclick="goToStep(5)">5</div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        ↑
+    </button>
+
+    <script>
+        // Toolkit functionality
+        let currentStep = 1;
+        let toolkitData = {
+            currentRole: '',
+            satisfaction: 5,
+            energy: 5,
+            strengths: [],
+            challenges: [],
+            values: [],
+            // Add other step data as needed
+        };
+
+        // Initialize toolkit
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSliders();
+            loadSavedProgress();
+        });
+
+        // Slider updates
+        function updateSliders() {
+            const satisfactionSlider = document.getElementById('satisfactionSlider');
+            const energySlider = document.getElementById('energySlider');
+            
+            satisfactionSlider.oninput = function() {
+                document.getElementById('satisfactionValue').textContent = this.value + '/10';
+                toolkitData.satisfaction = parseInt(this.value);
+            };
+            
+            energySlider.oninput = function() {
+                document.getElementById('energyValue').textContent = this.value + '/10';
+                toolkitData.energy = parseInt(this.value);
+            };
+        }
+
+        // List management functions
+        function addStrength() {
+            const input = document.getElementById('strengthInput');
+            if (input.value.trim()) {
+                toolkitData.strengths.push(input.value.trim());
+                input.value = '';
+                updateStrengthsList();
+            }
+        }
+
+        function addChallenge() {
+            const input = document.getElementById('challengeInput');
+            if (input.value.trim()) {
+                toolkitData.challenges.push(input.value.trim());
+                input.value = '';
+                updateChallengesList();
+            }
+        }
+
+        function addValue() {
+            const input = document.getElementById('valueInput');
+            if (input.value.trim()) {
+                toolkitData.values.push(input.value.trim());
+                input.value = '';
+                updateValuesList();
+            }
+        }
+
+        function updateStrengthsList() {
+            const list = document.getElementById('strengthsList');
+            list.innerHTML = toolkitData.strengths.map((strength, index) => 
+                `<div class="list-item">
+                    <span>${strength}</span>
+                    <button class="remove-btn" onclick="removeStrength(${index})">Remove</button>
+                </div>`
+            ).join('');
+        }
+
+        function updateChallengesList() {
+            const list = document.getElementById('challengesList');
+            list.innerHTML = toolkitData.challenges.map((challenge, index) => 
+                `<div class="list-item">
+                    <span>${challenge}</span>
+                    <button class="remove-btn" onclick="removeChallenge(${index})">Remove</button>
+                </div>`
+            ).join('');
+        }
+
+        function updateValuesList() {
+            const list = document.getElementById('valuesList');
+            list.innerHTML = toolkitData.values.map((value, index) => 
+                `<div class="list-item">
+                    <span>${value}</span>
+                    <button class="remove-btn" onclick="removeValue(${index})">Remove</button>
+                </div>`
+            ).join('');
+        }
+
+        function removeStrength(index) {
+            toolkitData.strengths.splice(index, 1);
+            updateStrengthsList();
+        }
+
+        function removeChallenge(index) {
+            toolkitData.challenges.splice(index, 1);
+            updateChallengesList();
+        }
+
+        function removeValue(index) {
+            toolkitData.values.splice(index, 1);
+            updateValuesList();
+        }
+
+        // Navigation functions
+        function nextStep() {
+            if (currentStep < 5) {
+                currentStep++;
+                updateStep();
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStep();
+            }
+        }
+
+        function goToStep(step) {
+            currentStep = step;
+            updateStep();
+        }
+
+        function updateStep() {
+            // Update progress - 0% at start, 20% after step 1, 40% after step 2, etc.
+            const progress = currentStep === 1 ? 0 : ((currentStep - 1) / 4) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            const progressText = currentStep === 1 ? 
+                'Step 1 of 5 - Getting Started' : 
+                `Step ${currentStep} of 5 - ${Math.round(progress)}% Complete`;
+            document.getElementById('progressText').textContent = progressText;
+
+            // Update step indicators
+            document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
+                indicator.className = 'step-indicator';
+                if (index + 1 < currentStep) {
+                    indicator.classList.add('completed');
+                } else if (index + 1 === currentStep) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.add('pending');
+                }
+            });
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentStep === 1;
+            if (currentStep === 5) {
+                document.getElementById('nextBtn').innerHTML = 'Complete & Download Report 📄';
+                document.getElementById('nextBtn').className = 'btn btn-success';
+            } else {
+                document.getElementById('nextBtn').innerHTML = 'Next Step →';
+                document.getElementById('nextBtn').className = 'btn btn-primary';
+            }
+        }
+
+        // Save/load functionality
+        function saveProgress() {
+            // Save current form data
+            toolkitData.currentRole = document.getElementById('currentRole').value;
+            
+            localStorage.setItem('careerToolkitProgress', JSON.stringify({
+                step: currentStep,
+                data: toolkitData
+            }));
+            alert('Progress saved! You can continue later from where you left off.');
+        }
+
+        function loadSavedProgress() {
+            const saved = localStorage.getItem('careerToolkitProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                currentStep = progress.step;
+                toolkitData = progress.data;
+                updateStep();
+                // Populate form fields
+                document.getElementById('currentRole').value = toolkitData.currentRole || '';
+                document.getElementById('satisfactionSlider').value = toolkitData.satisfaction || 5;
+                document.getElementById('energySlider').value = toolkitData.energy || 5;
+                updateSliders();
+                updateStrengthsList();
+                updateChallengesList();
+                updateValuesList();
+            }
+        }
+
+        // Back to top functionality
+        window.onscroll = function() {
+            const backToTop = document.getElementById('backToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Enter key support for inputs
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const activeElement = document.activeElement;
+                if (activeElement.id === 'strengthInput') addStrength();
+                if (activeElement.id === 'challengeInput') addChallenge();
+                if (activeElement.id === 'valueInput') addValue();
+            }
+        });
+    </script>
 </body>
 </html>
