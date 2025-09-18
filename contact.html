@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Senior Academic Transformations</title>
+    <title>Contact Paul Thomas - Senior Academic Transformations</title>
     <style>
         :root { 
             --colour-primary: #4A6FA5; 
@@ -23,14 +23,14 @@
             box-sizing: border-box;
         }
 
-        body { 
-            font-family: 'Georgia', 'Times New Roman', serif; 
-            line-height: 1.7; 
-            color: var(--colour-dark); 
-            background-color: var(--colour-light); 
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--colour-dark);
+            background-color: var(--colour-light);
         }
 
-        /* STANDARDIZED BLUE GRADIENT NAVIGATION */
+        /* Navigation - STANDARDIZED BLUE GRADIENT */
         nav {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             padding: 1rem 0;
@@ -55,358 +55,309 @@
             text-decoration: none;
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        .nav-menu a {
+        .nav-links a {
             color: white;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
         }
 
-        .nav-menu a:hover, .nav-menu a.active, .nav-menu a.current {
+        .nav-links a:hover, .nav-links a.active {
             color: #ffd700;
         }
 
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .header {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
             color: white;
-        }
-
-        /* Contact Page Styles */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .page-hero {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
-            color: white;
-            padding: 4rem 2rem;
             text-align: center;
-            margin-bottom: 3rem;
-            border-radius: 10px;
+            padding: 4rem 1rem 3rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .page-hero h1 {
+        .header h1 {
             font-size: 2.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
             font-weight: normal;
         }
 
-        .page-hero p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto;
+        .header p {
+            font-size: 1.4rem;
+            font-weight: lighter;
+            margin-top: 0.5rem;
+            opacity: 0.9;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+        .container {
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .contact-main {
+            background: var(--colour-white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-main h2 {
+            color: var(--colour-accent);
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            border-bottom: 2px solid var(--colour-secondary);
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-main p {
+            margin-bottom: 20px;
+            color: var(--colour-dark);
+            font-size: 1.15rem;
         }
 
         .contact-info {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-medium);
+            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid var(--colour-secondary);
         }
 
-        .contact-info h3 {
-            color: var(--colour-primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+        .contact-item {
+            margin: 20px 0;
+            font-size: 1.2em;
         }
 
-        .contact-details {
-            list-style: none;
-        }
-
-        .contact-details li {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid var(--colour-primary);
-        }
-
-        .contact-details strong {
-            display: block;
-            color: var(--colour-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-form {
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-medium);
-        }
-
-        .contact-form h3 {
-            color: var(--colour-primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--colour-dark);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-            font-family: Georgia, serif;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--colour-primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .checkbox-group {
-            margin: 1.5rem 0;
-        }
-
-        .checkbox-group label {
-            display: flex;
-            align-items: flex-start;
-            font-weight: normal;
-            cursor: pointer;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
-            margin-right: 0.5rem;
-            margin-top: 0.2rem;
-        }
-
-        .submit-button {
-            background: linear-gradient(135deg, var(--colour-success), #20c997);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-button:hover {
-            background: linear-gradient(135deg, #218838, #1ba085);
-            transform: translateY(-2px);
-        }
-
-        .alternative-contact {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
-        }
-
-        .alternative-contact h3 {
-            color: var(--colour-primary);
-            margin-bottom: 1rem;
-        }
-
-        .calendar-btn {
+        .contact-item strong {
+            color: var(--colour-accent);
             display: inline-block;
-            background: linear-gradient(135deg, #ff6b35, #ff8c42);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
+            width: 80px;
         }
 
-        .calendar-btn:hover {
-            background: linear-gradient(135deg, #e55a2b, #e57a35);
-            transform: translateY(-2px);
+        .contact-item a {
+            color: var(--colour-primary);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .gentle-approach {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .gentle-approach h3 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .gentle-approach p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+            font-size: 1.15rem;
+        }
+
+        .when-to-contact {
+            background: var(--colour-white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: left;
+            box-shadow: var(--shadow-light);
+        }
+
+        .when-to-contact h3 {
+            color: var(--colour-accent);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .when-to-contact ul {
+            color: var(--colour-dark);
+            padding-left: 20px;
+        }
+
+        .when-to-contact li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .about-link {
+            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid var(--colour-secondary);
+        }
+
+        .about-link p {
+            margin-bottom: 15px;
+            color: var(--colour-dark);
+            font-size: 1.15rem;
+        }
+
+        .about-link a {
+            color: var(--colour-primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .about-link a:hover {
+            text-decoration: underline;
+            color: var(--colour-accent);
+        }
+
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: var(--colour-dark);
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--colour-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+        }
+
+        footer {
+            background-color: var(--colour-dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
-                flex-direction: column;
-                padding: 1rem;
-                gap: 1.5rem;
-            }
-
-            .nav-menu.active {
+            .nav-links {
                 display: flex;
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            .page-hero h1 {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .header h1 {
                 font-size: 2.2rem;
             }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 1rem 0;
+            }
+            
+            .contact-main {
+                padding: 2rem 1rem;
             }
 
-            .contact-info,
-            .contact-form {
-                padding: 2rem;
+            .contact-item strong {
+                display: block;
+                margin-bottom: 5px;
+                width: auto;
             }
         }
     </style>
 </head>
 <body>
     <!-- STANDARDIZED NAVIGATION -->
-    <nav role="navigation">
+    <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Senior Academic Transformations</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
-            <ul class="nav-menu">
+            <ul class="nav-links">
                 <li><a href="apps.html">Apps</a></li>
                 <li><a href="workbooks.html">Workbooks</a></li>
                 <li><a href="toolkit.html">Free Toolkit</a></li>
                 <li><a href="coaching.html">Coaching</a></li>
-                <li><a href="contact.html" class="current">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
             </ul>
         </div>
     </nav>
+    <div class="header">
+        <h1>Get In Touch</h1>
+        <p>Happy to chat about your transition journey</p>
+    </div>
 
-    <main class="container">
-        <section class="page-hero">
-            <h1>Get In Touch</h1>
-            <p>Ready to start your transformation journey? Let's have a conversation about your goals and how we can support you.</p>
-        </section>
+    <div class="container">
+        <div class="contact-main">
+            <h2>Let's Have a Conversation</h2>
+            
+            <p>If you're considering a significant career transition or facing complex leadership challenges, I'm happy to have an initial conversation about your situation.</p>
+            
+            <p>There's no pressure or sales pitch - just a genuine discussion about where you are, what you're thinking about, and whether working together might be helpful.</p>
 
-        <div class="contact-grid">
             <div class="contact-info">
-                <h3>Contact Information</h3>
-                <ul class="contact-details">
-                    <li>
-                        <strong>Email</strong>
-                        paul@senioracademictransformations.co.uk
-                    </li>
-                    <li>
-                        <strong>Phone</strong>
-                        +44 (0) 7368 621 415
-                    </li>
-                    <li>
-                        <strong>Response Time</strong>
-                        We typically respond within 24 hours during business days
-                    </li>
-                    <li>
-                        <strong>Best Times to Call</strong>
-                        Monday - Friday, 9:00 AM - 5:00 PM GMT
-                    </li>
-                </ul>
-            </div>
-
-            <div class="contact-form">
-                <h3>Send a Message</h3>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <select id="subject" name="subject">
-                            <option value="">Please select...</option>
-                            <option value="coaching">Coaching Inquiry</option>
-                            <option value="assessment">Assessment Tools</option>
-                            <option value="workbooks">Workbooks</option>
-                            <option value="speaking">Speaking Engagement</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your current situation and how we might be able to help..." required></textarea>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" name="newsletter" value="yes">
-                            I'd like to receive occasional updates about new resources and tools
-                        </label>
-                    </div>
-
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+                <div class="contact-item">
+                    <strong>Email:</strong> <a href="mailto:paul@paulthomascoaching.co.uk">paul@paulthomascoaching.co.uk</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> 07368 621 415
+                </div>
             </div>
         </div>
 
-        <div class="alternative-contact">
-            <h3>Prefer to Book Directly?</h3>
-            <p>Skip the back-and-forth emails and book a free 30-minute discovery call directly in my calendar.</p>
-            <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" class="calendar-btn" target="_blank" rel="noopener">Book Free Discovery Call</a>
+        <div class="gentle-approach">
+            <h3>My Approach to Initial Conversations</h3>
+            <p>Every situation is different, so I prefer to start by understanding your specific circumstances before suggesting any particular approach. Sometimes a single conversation provides exactly the clarity needed; other times, ongoing collaborative support through a transition period is more helpful.</p>
+            <p><em>The initial conversation helps us both understand whether working together makes sense for your situation.</em></p>
         </div>
-    </main>
 
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
+        <div class="when-to-contact">
+            <h3>People Often Get In Touch When They're:</h3>
+            <ul>
+                <li>Considering a significant career change but feeling unsure about the best approach to take</li>
+                <li>Feeling caught between staying in their current role or making a move to something different</li>
+                <li>Clear about wanting change but uncertain about what direction would be most fulfilling</li>
+                <li>Facing a transition they know is right but feeling apprehensive about taking the next steps</li>
+                <li>Looking for structured support and guidance while navigating a complex career change</li>
+                <li>Wanting to think through their options with someone who understands senior-level transitions</li>
+                <li>Needing clarity on how to balance continued impact with personal fulfilment</li>
+                <li>Ready to design their next chapter but want collaborative support in the planning</li>
+            </ul>
+        </div>
 
-        // Form submission
-        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-        });
-    </script>
+        <div class="about-link">
+            <p>If you'd like to understand more about my background and approach to supporting senior leaders through transitions, you can read more about my experience and methodology.</p>
+            <a href="about.html">Learn more about my approach →</a>
+        </div>
+
+        <div class="quote">
+            "Sometimes talking through a transition with someone experienced in change provides exactly the perspective and clarity needed to move forward with confidence."
+        </div>
+    </div>
 </body>
 </html>
