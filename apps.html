@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment Apps - Leadership and Career Transition Tools</title>
+    <title>Assessment Apps - Senior Academic Transformations</title>
     <style>
+        :root { 
+            --colour-primary: #4A6FA5; 
+            --colour-secondary: #E6B89C; 
+            --colour-accent: #166088; 
+            --colour-light: #F9F5EB; 
+            --colour-dark: #333333; 
+            --colour-white: #ffffff;
+            --colour-success: #28a745;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,147 +24,256 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--colour-dark);
+            background-color: var(--colour-light);
+        }
+
+        /* Navigation - STANDARDIZED BLUE GRADIENT */
+        nav {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffd700;
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 4rem 1rem 3rem;
+            position: relative;
+            overflow: hidden;
         }
 
         .header h1 {
-            font-size: 2.5em;
+            font-size: 2.8rem;
             margin-bottom: 20px;
-            font-weight: 300;
+            font-weight: normal;
         }
 
         .header p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto;
+            font-size: 1.4rem;
+            font-weight: lighter;
+            margin-top: 0.5rem;
             opacity: 0.9;
         }
 
         .container {
-            max-width: 1200px;
+            width: 90%;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 2rem 0;
         }
 
         .intro-section {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--colour-white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-light);
             text-align: center;
+        }
+
+        .intro-section h2 {
+            color: var(--colour-accent);
+            border-bottom: 2px solid var(--colour-secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .intro-section p {
+            color: var(--colour-dark);
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
         }
 
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
         .app-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid #3498db;
+            background: var(--colour-white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            text-align: center;
         }
 
         .app-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-medium);
         }
 
         .app-card h3 {
-            color: #2c3e50;
-            font-size: 1.4em;
+            color: var(--colour-accent);
+            font-size: 1.4rem;
             margin-bottom: 15px;
         }
 
         .app-card p {
-            color: #666;
-            margin-bottom: 20px;
+            color: var(--colour-dark);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         .app-link {
             display: inline-block;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            background-color: var(--colour-primary);
             color: white;
-            padding: 12px 24px;
+            padding: 0.9rem 1.8rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 1.2rem;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-size: 1rem;
         }
 
         .app-link:hover {
-            background: linear-gradient(135deg, #2980b9, #3498db);
+            background-color: var(--colour-accent);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
         }
 
         .gentle-progression {
-            background: #e8f6f3;
-            padding: 20px;
+            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
+            padding: 1.5rem;
             border-radius: 8px;
             margin-top: 15px;
             font-style: italic;
-            color: #2c3e50;
-            border-left: 4px solid #27ae60;
+            color: var(--colour-dark);
+            border: 2px solid var(--colour-secondary);
+            font-size: 0.95rem;
         }
 
         .support-section {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            margin-top: 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: var(--colour-white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-light);
             text-align: center;
         }
 
         .support-section h2 {
-            color: #2c3e50;
+            color: var(--colour-accent);
             margin-bottom: 20px;
+            font-size: 2.2rem;
         }
 
         .support-text {
             max-width: 800px;
             margin: 0 auto;
-            color: #666;
-            font-size: 1.1em;
+            color: var(--colour-dark);
+            font-size: 1.15rem;
+        }
+
+        .support-text p {
+            margin-bottom: 1.5rem;
         }
 
         .contact-gentle {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background-color: var(--colour-success);
             color: white;
-            padding: 15px 30px;
+            padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 8px;
             display: inline-block;
             margin-top: 20px;
+            font-weight: bold;
             transition: all 0.3s ease;
         }
 
         .contact-gentle:hover {
+            background-color: #218838;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: var(--shadow-light);
             color: white;
             text-decoration: none;
         }
 
+        footer {
+            background-color: var(--colour-dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
             .header h1 {
-                font-size: 2em;
+                font-size: 2.2rem;
+            }
+            
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 1rem 0;
             }
             
             .apps-grid {
@@ -160,12 +281,27 @@
             }
             
             .app-card, .intro-section, .support-section {
-                padding: 20px;
+                padding: 2rem 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- STANDARDIZED NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <ul class="nav-links">
+                <li><a href="apps.html" class="active">Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="header">
         <h1>Leadership & Career Assessment Tools</h1>
         <p>Practical insights to support your leadership journey and career transitions</p>
@@ -237,5 +373,12 @@
             <a href="mailto:paul@paulthomascoaching.co.uk" class="contact-gentle">Drop me a line if you'd like to chat</a>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Senior Academic Transformations. All rights reserved.</p>
+            <p><a href="aboutpaul.html">About Paul Thomas</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
 </body>
 </html>
