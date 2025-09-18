@@ -23,14 +23,14 @@
             box-sizing: border-box;
         }
 
-        body { 
-            font-family: 'Georgia', 'Times New Roman', serif; 
-            line-height: 1.7; 
-            color: var(--colour-dark); 
-            background-color: var(--colour-light); 
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--colour-dark);
+            background-color: var(--colour-light);
         }
 
-        /* STANDARDIZED BLUE GRADIENT NAVIGATION */
+        /* Navigation - STANDARDIZED BLUE GRADIENT */
         nav {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             padding: 1rem 0;
@@ -68,259 +68,302 @@
             font-weight: 500;
         }
 
-        .nav-links a:hover, .nav-links a.active, .nav-links a.current {
+        .nav-links a:hover, .nav-links a.active {
             color: #ffd700;
         }
 
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: white;
-        }
-
-        /* About Page Styles */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .page-hero {
+        .header {
             background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
             color: white;
-            padding: 4rem 2rem;
             text-align: center;
-            margin-bottom: 3rem;
-            border-radius: 15px;
+            padding: 4rem 1rem 3rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .page-hero h1 {
+        .header h1 {
             font-size: 2.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
             font-weight: normal;
         }
 
-        .page-hero p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            max-width: 800px;
+        .header p {
+            font-size: 1.4rem;
+            font-weight: lighter;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1140px;
             margin: 0 auto;
+            padding: 2rem 0;
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .about-sidebar {
+        .about-section {
             background: var(--colour-white);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-medium);
-            height: fit-content;
-        }
-
-        .profile-image {
-            width: 100%;
-            border-radius: 15px;
-            margin-bottom: 1.5rem;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
             box-shadow: var(--shadow-light);
         }
 
-        .credentials {
-            margin-top: 2rem;
-        }
-
-        .credentials h3 {
-            color: var(--colour-primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .credentials ul {
-            list-style: none;
-        }
-
-        .credentials li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--colour-light);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .credentials li::before {
-            content: '•';
-            color: var(--colour-secondary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .about-main {
-            background: var(--colour-white);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-medium);
-        }
-
-        .about-main h2 {
+        .about-section h2 {
             color: var(--colour-accent);
             border-bottom: 2px solid var(--colour-secondary);
             padding-bottom: 0.5rem;
             margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .about-section h3 {
+            color: var(--colour-primary);
+            margin: 2.5rem 0 1.5rem 0;
             font-size: 1.8rem;
         }
 
-        .about-main h3 {
-            color: var(--colour-primary);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .about-main p {
-            font-size: 1.1rem;
+        .about-section p {
             margin-bottom: 1.5rem;
-            text-align: justify;
+            color: var(--colour-dark);
+            font-size: 1.15rem;
         }
 
-        .philosophy-section {
+        .credentials {
             background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
-            padding: 3rem;
-            border-radius: 15px;
-            margin: 3rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
             border: 2px solid var(--colour-secondary);
         }
 
-        .philosophy-section h2 {
+        .credentials h4 {
             color: var(--colour-accent);
-            text-align: center;
-            margin-bottom: 2rem;
-            border: none;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
 
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .credentials ul {
+            list-style-position: inside;
+            color: var(--colour-dark);
         }
 
-        .philosophy-card {
+        .credentials li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .approach-section {
             background: var(--colour-white);
             padding: 2rem;
             border-radius: 12px;
+            margin: 2rem 0;
             box-shadow: var(--shadow-light);
-            text-align: center;
         }
 
-        .philosophy-card h4 {
-            color: var(--colour-primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+        .methodology-section {
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .methodology-section h3 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .methodology-section p {
+            color: white;
+            opacity: 0.9;
+        }
+
+        .methodology-section ul {
+            color: white;
+            opacity: 0.9;
+        }
+
+        .working-together {
+            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid var(--colour-secondary);
         }
 
         .contact-cta {
-            background: var(--colour-white);
-            padding: 3rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow-medium);
-            margin-top: 3rem;
-        }
-
-        .contact-cta h2 {
-            color: var(--colour-primary);
-            margin-bottom: 1rem;
-            border: none;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--colour-primary), var(--colour-accent));
+            background: linear-gradient(135deg, var(--colour-success) 0%, #218838 100%);
             color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-cta h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .contact-cta p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-size: 1.15rem;
+        }
+
+        .contact-cta a {
+            display: inline-block;
+            background: var(--colour-white);
+            color: var(--colour-success);
             padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: bold;
             transition: all 0.3s ease;
-            margin-top: 1rem;
         }
 
-        .btn:hover {
-            background: linear-gradient(135deg, var(--colour-accent), #0f4c75);
+        .contact-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .resources-link {
+            background: var(--colour-white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-light);
+        }
+
+        .resources-link h4 {
+            color: var(--colour-accent);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .resources-link p {
+            color: var(--colour-dark);
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .resources-link a {
+            color: var(--colour-primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resources-link a:hover {
+            text-decoration: underline;
+            color: var(--colour-accent);
+        }-bottom: 15px;
+        }
+
+        .contact-cta p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-cta a {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-cta a:hover {
+            background: rgba(255,255,255,0.3);
             transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            background: linear-gradient(135deg, var(--colour-success), #20c997);
-            margin-left: 1rem;
+        .resources-link {
+            background: #f0f8f4;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid #27ae60;
         }
 
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, #218838, #1ba085);
+        .resources-link h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .resources-link p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .resources-link a {
+            color: #27ae60;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .resources-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--colour-dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--colour-secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
             .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
-                flex-direction: column;
-                padding: 1rem;
-                gap: 1.5rem;
-            }
-
-            .nav-links.active {
                 display: flex;
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            .page-hero h1 {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .header h1 {
                 font-size: 2.2rem;
             }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            
+            .header p {
+                font-size: 1.2rem;
             }
-
-            .about-sidebar,
-            .about-main,
-            .philosophy-section,
-            .contact-cta {
-                padding: 2rem;
+            
+            .container {
+                width: 95%;
+                padding: 1rem 0;
             }
-
-            .philosophy-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
+            
+            .about-section {
+                padding: 2rem 1rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- STANDARDIZED NAVIGATION -->
-    <nav role="navigation">
+    <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Senior Academic Transformations</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
             <ul class="nav-links">
                 <li><a href="apps.html">Apps</a></li>
                 <li><a href="workbooks.html">Workbooks</a></li>
@@ -328,92 +371,106 @@
                 <li><a href="coaching.html">Coaching</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="aboutpaul.html" class="current">About</a></li>
+                <li><a href="aboutpaul.html" class="active">About</a></li>
             </ul>
         </div>
     </nav>
+    <div class="header">
+        <h1>About Paul Thomas</h1>
+        <p>Transformation specialist supporting senior leaders through significant transitions</p>
+    </div>
 
-    <main class="container">
-        <section class="page-hero">
-            <h1>About Paul Thomas</h1>
-            <p>Supporting senior academics in Higher Education since the early 1990s</p>
-        </section>
+    <div class="container">
+        <div class="about-section">
+            <h2>Supporting Senior Leaders Through Change</h2>
+            
+            <p>I work with senior leaders who are navigating significant career transitions and organisational changes. My approach combines proven change methodologies with practical, supportive guidance tailored to the unique challenges that come with leadership responsibility.</p>
 
-        <div class="about-content">
-            <aside class="about-sidebar">
-                <img src="https://via.placeholder.com/300x400/4A6FA5/ffffff?text=Paul+Thomas" alt="Paul Thomas" class="profile-image">
-                
-                <div class="credentials">
-                    <h3>Qualifications & Experience</h3>
-                    <ul>
-                        <li>30+ years in Higher Education</li>
-                        <li>Senior Leadership Positions</li>
-                        <li>Certified Executive Coach</li>
-                        <li>Career Transition Specialist</li>
-                        <li>Academic Development Expert</li>
-                        <li>Published Researcher</li>
-                    </ul>
-                </div>
-            </aside>
+            <p>Whether you're considering a major career shift, designing your next chapter, or working through complex leadership challenges, I provide the space, frameworks, and honest perspective to help you move forward with clarity and confidence.</p>
 
-            <article class="about-main">
-                <h2>My Journey</h2>
-                <p>I've spent over three decades working within Higher Education, experiencing firsthand the unique challenges and opportunities that define academic careers. From early-career lecturer to senior leadership positions, I understand the complex decisions that senior academics face when considering their next career moves.</p>
+            <div class="credentials">
+                <h4>Background & Experience</h4>
+                <ul>
+                    <li><strong>MA in Change</strong> - specialist qualification in transformation and organisational development</li>
+                    <li><strong>Former Royal Navy officer</strong> - bringing structured, strategic thinking to complex challenges</li>
+                    <li><strong>Extensive consultancy experience</strong> across public and private sector organisations</li>
+                    <li><strong>International programme delivery</strong> including advanced communication training (NLP Master Practitioner)</li>
+                    <li><strong>Senior leadership programmes</strong> - design and delivery of executive development initiatives</li>
+                    <li><strong>Collaborative partnership</strong> with senior academic leaders (identity protected for confidentiality)</li>
+                </ul>
+            </div>
 
-                <p>My own career transitions taught me that change in academia requires both strategic thinking and emotional intelligence. It's not just about moving from one role to another—it's about understanding your values, leveraging your expertise, and creating a path that aligns with your personal and professional aspirations.</p>
+            <h3>My Approach to Transitions</h3>
+            <p>I believe that the best transitions happen when people have the space to think clearly, explore their options thoroughly, and move forward with genuine confidence rather than rushed decisions.</p>
 
-                <h3>Why I Focus on Senior Academics</h3>
-                <p>Senior academics bring extraordinary expertise to any transition. You've built careers on critical thinking, research excellence, and knowledge creation. However, the academic environment can sometimes limit our perspective on what's possible beyond traditional academic roles.</p>
+            <div class="approach-section">
+                <p><strong>My role is to provide that thinking space, along with:</strong></p>
+                <ul style="margin-left: 20px; color: #555;">
+                    <li><strong>Practical frameworks</strong> for working through complex decisions</li>
+                    <li><strong>Honest perspective</strong> when it's helpful and welcome</li>
+                    <li><strong>Structured support</strong> through the uncertainties that come with change</li>
+                    <li><strong>Accountability</strong> for the actions that matter most</li>
+                    <li><strong>Confidential space</strong> to think through sensitive career and leadership issues</li>
+                </ul>
+            </div>
 
-                <p>I work with senior academics because I understand the unique value you bring to any organization, and the specific challenges you face when considering change. Whether you're looking at leadership roles within academia, transitioning to industry, or exploring consulting opportunities, your experience deserves thoughtful, strategic guidance.</p>
+            <h3>What I Particularly Enjoy</h3>
+            <p><strong>I find it most rewarding to help senior leaders with:</strong></p>
+            <ul style="margin-left: 20px; color: #555; margin-bottom: 20px;">
+                <li>Thinking through complex career decisions and weighing up different pathways</li>
+                <li>Navigating the identity shifts that come with major role changes</li>
+                <li>Designing their next chapter in a way that aligns with their values and long-term goals</li>
+                <li>Working through the practical challenges and logistics of significant transitions</li>
+                <li>Building confidence for moving into unfamiliar or challenging territory</li>
+                <li>Balancing continued impact and influence with personal fulfilment and satisfaction</li>
+            </ul>
 
-                <h3>My Approach</h3>
-                <p>My coaching is grounded in evidence-based practice and designed specifically for the academic mindset. I combine practical career strategy with reflective exploration, helping you gain clarity on your goals while developing concrete action plans to achieve them.</p>
+            <div class="methodology-section">
+                <h3>The NAVIGATE™ Methodology</h3>
+                <p>Over the years, I've developed a comprehensive framework for supporting people through transitions that combines structured planning with space for reflection and exploration.</p>
 
-                <p>Every coaching relationship is unique. Some clients need help identifying their transferable skills, others require support in building confidence for new challenges, and many benefit from strategic networking guidance. Whatever your specific needs, we'll work together to create a tailored approach that respects your experience while opening doors to new possibilities.</p>
-            </article>
+                <p><strong>The NAVIGATE™ approach ensures that changes are both:</strong></p>
+                <ul style="margin-left: 20px; color: #555;">
+                    <li><strong>Well thought through</strong> - using proven frameworks and strategic thinking</li>
+                    <li><strong>Personally meaningful</strong> - aligned with your values, goals, and authentic aspirations</li>
+                </ul>
+
+                <p>This methodology forms the foundation of the assessment tools and resources available on this site, as well as the collaborative work I do with individual leaders.</p>
+            </div>
+
+            <div class="working-together">
+                <h3>Working Together</h3>
+                <p>Every situation is different, so I prefer to start with a conversation about your specific circumstances before suggesting any particular approach or structure.</p>
+
+                <p><strong>Sometimes:</strong></p>
+                <ul style="margin-left: 20px; color: #555; margin-bottom: 15px;">
+                    <li>A single strategic conversation provides the clarity and confidence needed</li>
+                    <li>A few sessions over several weeks helps work through a specific decision</li>
+                    <li>Ongoing support through a longer transition period is most valuable</li>
+                </ul>
+
+                <p>The most important thing is that the approach feels right for your situation and provides genuinely helpful support for your transition journey.</p>
+            </div>
+
+            <div class="resources-link">
+                <h4>Assessment Tools & Resources</h4>
+                <p>If you'd like to explore some of the frameworks and approaches I use, there are several free assessment tools available that provide immediate insights into leadership style, career transition readiness, and life balance.</p>
+                <a href="apps.html">Explore the assessment tools →</a>
+            </div>
         </div>
 
-        <section class="philosophy-section">
-            <h2>My Coaching Philosophy</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 0;">I believe that every senior academic has the potential to create meaningful change, both in their own careers and in the broader impact they can make in the world.</p>
-            
-            <div class="philosophy-grid">
-                <div class="philosophy-card">
-                    <h4>Evidence-Based</h4>
-                    <p>My methods are grounded in research and proven frameworks for career development and transition.</p>
-                </div>
-                
-                <div class="philosophy-card">
-                    <h4>Academic-Focused</h4>
-                    <p>I understand the unique culture, values, and challenges of academic careers at senior levels.</p>
-                </div>
-                
-                <div class="philosophy-card">
-                    <h4>Personally Tailored</h4>
-                    <p>Every coaching relationship is designed around your specific situation, goals, and aspirations.</p>
-                </div>
-                
-                <div class="philosophy-card">
-                    <h4>Action-Oriented</h4>
-                    <p>While reflection is important, my focus is on helping you create concrete steps toward your goals.</p>
-                </div>
+        <div class="contact-cta">
+            <h3>Interested in a Conversation?</h3>
+            <p>If you're facing a significant transition and think it might be helpful to explore your situation with someone experienced in change and transitions, I'm happy to chat about what that might look like.</p>
+            <a href="contact.html">Get in touch →</a>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Senior Academic Transformations. All rights reserved.</p>
+                <p><a href="aboutpaul.html">About Paul Thomas</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy Policy</a></p>
             </div>
-        </section>
-
-        <section class="contact-cta">
-            <h2>Ready to Explore Your Next Chapter?</h2>
-            <p>If you're a senior academic considering your next career move, I'd welcome the opportunity to explore how I can support your journey.</p>
-            <a href="contact.html" class="btn">Book a Discovery Call</a>
-            <a href="coaching.html" class="btn btn-secondary">View Coaching Packages</a>
-        </section>
-    </main>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
+        </footer>
+    </div>
 </body>
 </html>
