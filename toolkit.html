@@ -72,158 +72,377 @@
             color: #ffd700;
         }
 
-        .header {
-            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 1rem 3rem;
+        .container { 
+            width: 90%; 
+            max-width: 1140px; 
+            margin: 0 auto; 
+            padding: 2rem 0; 
+        }
+
+        header { 
+            background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-accent) 100%); 
+            color: white; 
+            text-align: center; 
+            padding: 4rem 1rem 3rem; 
             position: relative;
             overflow: hidden;
         }
 
-        .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            font-weight: normal;
+        header h1 { 
+            margin: 0; 
+            font-size: 2.8rem; 
+            font-weight: normal; 
+            position: relative;
+            z-index: 1;
         }
 
-        .header p {
-            font-size: 1.4rem;
-            font-weight: lighter;
-            margin-top: 0.5rem;
-            opacity: 0.9;
+        header p { 
+            font-size: 1.4rem; 
+            font-weight: lighter; 
+            margin-top: 0.5rem; 
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1140px;
+        /* Toolkit Styles */
+        .toolkit-container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem 0;
+            padding: 2rem 1rem;
         }
 
-        .intro-section {
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .welcome-section {
             background: var(--colour-white);
             padding: 3rem 2rem;
             border-radius: 12px;
-            margin-bottom: 3rem;
+            margin: 3rem 0;
             box-shadow: var(--shadow-light);
+            text-align: center;
         }
 
-        .intro-section h2 {
+        .welcome-section h2 {
             color: var(--colour-accent);
-            border-bottom: 2px solid var(--colour-secondary);
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
             font-size: 2.2rem;
-        }
-
-        .intro-section p {
-            color: var(--colour-dark);
-            font-size: 1.15rem;
             margin-bottom: 1.5rem;
         }
 
-        .research-section {
-            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 2px solid var(--colour-secondary);
-        }
-
-        .research-section h3 {
-            color: var(--colour-accent);
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
-        }
-
-        .research-section p {
+        .welcome-section p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
             color: var(--colour-dark);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
             margin: 2rem 0;
+            text-align: left;
         }
 
-        .benefit-card {
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .benefit-icon {
+            width: 2rem;
+            height: 2rem;
+            background: var(--colour-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .benefit-content h4 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+            color: var(--colour-accent);
+        }
+
+        .benefit-content p {
+            font-size: 0.95rem;
+            color: var(--colour-dark);
+            margin: 0;
+        }
+
+        .assessment-card {
             background: var(--colour-white);
             padding: 2rem;
             border-radius: 12px;
             box-shadow: var(--shadow-light);
+            margin-bottom: 2rem;
+        }
+
+        .question-header {
             text-align: center;
+            margin-bottom: 2rem;
         }
 
-        .benefit-card h4 {
+        .question-header h2 {
             color: var(--colour-accent);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .benefit-card p {
+        .question-header p {
             color: var(--colour-dark);
             font-size: 1.1rem;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, var(--colour-success) 0%, #218838 100%);
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            text-align: center;
-            margin: 3rem 0;
+        .question-item {
+            margin-bottom: 2rem;
         }
 
-        .cta-section h2 {
-            color: white;
-            font-size: 2.2rem;
+        .question-item h3 {
+            color: var(--colour-accent);
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .question-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--colour-white);
-            color: var(--colour-success);
-            padding: 1.2rem 2.5rem;
-            text-decoration: none;
+        .option-button {
+            padding: 1rem;
+            border: 2px solid #ddd;
+            background: var(--colour-white);
             border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.2rem;
+            cursor: pointer;
             transition: all 0.3s ease;
+            text-align: left;
+            font-size: 1rem;
+            color: var(--colour-dark);
         }
 
-        .btn:hover {
+        .option-button:hover {
+            border-color: var(--colour-primary);
+            background: rgba(74, 111, 165, 0.05);
+        }
+
+        .option-button.selected {
+            border-color: var(--colour-primary);
+            background: rgba(74, 111, 165, 0.1);
+            color: var(--colour-primary);
+            font-weight: 500;
+        }
+
+        .btn { 
+            display: inline-block; 
+            background-color: var(--colour-primary); 
+            color: white; 
+            padding: 0.9rem 1.8rem; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            margin-top: 1.2rem; 
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 1rem; 
+            text-align: center;
+        }
+        
+        .btn:hover { 
+            background-color: var(--colour-accent); 
             transform: translateY(-2px);
             box-shadow: var(--shadow-light);
         }
 
-        footer {
-            background-color: var(--colour-dark);
-            color: white;
-            text-align: center;
-            padding: 2.5rem 0;
-            margin-top: 4rem;
+        .btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
         }
 
+        .btn-large {
+            font-size: 1.2rem;
+            padding: 1.2rem 2.5rem;
+        }
+
+        .btn-success {
+            background-color: var(--colour-success);
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .results-section {
+            background: var(--colour-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: rgba(74, 111, 165, 0.05);
+            border: 2px solid rgba(74, 111, 165, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .result-card h3 {
+            color: var(--colour-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar-container {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 20px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(45deg, var(--colour-primary), var(--colour-accent));
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .recommendations {
+            background: var(--colour-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .recommendations h4 {
+            color: var(--colour-accent);
+            margin-bottom: 1rem;
+        }
+
+        .recommendations ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recommendations li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .recommendations li::before {
+            content: '✓';
+            background: var(--colour-success);
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid var(--colour-secondary);
+            text-align: center;
+        }
+
+        .next-steps h3 {
+            color: var(--colour-accent);
+            margin-bottom: 1rem;
+        }
+
+        .next-steps p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer { 
+            background-color: var(--colour-dark); 
+            color: white; 
+            text-align: center; 
+            padding: 2.5rem 0; 
+            margin-top: 4rem; 
+        }
+        
         footer a {
             color: var(--colour-secondary);
             text-decoration: none;
         }
-
+        
         footer a:hover {
             text-decoration: underline;
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--colour-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--colour-accent);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: flex;
@@ -236,11 +455,11 @@
                 gap: 1rem;
             }
             
-            .header h1 {
+            header h1 {
                 font-size: 2.2rem;
             }
             
-            .header p {
+            header p {
                 font-size: 1.2rem;
             }
             
@@ -252,9 +471,14 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .intro-section, .cta-section {
-                padding: 2rem 1rem;
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .welcome-section, .assessment-card, .results-section {
+                padding: 1.5rem 1rem;
             }
         }
     </style>
@@ -276,70 +500,221 @@
         </div>
     </nav>
 
-    <div class="header">
-        <h1>Your Free Career Transition Toolkit</h1>
-        <p>Evidence-based assessments designed specifically for senior academics</p>
-    </div>
-
-    <div class="container">
-        <div class="intro-section">
-            <h2>What Is the Free Toolkit?</h2>
-            
-            <p>The Free Career Transition Toolkit is a comprehensive collection of evidence-based assessment tools specifically designed for senior academics and leaders in higher education. These assessments provide immediate, actionable insights to support your career transition decisions and professional development.</p>
-
-            <p>Developed by Paul Thomas, a transformation specialist with an MA in Change, these tools combine proven psychological frameworks with practical guidance tailored to the unique challenges faced by senior academic professionals.</p>
-
-            <h3>How It Helps You</h3>
-            <p>Each assessment in the toolkit addresses a specific aspect of career transition and leadership development:</p>
-            
-            <ul style="margin-left: 2rem; margin-bottom: 2rem;">
-                <li><strong>Clarity and Self-Awareness:</strong> Understand your natural preferences, strengths, and areas for development</li>
-                <li><strong>Strategic Decision-Making:</strong> Gain frameworks for thinking through complex career choices</li>
-                <li><strong>Transition Readiness:</strong> Assess your preparedness for significant career changes</li>
-                <li><strong>Sustainable Balance:</strong> Evaluate and improve your work-life integration</li>
-                <li><strong>Resilience Building:</strong> Develop strategies for thriving under academic pressures</li>
-            </ul>
+    <header>
+        <div class="hero-content">
+            <h1>🎯 Senior Academic Career Toolkit</h1>
+            <p>A thoughtful assessment designed specifically for senior academics considering their next career move</p>
         </div>
+    </header>
 
-        <div class="research-section">
-            <h3>Research Foundation</h3>
-            <p>The toolkit assessments are grounded in established research from organisational psychology, career development theory, and change management literature:</p>
-            
-            <p><strong>Support Style Assessment:</strong> Based on leadership support research and communication preference studies, helping you understand how you naturally provide and receive support in professional relationships.</p>
-            
-            <p><strong>Career Transition Navigator:</strong> Incorporates Bridges' Transition Model and Schlossberg's Transition Theory, providing a research-backed framework for navigating career changes with confidence.</p>
-            
-            <p><strong>Life Balance Scorecard:</strong> Draws from work-life integration research and the concept of sustainable high performance, helping you create a balanced approach to demanding academic roles.</p>
-            
-            <p><strong>Academic Resilience Assessment:</strong> Based on psychological resilience research and stress management studies, specifically adapted for the unique pressures of academic leadership environments.</p>
-        </div>
+    <div class="toolkit-container">
+        <!-- Overview Section -->
+        <div id="overview" class="section active">
+            <div class="welcome-section">
+                <h2>What You'll Discover</h2>
+                <p>Take 10-15 minutes to gain clarity on your career transition readiness, support preferences, and potential career directions.</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-content">
+                            <h4>Transition Readiness</h4>
+                            <p>How prepared you are for your next career move</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">❤️</div>
+                        <div class="benefit-content">
+                            <h4>Support Preferences</h4>
+                            <p>What kind of guidance serves you best</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">👤</div>
+                        <div class="benefit-content">
+                            <h4>Career Direction</h4>
+                            <p>Which pathways align with your values</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📋</div>
+                        <div class="benefit-content">
+                            <h4>Action Steps</h4>
+                            <p>Practical next steps for your situation</p>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <h4>🎯 Immediate Insights</h4>
-                <p>Get personalised results and recommendations instantly, with no waiting or complex interpretation required.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h4>📊 Evidence-Based</h4>
-                <p>All assessments are grounded in established psychological and organisational research, ensuring reliable and valid insights.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h4>🎓 Academic-Specific</h4>
-                <p>Designed specifically for the higher education context, addressing the unique challenges and opportunities in academic careers.</p>
-            </div>
-
-            <div class="benefit-card">
-                <h4>🔄 Practical Application</h4>
-                <p>Each assessment provides actionable recommendations you can implement immediately in your professional development.</p>
+                <button onclick="showSection('assessment')" class="btn btn-large btn-success">
+                    Begin Assessment
+                </button>
             </div>
         </div>
 
-        <div class="cta-section">
-            <h2>Begin Your Assessment Journey</h2>
-            <p>Take the first step towards greater clarity and confidence in your career transition. Start with any assessment that resonates with your current situation.</p>
-            <a href="apps.html" class="btn">Access Your Free Toolkit</a>
+        <!-- Assessment Section -->
+        <div id="assessment" class="section">
+            <div class="assessment-card">
+                <div class="question-header">
+                    <h2>Career Transition Readiness Assessment</h2>
+                    <p>5 quick questions to assess where you are in your transition journey</p>
+                </div>
+
+                <div class="question-item">
+                    <h3>1. How ready do you feel for a significant career change?</h3>
+                    <div class="question-options">
+                        <button class="option-button" data-question="readiness" data-value="5" onclick="selectOption(this)">
+                            Very ready - I've been planning this for a while
+                        </button>
+                        <button class="option-button" data-question="readiness" data-value="4" onclick="selectOption(this)">
+                            Quite ready - I have a good sense of direction
+                        </button>
+                        <button class="option-button" data-question="readiness" data-value="3" onclick="selectOption(this)">
+                            Moderately ready - still exploring options
+                        </button>
+                        <button class="option-button" data-question="readiness" data-value="2" onclick="selectOption(this)">
+                            Somewhat uncertain - need more clarity
+                        </button>
+                        <button class="option-button" data-question="readiness" data-value="1" onclick="selectOption(this)">
+                            Not ready - just starting to think about it
+                        </button>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <h3>2. What's driving your interest in career transition?</h3>
+                    <div class="question-options">
+                        <button class="option-button" data-question="motivation" data-value="5" onclick="selectOption(this)">
+                            Strong desire for new challenges and growth
+                        </button>
+                        <button class="option-button" data-question="motivation" data-value="4" onclick="selectOption(this)">
+                            Seeking better work-life balance
+                        </button>
+                        <button class="option-button" data-question="motivation" data-value="3" onclick="selectOption(this)">
+                            Current role limitations becoming apparent
+                        </button>
+                        <button class="option-button" data-question="motivation" data-value="2" onclick="selectOption(this)">
+                            External pressures or changes
+                        </button>
+                        <button class="option-button" data-question="motivation" data-value="1" onclick="selectOption(this)">
+                            General dissatisfaction with current situation
+                        </button>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <h3>3. How confident are you about your transferable skills?</h3>
+                    <div class="question-options">
+                        <button class="option-button" data-question="confidence" data-value="5" onclick="selectOption(this)">
+                            Very confident - I know my strengths well
+                        </button>
+                        <button class="option-button" data-question="confidence" data-value="4" onclick="selectOption(this)">
+                            Quite confident - good understanding of my abilities
+                        </button>
+                        <button class="option-button" data-question="confidence" data-value="3" onclick="selectOption(this)">
+                            Moderately confident - some clarity about skills
+                        </button>
+                        <button class="option-button" data-question="confidence" data-value="2" onclick="selectOption(this)">
+                            Somewhat uncertain - need help identifying strengths
+                        </button>
+                        <button class="option-button" data-question="confidence" data-value="1" onclick="selectOption(this)">
+                            Low confidence - struggle to see my value outside academia
+                        </button>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <h3>4. What kind of support would be most helpful right now?</h3>
+                    <div class="question-options">
+                        <button class="option-button" data-question="support" data-value="5" onclick="selectOption(this)">
+                            Strategic planning and implementation guidance
+                        </button>
+                        <button class="option-button" data-question="support" data-value="4" onclick="selectOption(this)">
+                            Skills assessment and capability mapping
+                        </button>
+                        <button class="option-button" data-question="support" data-value="3" onclick="selectOption(this)">
+                            Career exploration and option analysis
+                        </button>
+                        <button class="option-button" data-question="support" data-value="2" onclick="selectOption(this)">
+                            Confidence building and mindset work
+                        </button>
+                        <button class="option-button" data-question="support" data-value="1" onclick="selectOption(this)">
+                            General career counselling and direction finding
+                        </button>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <h3>5. What's your ideal timeline for making a career move?</h3>
+                    <div class="question-options">
+                        <button class="option-button" data-question="timeline" data-value="5" onclick="selectOption(this)">
+                            Within 3-6 months
+                        </button>
+                        <button class="option-button" data-question="timeline" data-value="4" onclick="selectOption(this)">
+                            Within 6-12 months
+                        </button>
+                        <button class="option-button" data-question="timeline" data-value="3" onclick="selectOption(this)">
+                            Within 1-2 years
+                        </button>
+                        <button class="option-button" data-question="timeline" data-value="2" onclick="selectOption(this)">
+                            More than 2 years away
+                        </button>
+                        <button class="option-button" data-question="timeline" data-value="1" onclick="selectOption(this)">
+                            No specific timeline - just exploring
+                        </button>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button id="calculateResults" onclick="calculateResults()" class="btn btn-large" disabled>
+                        See My Results
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="section">
+            <div class="results-section">
+                <div class="question-header">
+                    <h2>Your Career Transition Results</h2>
+                    <p>Personalised insights based on your assessment responses</p>
+                </div>
+
+                <div id="readinessResult" class="result-card">
+                    <h3>Your Transition Readiness</h3>
+                    <div class="progress-bar-container">
+                        <div id="progressBar" class="progress-bar" style="width: 0%;">
+                            <span id="progressText">0%</span>
+                        </div>
+                    </div>
+                    <div id="readinessLevel"></div>
+                    <div id="readinessDescription"></div>
+                </div>
+
+                <div class="recommendations">
+                    <h4>Recommended Next Steps</h4>
+                    <ul id="recommendationsList">
+                        <!-- Recommendations will be populated by JavaScript -->
+                    </ul>
+                </div>
+
+                <div class="next-steps">
+                    <h3>Continue Your Journey</h3>
+                    <p>Based on your assessment, you may benefit from more detailed career transition support. Consider exploring what collaborative support might look like for your specific situation.</p>
+                    
+                    <div class="button-group">
+                        <a href="contact.html" class="btn btn-success">
+                            Explore Support Options
+                        </a>
+                        <a href="about.html" class="btn">
+                            Learn About My Approach
+                        </a>
+                        <button onclick="showSection('overview')" class="btn">
+                            Start Over
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -349,5 +724,154 @@
             <p><a href="aboutpaul.html">About Paul Thomas</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy Policy</a></p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        let responses = {};
+        
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function selectOption(button) {
+            const question = button.dataset.question;
+            const value = parseInt(button.dataset.value);
+            
+            // Remove selected class from all buttons in this question
+            const questionButtons = button.parentNode.querySelectorAll('.option-button');
+            questionButtons.forEach(btn => btn.classList.remove('selected'));
+            
+            // Add selected class to clicked button
+            button.classList.add('selected');
+            
+            // Store response
+            responses[question] = value;
+            
+            // Check if all questions are answered
+            checkAllAnswered();
+        }
+        
+        function checkAllAnswered() {
+            const requiredQuestions = ['readiness', 'motivation', 'confidence', 'support', 'timeline'];
+            const answered = requiredQuestions.filter(q => responses[q] !== undefined);
+            const calculateButton = document.getElementById('calculateResults');
+            
+            if (answered.length === requiredQuestions.length) {
+                calculateButton.disabled = false;
+                calculateButton.textContent = 'See My Results';
+                calculateButton.classList.add('btn-success');
+            } else {
+                calculateButton.disabled = true;
+                calculateButton.textContent = `Answer ${requiredQuestions.length - answered.length} more questions`;
+                calculateButton.classList.remove('btn-success');
+            }
+        }
+        
+        function calculateResults() {
+            const total = Object.values(responses).reduce((sum, value) => sum + value, 0);
+            const average = total / Object.keys(responses).length;
+            const score = Math.round(average * 20);
+            
+            let readinessLevel, description, recommendations;
+            
+            if (average >= 4.5) {
+                readinessLevel = "High Readiness";
+                description = "You're well-prepared for a career transition with clear direction and strong confidence in your abilities.";
+                recommendations = [
+                    "Focus on strategic implementation and timeline planning",
+                    "Consider working with a career strategist for optimised execution",
+                    "Begin networking actively in your target areas",
+                    "Start updating professional materials and online presence"
+                ];
+            } else if (average >= 3.5) {
+                readinessLevel = "Good Readiness";
+                description = "You have solid foundations for transition but could benefit from targeted support in specific areas.";
+                recommendations = [
+                    "Complete a thorough skills and capabilities assessment",
+                    "Develop clearer vision for your ideal next role",
+                    "Build confidence through capability recognition work",
+                    "Create structured exploration plan for career options"
+                ];
+            } else if (average >= 2.5) {
+                readinessLevel = "Moderate Readiness";
+                description = "You're in the exploration phase with some clarity but need more structured support to move forward effectively.";
+                recommendations = [
+                    "Start with comprehensive career exploration",
+                    "Work on identifying and articulating transferable skills",
+                    "Build network connections outside academic sector",
+                    "Consider career coaching for structured guidance"
+                ];
+            } else if (average >= 1.5) {
+                readinessLevel = "Early Stage Readiness";
+                description = "You're at the beginning of your transition journey and would benefit from foundational career development work.";
+                recommendations = [
+                    "Focus on self-assessment and career exploration",
+                    "Build confidence through skills recognition exercises",
+                    "Start informal conversations about career possibilities",
+                    "Consider career counselling to explore options systematically"
+                ];
+            } else {
+                readinessLevel = "Exploratory Stage";
+                description = "You're just beginning to consider career options and need supportive guidance to explore possibilities.";
+                recommendations = [
+                    "Take time for thorough self-reflection and assessment",
+                    "Explore what's possible beyond your current role",
+                    "Build understanding of your strengths and interests",
+                    "Consider speaking with a career professional for guidance"
+                ];
+            }
+            
+            // Update results display
+            document.getElementById('readinessLevel').innerHTML = `<h4 style="color: var(--colour-primary); margin: 1rem 0;">${readinessLevel}</h4>`;
+            document.getElementById('readinessDescription').innerHTML = `<p>${description}</p>`;
+            
+            // Animate progress bar
+            setTimeout(() => {
+                document.getElementById('progressBar').style.width = score + '%';
+                document.getElementById('progressText').textContent = score + '%';
+            }, 100);
+            
+            // Update recommendations
+            const recommendationsList = document.getElementById('recommendationsList');
+            recommendationsList.innerHTML = '';
+            recommendations.forEach(rec => {
+                const li = document.createElement('li');
+                li.textContent = rec;
+                recommendationsList.appendChild(li);
+            });
+            
+            // Show results section
+            showSection('results');
+        }
+        
+        // Back to Top Button Functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
