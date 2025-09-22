@@ -361,6 +361,31 @@
                 padding: 2rem 1rem;
             }
         }
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--colour-primary);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .back-to-top:hover {
+            background: var(--colour-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -476,5 +501,16 @@
             </div>
         </footer>
     </div>
+    <a href="#top" class="back-to-top">↑</a>
+    <script>
+window.addEventListener('scroll', function() {
+    const backToTop = document.querySelector('.back-to-top');
+    if (window.pageYOffset > 300) {
+        backToTop.style.display = 'block';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+</script>
 </body>
 </html>
