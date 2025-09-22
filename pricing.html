@@ -253,6 +253,26 @@
             font-weight: bold;
         }
 
+        .btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
         .btn-primary {
             background: linear-gradient(135deg, #28a745, #20c997);
             color: white;
@@ -269,6 +289,8 @@
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+            color: white;
+            text-decoration: none;
         }
 
         .btn-secondary {
@@ -287,6 +309,8 @@
         .btn-secondary:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
+            color: white;
+            text-decoration: none;
         }
 
         .btn-cta {
@@ -305,6 +329,34 @@
         .btn-cta:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2c5aa0;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        .back-to-top:hover {
+            background: #1e3a5f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            color: white;
+            text-decoration: none;
         }
 
         /* Responsive Design */
@@ -336,4 +388,130 @@
                 padding: 0 1rem;
             }
         }
-      
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <ul class="nav-links">
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="workbooks.html">Workbooks</a></li>
+                <li><a href="toolkit.html">Free Toolkit</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="aboutpaul.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Choose Your Transformation Journey</h1>
+            <p>Professional coaching and development programmes designed specifically for senior academics navigating career transitions and leadership challenges.</p>
+        </div>
+    </section>
+
+    <!-- Discovery Session Section -->
+    <section class="discovery-section" id="discovery">
+        <div class="container">
+            <div class="discovery-card">
+                <h2>Start with a Free Discovery Session</h2>
+                <div class="price">FREE</div>
+                <p>A 30-minute conversation to explore your current situation, challenges, and aspirations. No obligation, just clarity and insight.</p>
+                <ul class="discovery-features">
+                    <li>Understand your unique situation</li>
+                    <li>Clarify your goals and challenges</li>
+                    <li>Explore how coaching could help</li>
+                    <li>Receive immediate insights and next steps</li>
+                    <li>No sales pressure, just genuine support</li>
+                </ul>
+                <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" target="_blank" rel="noopener" class="btn">Book Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Coaching Programmes</h2>
+            <p class="section-subtitle">Choose the level of support that matches your needs and commitment to transformation.</p>
+            
+            <div class="pricing-grid">
+                <!-- Essential Package -->
+                <div class="pricing-card">
+                    <h3>Essential</h3>
+                    <div class="price">£150</div>
+                    <div class="period">per session</div>
+                    <p>Perfect for focused support on specific challenges or decisions you're facing.</p>
+                    <ul class="pricing-features">
+                        <li>One-off 90-minute session</li>
+                        <li>Assessment tool included</li>
+                        <li>Personalised action plan</li>
+                        <li>Follow-up resources</li>
+                        <li>Email support for 2 weeks</li>
+                    </ul>
+                    <a href="contact.html" class="btn-secondary">Book Essential Session</a>
+                </div>
+
+                <!-- Transformation Package (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Transformation</h3>
+                    <div class="price">£1,200</div>
+                    <div class="period">3-month programme</div>
+                    <p>Comprehensive support for significant career transitions and leadership development.</p>
+                    <ul class="pricing-features">
+                        <li>6 x 90-minute coaching sessions</li>
+                        <li>Complete assessment suite</li>
+                        <li>All workbooks included</li>
+                        <li>Strategic planning workshop</li>
+                        <li>Ongoing email support</li>
+                        <li>Resource library access</li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary">Start Transformation</a>
+                </div>
+
+                <!-- Executive Package -->
+                <div class="pricing-card">
+                    <h3>Executive</h3>
+                    <div class="price">£2,500</div>
+                    <div class="period">6-month programme</div>
+                    <p>Intensive support for senior leaders navigating complex organizational and career challenges.</p>
+                    <ul class="pricing-features">
+                        <li>12 x 90-minute coaching sessions</li>
+                        <li>360-degree feedback process</li>
+                        <li>Leadership development plan</li>
+                        <li>Monthly check-in calls</li>
+                        <li>Emergency support access</li>
+                        <li>Complete resource library</li>
+                        <li>Partner/team sessions available</li>
+                    </ul>
+                    <a href="contact.html" class="btn-secondary">Discuss Executive Programme</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: #666; margin-bottom: 2rem;">All programmes include assessment tools, workbooks, and ongoing support. Payment plans available.</p>
+                <a href="contact.html" class="btn-cta">Book Your Free Discovery Session</a>
+            </div>
+        </div>
+    </section>
+
+    <a href="#top" class="back-to-top">↑</a>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
