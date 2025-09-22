@@ -285,6 +285,24 @@
                 font-size: 1.8rem;
             }
         }
+        .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2c5aa0;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: #1a365d;
+    transform: translateY(-2px);
+}
     </style>
 </head>
 <body>
@@ -402,5 +420,16 @@
             <p><a href="about.html">About Paul Thomas</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy Policy</a></p>
         </div>
     </footer>
+   <a href="#top" class="back-to-top">↑ Top</a> 
+    <script>
+window.addEventListener('scroll', function() {
+    const backToTop = document.querySelector('.back-to-top');
+    if (window.pageYOffset > 300) {
+        backToTop.style.display = 'block';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+</script>
 </body>
 </html>
