@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Academic Transformations</title>
+    <title>Paul Thomas - Five Decades of Supporting Career Transitions</title>
     <style>
         :root { 
             --colour-primary: #4A6FA5; 
@@ -30,7 +30,7 @@
             background-color: var(--colour-light); 
         }
         
-        /* Navigation - STANDARDIZED BLUE GRADIENT */
+        /* Navigation */
         nav {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5aa0 100%);
             padding: 1rem 0;
@@ -50,7 +50,7 @@
 
         .logo {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: bold;
             text-decoration: none;
         }
@@ -90,19 +90,29 @@
         
         header h1 { 
             margin: 0; 
-            font-size: 2.8rem; 
+            font-size: 2.5rem; 
             font-weight: normal; 
             position: relative;
             z-index: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: lighter;
+            margin-bottom: 1rem;
+            opacity: 0.9;
         }
         
         header p { 
-            font-size: 1.4rem; 
+            font-size: 1.1rem; 
             font-weight: lighter; 
-            margin-top: 0.5rem; 
             margin-bottom: 2rem;
             position: relative;
             z-index: 1;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero-buttons {
@@ -122,47 +132,71 @@
             border-bottom: 2px solid var(--colour-secondary); 
             padding-bottom: 0.5rem; 
             margin-bottom: 2rem; 
-            font-size: 2.2rem;
+            font-size: 2rem;
         }
         
         h3 { 
             color: var(--colour-primary); 
-            margin-top: 2.5rem; 
+            margin-top: 2rem; 
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .story-section {
+            background: var(--colour-white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: var(--shadow-light);
+            border-left: 4px solid var(--colour-primary);
+        }
+
+        .story-section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
         }
         
-        .feature-grid { 
+        .tools-grid { 
             display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
             gap: 2rem; 
             margin: 3rem 0; 
         }
         
-        .feature-card { 
+        .tool-card { 
             background: var(--colour-white); 
             border-radius: 12px; 
             padding: 2rem; 
             box-shadow: var(--shadow-light); 
             transition: all 0.3s ease; 
             border: 1px solid #eee; 
-            text-align: center;
         }
         
-        .feature-card:hover { 
+        .tool-card:hover { 
             transform: translateY(-5px); 
             box-shadow: var(--shadow-medium); 
         }
         
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h4 {
+        .tool-card h4 {
             color: var(--colour-accent);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+        }
+
+        .tool-status {
+            display: inline-block;
+            background: var(--colour-success);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon {
+            background: var(--colour-secondary);
+            color: var(--colour-dark);
         }
         
         .btn { 
@@ -173,7 +207,7 @@
             text-decoration: none; 
             border-radius: 8px; 
             font-weight: bold; 
-            margin-top: 1.2rem; 
+            margin-top: 1rem; 
             transition: all 0.3s ease; 
             border: none; 
             cursor: pointer; 
@@ -187,45 +221,28 @@
             box-shadow: var(--shadow-light);
         }
         
-        .btn-success {
-            background-color: var(--colour-success);
+        .btn-primary {
+            background-color: var(--colour-primary);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--colour-primary);
+            border: 2px solid var(--colour-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--colour-primary);
             color: white;
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
         }
         
-        .btn-success:hover {
-            background-color: #218838;
-        }
-        
-        .btn-large {
-            font-size: 1.2rem;
-            padding: 1.2rem 2.5rem;
-        }
-        
-        .lead-capture {
-            background: linear-gradient(135deg, var(--colour-light) 0%, #f0ebe1 100%);
+        .availability-section {
+            background: linear-gradient(135deg, #f8f9fd 0%, #f1f3f9 100%);
             padding: 3rem 2rem;
             border-radius: 12px;
             margin: 3rem 0;
-            border: 2px solid var(--colour-secondary);
             text-align: center;
-        }
-        
-        .welcome-section {
-            background: var(--colour-white);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            box-shadow: var(--shadow-light);
-        }
-        
-        /* Force consistent paragraph sizing */
-        .welcome-section p {
-            font-size: 1.15rem !important;
-            line-height: 1.8 !important;
-            margin-bottom: 1.5rem !important;
-            font-weight: normal !important;
+            border: 2px solid var(--colour-primary);
         }
         
         footer { 
@@ -259,11 +276,15 @@
             }
             
             header h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
             }
             
             header p {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
             
             .container {
@@ -271,7 +292,7 @@
                 padding: 1rem 0;
             }
             
-            .feature-grid {
+            .tools-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
@@ -282,154 +303,144 @@
             }
             
             h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
         }
-        .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #2c5aa0;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: none;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.back-to-top:hover {
-    background: #1a365d;
-    transform: translateY(-2px);
-}
     </style>
 </head>
 <body>
-    <!-- STANDARDIZED NAVIGATION -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">Senior Academic Transformations</a>
+            <a href="index.html" class="logo">Paul Thomas</a>
             <ul class="nav-links">
-                <li><a href="apps.html">Apps</a></li>
-                <li><a href="workbooks.html">Workbooks</a></li>
-                <li><a href="toolkit.html">Free Toolkit</a></li>
-                <li><a href="coaching.html">Coaching</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="aboutpaul.html">About</a></li>
+                <li><a href="#story">My Story</a></li>
+                <li><a href="#tools">Tools I've Developed</a></li>
+                <li><a href="#book">Book Project</a></li>
+                <li><a href="#working-together">Working Together</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <header>
         <div class="hero-content">
-            <h1>Navigate Your Next Chapter with Confidence</h1>
-            <p>Thoughtful guidance for senior academics ready to transform their careers with clarity and purpose</p>
+            <h1>Paul Thomas</h1>
+            <div class="subtitle">Five Decades of Supporting Career Transitions</div>
+            <p>From reluctant Naval Resettlement Officer to working across 50+ UK universities - sharing what I've learned about helping people navigate meaningful change</p>
             <div class="hero-buttons">
-                <a href="toolkit.html" class="btn btn-success btn-large">Start Your Free Assessment</a>
-                <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" target="_blank" rel="noopener"" class="btn btn-large">Book Discovery Call</a>
+                <a href="#working-together" class="btn btn-primary">Let's Have a Conversation</a>
+                <a href="#tools" class="btn btn-secondary">Explore the Tools I've Developed</a>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <section class="welcome-section">
-            <h2>A Personal Welcome</h2>
-            <p>Hello. I'm Paul Thomas, and I've been supporting academic professionals in Higher Education since the early 1990s. This platform is designed specifically for senior academics like you, who find themselves at pivotal moments in their careers.</p>
-            <p>Whether you're considering a move into senior leadership, seeking to amplify your impact beyond academia, or contemplating an entirely new direction, you'll find the tools and guidance here for thoughtful, evidence-based self-reflection and strategic career development.</p>
-            <a href="aboutpaul.html" class="btn">Discover My Story</a>
+        <section id="story" class="story-section">
+            <h2>How I Got Here</h2>
+            <p>A simple email asking for career transition help brought me out of retirement post-COVID. That conversation reminded me why this work has mattered throughout my career - and led me to develop new tools for the challenges facing today's senior professionals.</p>
+            
+            <p>It started in the early 1970s when, fresh out of Britannia Royal Naval College as a new lieutenant, I was appointed to HMS Excellent as an Instructor Lieutenant. What I didn't know was that among my duties would be serving as Naval Resettlement Officer - not because I'd chosen the role, but because that's what Instructor Lieutenants did.</p>
+
+            <p>Suddenly I was helping officers and ratings figure out civilian life after military service. I was learning as much as they were about career transitions, identity shifts, and what it means to translate professional skills into new contexts.</p>
+
+            <p>Fifty years later, after working with senior academics across 50+ UK universities through major institutional changes, I find myself having remarkably similar conversations. The contexts change, but the fundamental challenges of career transition remain consistent.</p>
+
+            <h3>What I've Learned</h3>
+            <p>Career transitions aren't just about updating CVs or networking. They're about identity, strategic thinking, and understanding how your deep capabilities translate to new environments. Most career support either treats academics like corporate executives (missing the identity complexity) or offers generic advice (ignoring analytical strengths).</p>
+
+            <p>Senior professionals - whether leaving the military or considering life beyond academia - need frameworks that respect their intellectual rigour whilst addressing their unique challenges.</p>
         </section>
 
-        <section>
-            <h2>What Would You Like to Explore?</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h4>Support Style Finder</h4>
-                    <p>Discover your natural preferences for receiving support and development. Understand which approaches resonate most deeply with your leadership style.</p>
-                    <a href="https://hesnrldrs.github.io/support-style-app/" class="btn">Discover Your Style</a>
+        <section id="tools">
+            <h2>Tools I've Developed</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">Over five decades of supporting career transitions, I've developed practical frameworks that work for strategic thinkers facing complex decisions.</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-status">Available Now</div>
+                    <h4>Personal Balanced Scorecard</h4>
+                    <p>Adapting the strategic framework developed by Kaplan & Norton for personal life planning. Helps senior leaders apply the same analytical rigour they use professionally to achieve authentic life balance across four interconnected perspectives.</p>
+                    <p><strong>Who it's for:</strong> Senior academics and professionals who think strategically about institutions and want to apply the same frameworks to their own lives.</p>
+                    <a href="https://hesnrldrs.github.io/personal-balanced-scorecard-website/" class="btn" target="_blank">Explore the Framework</a>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
+                <div class="tool-card">
+                    <div class="tool-status">Available Now</div>
                     <h4>Career Transition Navigator</h4>
-                    <p>A thoughtfully designed guide to help you navigate career change with confidence, clarity, and strategic purpose.</p>
-                    <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn">Begin Your Journey</a>
+                    <p>A thoughtfully designed approach to help senior professionals navigate career change with confidence, clarity, and strategic purpose. Based on understanding both the rational and emotional aspects of professional identity shifts.</p>
+                    <a href="https://hesnrldrs.github.io/career-transition-app/" class="btn" target="_blank">Begin Assessment</a>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">⚖️</div>
-                    <h4>Life Balance Scorecard</h4>
-                    <p>Evaluate your work-life integration across four essential dimensions and create a personalised strategy for sustainable wellbeing.</p>
-                    <a href="https://hesnrldrs.github.io/life-balance-app/" class="btn">Assess Your Balance</a>
+                <div class="tool-card">
+                    <div class="tool-status">Available Now</div>
+                    <h4>Life Balance Assessment</h4>
+                    <p>Evaluate your work-life integration across four essential dimensions. Developed from observing patterns in how senior professionals manage competing demands whilst maintaining personal wellbeing.</p>
+                    <a href="https://hesnrldrs.github.io/life-balance-app/" class="btn" target="_blank">Take Assessment</a>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h4>Academic Resilience Assessment</h4>
-                    <p>Understand your resilience patterns and develop strategies to thrive under pressure whilst maintaining your wellbeing.</p>
-                    <a href="https://hesnrldrs.github.io/resilience-app/" class="btn">Explore Resilience</a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Begin Your Transformation Journey</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h4>Assessment Tools</h4>
-                    <p>Evidence-based assessments meticulously designed for senior academics to provide meaningful insights and strategic clarity.</p>
-                    <a href="apps.html" class="btn">View Assessment Apps</a>
+                <div class="tool-card">
+                    <div class="tool-status">Available Now</div>
+                    <h4>Academic Resilience Framework</h4>
+                    <p>Understanding resilience patterns and developing strategies to thrive under pressure. Particularly relevant for academic professionals facing unprecedented sector changes.</p>
+                    <a href="https://hesnrldrs.github.io/resilience-app/" class="btn" target="_blank">Assess Resilience</a>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">📖</div>
-                    <h4>Practical Workbooks</h4>
-                    <p>Thoughtfully structured workbooks to guide your reflection and development journey at your own pace, whenever suits you best.</p>
-                    <a href="workbooks.html" class="btn">Access Workbooks</a>
+                <div class="tool-card">
+                    <div class="tool-status">Available Now</div>
+                    <h4>Support Style Assessment</h4>
+                    <p>Discover your natural preferences for receiving support and development. Understanding which approaches resonate most deeply with your leadership style and personality.</p>
+                    <a href="https://hesnrldrs.github.io/support-style-app/" class="btn" target="_blank">Discover Your Style</a>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h4>Personal Coaching</h4>
-                    <p>Bespoke one-to-one coaching support carefully tailored to your unique situation, aspirations, and career goals.</p>
-                    <a href="coaching.html" class="btn">Discover Coaching</a>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📞</div>
-                    <h4>Request a Discovery Call</h4>
-                    <p>Book a complimentary 30-minute conversation to explore your situation and discover how we can support your next steps.</p>
-                    <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" target="_blank" rel="noopener" class="btn">Book Discovery Call</a>
+                <div class="tool-card">
+                    <div class="tool-status coming-soon">In Development</div>
+                    <h4>The NAVIGATE Framework</h4>
+                    <p>My comprehensive approach to career transition decision-making, developed over decades of supporting professionals through major life changes. Currently being documented as part of my memoir project.</p>
+                    <p><em>This will be available alongside the book when published.</em></p>
                 </div>
             </div>
         </section>
 
-        <section class="lead-capture">
-            <h2>Ready to Take the First Step?</h2>
-            <p>Begin your transformation journey with our comprehensive free assessment toolkit. Thoughtfully designed, evidence-based, and immediately actionable.</p>
-            <a href="toolkit.html" class="btn btn-success btn-large">Start Your Free Assessment</a>
+        <section id="book">
+            <div class="story-section">
+                <h2>Book Project: Memoir & The NAVIGATE Framework</h2>
+                <p>I'm currently documenting the journey from that first reluctant appointment as Naval Resettlement Officer through five decades of supporting career transitions. The memoir weaves together personal experiences with the development of practical frameworks - culminating in the NAVIGATE tool that synthesises what I've learned about helping people through complex career decisions.</p>
+
+                <p>The book will include the complete NAVIGATE methodology, detailed case studies (appropriately anonymised), and the strategic frameworks that have proven most effective for senior professionals facing career transitions.</p>
+
+                <h3>What NAVIGATE Includes</h3>
+                <p>While I'm still finalising the framework, NAVIGATE addresses the systematic approach to career transition that respects both the analytical capabilities and emotional complexity of senior professional identity shifts. It's designed specifically for strategic thinkers who want rigorous frameworks rather than generic career advice.</p>
+
+                <p><em>Expected publication: 2025. Updates will be shared with those interested in following the project.</em></p>
+            </div>
+        </section>
+
+        <section id="working-together" class="availability-section">
+            <h2>Working Together</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">I work selectively with a small number of senior academic and healthcare leaders who are navigating career transitions.</p>
+            
+            <p>This isn't career coaching or life coaching in the traditional sense. It's experienced guidance from someone who understands both the strategic challenges of professional leadership and the personal complexity of identity shifts that accompany major career changes.</p>
+
+            <p style="margin: 2rem 0;">I typically work with 4-6 individuals at any time, allowing for the depth of conversation and strategic thinking that complex transitions require.</p>
+
+            <p><strong>If you're a senior professional considering your options, I'd welcome a brief conversation about your situation.</strong></p>
+            
+            <p style="margin-bottom: 2rem;">No agenda beyond understanding whether my experience might be helpful for what you're navigating.</p>
+
+            <div class="hero-buttons">
+                <a href="https://calendar.app.google/K26A3jh2ST52cZVE8" target="_blank" rel="noopener" class="btn btn-primary">Book a Conversation</a>
+                <a href="mailto:paul@academicleadershiptransformations.co.uk" class="btn btn-secondary">Send a Message</a>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="container">
-            <p>&copy; 2024 Senior Academic Transformations. All rights reserved.</p>
-            <p><a href="about.html">About Paul Thomas</a> | <a href="contact.html">Contact</a> | <a href="privacy.html">Privacy Policy</a></p>
+            <h3 style="color: white; margin-bottom: 1rem;">Contact</h3>
+            <p>Paul Thomas</p>
+            <p><a href="mailto:paul@academicleadershiptransformations.co.uk">paul@academicleadershiptransformations.co.uk</a></p>
+            <p style="margin-top: 2rem;">&copy; 2024 Paul Thomas. All rights reserved.</p>
         </div>
     </footer>
-   <a href="#top" class="back-to-top">↑ Top</a> 
-    <script>
-window.addEventListener('scroll', function() {
-    const backToTop = document.querySelector('.back-to-top');
-    if (window.pageYOffset > 300) {
-        backToTop.style.display = 'block';
-    } else {
-        backToTop.style.display = 'none';
-    }
-});
-</script>
 </body>
 </html>
