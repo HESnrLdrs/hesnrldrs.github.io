@@ -267,6 +267,25 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--colour-primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: var(--colour-accent);
+            transform: translateY(-2px);
+        }
         
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -439,7 +458,7 @@
             </div>
         </section>
 
-        <section id="contact" style="margin-bottom: 2rem;">
+        <section id="contact">
             <div class="story-section">
                 <h2>Get in Touch</h2>
                 <p>If you're a senior academic or healthcare professional navigating career questions, I'd welcome a brief conversation.</p>
@@ -461,6 +480,8 @@
         </div>
     </footer>
 
+    <a href="#top" class="back-to-top">↑ Top</a>
+
     <script>
         // Smooth scrolling for navigation links with offset for sticky nav
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -468,13 +489,28 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for sticky navigation
+                    const offsetTop = target.offsetTop - 80;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
                     });
+                } else if (this.getAttribute('href') === '#top') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 }
             });
+        });
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
         });
     </script>
 </body>
