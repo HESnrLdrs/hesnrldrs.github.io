@@ -71,7 +71,22 @@
         .nav-links a:hover, .nav-links a.active {
             color: #ffd700;
         }
-        
+        /* Fix for iPad/touch devices */
+.nav-links a {
+    display: block;
+    padding: 12px 16px;
+    min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255, 215, 0, 0.3);
+}
+
+.nav-links li {
+    touch-action: manipulation;
+}
+
+nav {
+    -webkit-tap-highlight-color: transparent;
+}
         .container { 
             width: 90%; 
             max-width: 1140px; 
